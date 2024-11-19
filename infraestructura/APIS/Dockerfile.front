@@ -5,13 +5,13 @@ FROM node:20
 WORKDIR /usr/src/app
 
 # Copia el archivo package.json y package-lock.json desde la carpeta correcta
-COPY libreria/package*.json ./
+COPY libreria-frontend /package*.json ./
 
 # Instala las dependencias del proyecto
 RUN npm install
 
 # Copia el resto de la aplicación
-COPY libreria ./ 
+COPY libreria-frontend ./ 
 
 # Expone el puerto de la aplicación
 EXPOSE 3003
