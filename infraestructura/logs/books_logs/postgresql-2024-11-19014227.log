@@ -1,0 +1,631 @@
+2024-11-19 01:42:27.054 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-19 01:42:27.054 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-19 01:42:27.056 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-19 01:42:27.056 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-19 01:42:27.056 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-19 01:42:27.056 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-19 01:42:27.069 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-19 01:42:27.069 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-19 01:42:27.129 GMT [30]     LOG:  00000: database system was shut down at 2024-11-19 01:11:09 GMT
+2024-11-19 01:42:27.129 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-19 01:42:27.212 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-19 01:42:27.212 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-19 01:44:14.021 GMT [39] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 66.427 ms  parse s0: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:44:14.021 GMT [39] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 01:44:14.049 GMT [39] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 01:44:14.049 GMT [39] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 01:44:14.053 GMT [39] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 30.505 ms  bind s0: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:44:14.053 GMT [39] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 01:44:14.053 GMT [39] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 01:44:14.053 GMT [39] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s0: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:44:14.053 GMT [39] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 01:44:14.053 GMT [39] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 01:44:14.054 GMT [39] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.072 ms
+2024-11-19 01:44:14.054 GMT [39] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 01:44:58.600 GMT [42] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.299 ms  parse s1: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:44:58.600 GMT [42] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 01:44:58.607 GMT [42] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 01:44:58.607 GMT [42] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 01:44:58.607 GMT [42] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 5.450 ms  bind s1: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:44:58.607 GMT [42] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 01:44:58.607 GMT [42] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 01:44:58.607 GMT [42] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s1: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:44:58.607 GMT [42] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 01:44:58.607 GMT [42] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 01:44:58.607 GMT [42] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.082 ms
+2024-11-19 01:44:58.607 GMT [42] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 01:45:50.009 GMT [46] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.160 ms  parse s2: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:45:50.009 GMT [46] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 01:45:50.015 GMT [46] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 01:45:50.015 GMT [46] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 01:45:50.015 GMT [46] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 6.070 ms  bind s2: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:45:50.015 GMT [46] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 01:45:50.015 GMT [46] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 01:45:50.015 GMT [46] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s2: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:45:50.015 GMT [46] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 01:45:50.015 GMT [46] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 01:45:50.016 GMT [46] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.060 ms
+2024-11-19 01:45:50.016 GMT [46] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 01:46:02.812 GMT [47] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.762 ms  parse s3: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:46:02.812 GMT [47] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 01:46:02.820 GMT [47] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 01:46:02.820 GMT [47] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 01:46:02.820 GMT [47] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 6.920 ms  bind s3: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:46:02.820 GMT [47] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 01:46:02.820 GMT [47] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 01:46:02.820 GMT [47] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s3: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 01:46:02.820 GMT [47] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 01:46:02.820 GMT [47] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 01:46:02.820 GMT [47] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.100 ms
+2024-11-19 01:46:02.820 GMT [47] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 01:47:27.149 GMT [28]     LOG:  00000: checkpoint starting: time
+2024-11-19 01:47:27.149 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-19 01:47:27.348 GMT [28]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.064 s, sync=0.021 s, total=0.200 s; sync files=2, longest=0.014 s, average=0.011 s; distance=0 kB, estimate=0 kB; lsn=0/7E942B8, redo lsn=0/7E94260
+2024-11-19 01:47:27.348 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-19 02:01:25.595 GMT [94] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 15.756 ms  parse s4: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:01:25.595 GMT [94] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:01:25.615 GMT [94] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:01:25.615 GMT [94] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:01:25.616 GMT [94] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 17.835 ms  bind s4: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:01:25.616 GMT [94] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:01:25.616 GMT [94] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:01:25.616 GMT [94] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s4: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:01:25.616 GMT [94] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:01:25.616 GMT [94] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:01:25.617 GMT [94] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.518 ms
+2024-11-19 02:01:25.617 GMT [94] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:03:52.272 GMT [103] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 5.223 ms  parse s5: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE ("public"."Books"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-19 02:03:52.272 GMT [103] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:03:52.303 GMT [103] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE (""public"".""Books"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-19 02:03:52.303 GMT [103] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:03:52.303 GMT [103] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 19.917 ms  bind s5: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE ("public"."Books"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-19 02:03:52.303 GMT [103] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-19 02:03:52.303 GMT [103] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:03:52.303 GMT [103] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s5: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE ("public"."Books"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-19 02:03:52.303 GMT [103] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-19 02:03:52.303 GMT [103] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:03:52.305 GMT [103] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.714 ms
+2024-11-19 02:03:52.305 GMT [103] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:04:18.343 GMT [105] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.946 ms  parse s6: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:04:18.343 GMT [105] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:04:18.348 GMT [105] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:04:18.348 GMT [105] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:04:18.348 GMT [105] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 4.218 ms  bind s6: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:04:18.348 GMT [105] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:04:18.348 GMT [105] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:04:18.348 GMT [105] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s6: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:04:18.348 GMT [105] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:04:18.348 GMT [105] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:04:18.348 GMT [105] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.058 ms
+2024-11-19 02:04:18.348 GMT [105] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:07:28.648 GMT [116] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 3.240 ms  parse s7: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:07:28.648 GMT [116] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:07:28.656 GMT [116] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:07:28.656 GMT [116] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:07:28.656 GMT [116] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 7.958 ms  bind s7: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:07:28.656 GMT [116] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:07:28.656 GMT [116] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:07:28.657 GMT [116] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s7: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:07:28.657 GMT [116] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:07:28.657 GMT [116] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:07:28.657 GMT [116] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.080 ms
+2024-11-19 02:07:28.657 GMT [116] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:13:20.957 GMT [134] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.344 ms  parse s8: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:13:20.957 GMT [134] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:13:20.963 GMT [134] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:13:20.963 GMT [134] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:13:20.963 GMT [134] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 4.999 ms  bind s8: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:13:20.963 GMT [134] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:13:20.963 GMT [134] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:13:20.963 GMT [134] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s8: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:13:20.963 GMT [134] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:13:20.963 GMT [134] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:13:20.963 GMT [134] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.060 ms
+2024-11-19 02:13:20.963 GMT [134] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:16:18.807 GMT [144] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 3.094 ms  parse s9: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:16:18.807 GMT [144] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:16:18.813 GMT [144] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:16:18.813 GMT [144] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:16:18.813 GMT [144] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 5.283 ms  bind s9: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:16:18.813 GMT [144] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:16:18.813 GMT [144] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:16:18.813 GMT [144] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s9: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:16:18.813 GMT [144] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:16:18.813 GMT [144] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:16:18.813 GMT [144] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.129 ms
+2024-11-19 02:16:18.813 GMT [144] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:20:25.162 GMT [157] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.881 ms  parse s10: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:20:25.162 GMT [157] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:20:25.168 GMT [157] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:20:25.168 GMT [157] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:20:25.168 GMT [157] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 5.362 ms  bind s10: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:20:25.168 GMT [157] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:20:25.168 GMT [157] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:20:25.168 GMT [157] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s10: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:20:25.168 GMT [157] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:20:25.168 GMT [157] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:20:25.168 GMT [157] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.060 ms
+2024-11-19 02:20:25.168 GMT [157] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:21:52.815 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-19 02:21:52.815 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:52.881 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-19 02:21:52.881 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:52.885 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: duration: 70.620 ms
+2024-11-19 02:21:52.885 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:52.886 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: statement: SELECT version()
+2024-11-19 02:21:52.886 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:52.888 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-19 02:21:52.888 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:52.888 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: duration: 2.335 ms
+2024-11-19 02:21:52.888 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:52.889 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-19 02:21:52.889 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:52.942 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-19 02:21:52.942 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:52.947 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: duration: 58.107 ms
+2024-11-19 02:21:52.947 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:52.948 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-19 02:21:52.948 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:52.965 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-19 02:21:52.965 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:52.968 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: duration: 20.192 ms
+2024-11-19 02:21:52.968 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:52.969 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-19 02:21:52.969 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.034 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-19 02:21:53.034 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.036 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: duration: 66.411 ms
+2024-11-19 02:21:53.036 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:53.163 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-19 02:21:53.163 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.187 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-19 02:21:53.187 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.190 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: duration: 27.294 ms
+2024-11-19 02:21:53.190 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:53.191 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: statement: SELECT version()
+2024-11-19 02:21:53.191 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.193 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-19 02:21:53.193 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.193 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: duration: 1.870 ms
+2024-11-19 02:21:53.193 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:53.194 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-19 02:21:53.194 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.221 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-19 02:21:53.221 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.222 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: duration: 28.068 ms
+2024-11-19 02:21:53.222 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:53.223 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-19 02:21:53.223 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.242 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-19 02:21:53.242 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.244 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: duration: 21.194 ms
+2024-11-19 02:21:53.244 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:53.244 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-19 02:21:53.244 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.282 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-19 02:21:53.282 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.283 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOG:  00000: duration: 38.180 ms
+2024-11-19 02:21:53.283 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:53.406 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-19 02:21:53.406 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.465 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-19 02:21:53.465 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.469 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: duration: 63.146 ms
+2024-11-19 02:21:53.469 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:53.470 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: statement: SELECT version()
+2024-11-19 02:21:53.470 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.473 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-19 02:21:53.473 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.473 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: duration: 3.231 ms
+2024-11-19 02:21:53.473 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:53.474 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-19 02:21:53.474 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.522 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-19 02:21:53.522 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.528 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: duration: 53.550 ms
+2024-11-19 02:21:53.528 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:53.528 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-19 02:21:53.528 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.548 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-19 02:21:53.548 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.550 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: duration: 22.003 ms
+2024-11-19 02:21:53.550 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:53.551 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-19 02:21:53.551 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:53.590 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-19 02:21:53.590 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:53.591 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOG:  00000: duration: 39.365 ms
+2024-11-19 02:21:53.591 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:55.168 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: statement: SELECT CASE WHEN usesuper
+	       THEN pg_catalog.pg_is_in_recovery()
+	       ELSE FALSE
+	       END as inrecovery,
+	       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+	       THEN pg_is_wal_replay_paused()
+	       ELSE FALSE
+	       END as isreplaypaused
+	FROM pg_catalog.pg_user WHERE usename=current_user
+2024-11-19 02:21:55.168 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:55.177 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: AUDIT: SESSION,6,1,READ,SELECT,,,"SELECT CASE WHEN usesuper
+	       THEN pg_catalog.pg_is_in_recovery()
+	       ELSE FALSE
+	       END as inrecovery,
+	       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+	       THEN pg_is_wal_replay_paused()
+	       ELSE FALSE
+	       END as isreplaypaused
+	FROM pg_catalog.pg_user WHERE usename=current_user",<not logged>
+2024-11-19 02:21:55.177 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:55.177 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: duration: 9.072 ms
+2024-11-19 02:21:55.177 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:21:55.501 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: statement: SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type;
+2024-11-19 02:21:55.501 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-19 02:21:55.550 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: AUDIT: SESSION,7,1,READ,SELECT,,,"SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type",<not logged>
+2024-11-19 02:21:55.550 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:21:55.554 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOG:  00000: duration: 53.660 ms
+2024-11-19 02:21:55.554 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-19 02:23:59.798 GMT [172] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.932 ms  parse s11: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:23:59.798 GMT [172] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:23:59.805 GMT [172] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:23:59.805 GMT [172] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:23:59.805 GMT [172] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 6.103 ms  bind s11: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:23:59.805 GMT [172] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:23:59.805 GMT [172] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:23:59.805 GMT [172] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s11: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:23:59.805 GMT [172] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:23:59.805 GMT [172] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:23:59.805 GMT [172] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.101 ms
+2024-11-19 02:23:59.805 GMT [172] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:24:26.408 GMT [174] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.160 ms  parse s12: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:24:26.408 GMT [174] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:24:26.414 GMT [174] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:24:26.414 GMT [174] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:24:26.414 GMT [174] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 5.221 ms  bind s12: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:24:26.414 GMT [174] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:24:26.414 GMT [174] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:24:26.414 GMT [174] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s12: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:24:26.414 GMT [174] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:24:26.414 GMT [174] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:24:26.414 GMT [174] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.076 ms
+2024-11-19 02:24:26.414 GMT [174] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:26:49.921 GMT [183] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.557 ms  parse s13: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:26:49.921 GMT [183] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:26:49.950 GMT [183] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:26:49.950 GMT [183] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:26:49.951 GMT [183] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 29.056 ms  bind s13: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:26:49.951 GMT [183] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:26:49.951 GMT [183] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:26:49.951 GMT [183] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s13: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:26:49.951 GMT [183] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:26:49.951 GMT [183] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:26:49.951 GMT [183] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.084 ms
+2024-11-19 02:26:49.951 GMT [183] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:27:15.520 GMT [185] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.880 ms  parse s14: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:27:15.520 GMT [185] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:27:15.526 GMT [185] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:27:15.526 GMT [185] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:27:15.526 GMT [185] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 5.810 ms  bind s14: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:27:15.526 GMT [185] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:27:15.526 GMT [185] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:27:15.526 GMT [185] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s14: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:27:15.526 GMT [185] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:27:15.526 GMT [185] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:27:15.527 GMT [185] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.371 ms
+2024-11-19 02:27:15.527 GMT [185] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:27:52.609 GMT [188] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.329 ms  parse s15: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:27:52.609 GMT [188] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:27:52.621 GMT [188] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:27:52.621 GMT [188] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:27:52.622 GMT [188] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 9.372 ms  bind s15: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:27:52.622 GMT [188] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:27:52.622 GMT [188] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:27:52.622 GMT [188] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s15: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:27:52.622 GMT [188] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:27:52.622 GMT [188] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:27:52.622 GMT [188] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.105 ms
+2024-11-19 02:27:52.622 GMT [188] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:31:01.187 GMT [198] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.873 ms  parse s16: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:31:01.187 GMT [198] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:31:01.194 GMT [198] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:31:01.194 GMT [198] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:31:01.194 GMT [198] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 6.264 ms  bind s16: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:31:01.194 GMT [198] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:31:01.194 GMT [198] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:31:01.194 GMT [198] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s16: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:31:01.194 GMT [198] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:31:01.194 GMT [198] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:31:01.194 GMT [198] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.077 ms
+2024-11-19 02:31:01.194 GMT [198] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:31:18.457 GMT [200] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 1.085 ms  parse s17: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:31:18.457 GMT [200] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:31:18.463 GMT [200] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:31:18.463 GMT [200] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:31:18.464 GMT [200] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 6.027 ms  bind s17: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:31:18.464 GMT [200] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:31:18.464 GMT [200] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:31:18.464 GMT [200] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s17: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:31:18.464 GMT [200] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:31:18.464 GMT [200] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:31:18.464 GMT [200] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.071 ms
+2024-11-19 02:31:18.464 GMT [200] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:32:53.777 GMT [206] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.823 ms  parse s18: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:32:53.777 GMT [206] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:32:53.782 GMT [206] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:32:53.782 GMT [206] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:32:53.782 GMT [206] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 4.678 ms  bind s18: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:32:53.782 GMT [206] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:32:53.782 GMT [206] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:32:53.782 GMT [206] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s18: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:32:53.782 GMT [206] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:32:53.782 GMT [206] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:32:53.782 GMT [206] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.050 ms
+2024-11-19 02:32:53.782 GMT [206] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:32:54.617 GMT [207] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.840 ms  parse s19: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:32:54.617 GMT [207] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:32:54.622 GMT [207] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:32:54.622 GMT [207] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:32:54.623 GMT [207] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 4.918 ms  bind s19: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:32:54.623 GMT [207] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:32:54.623 GMT [207] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:32:54.623 GMT [207] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s19: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:32:54.623 GMT [207] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:32:54.623 GMT [207] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:32:54.623 GMT [207] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.062 ms
+2024-11-19 02:32:54.623 GMT [207] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:32:57.442 GMT [208] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.853 ms  parse s20: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:32:57.442 GMT [208] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:32:57.479 GMT [208] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:32:57.479 GMT [208] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:32:57.479 GMT [208] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 6.372 ms  bind s20: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:32:57.479 GMT [208] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:32:57.479 GMT [208] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:32:57.479 GMT [208] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s20: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:32:57.479 GMT [208] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:32:57.479 GMT [208] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:32:57.479 GMT [208] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.101 ms
+2024-11-19 02:32:57.479 GMT [208] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:33:21.075 GMT [210] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.918 ms  parse s21: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:33:21.075 GMT [210] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:33:21.081 GMT [210] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:33:21.081 GMT [210] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:33:21.082 GMT [210] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 5.938 ms  bind s21: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:33:21.082 GMT [210] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:33:21.082 GMT [210] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:33:21.082 GMT [210] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s21: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:33:21.082 GMT [210] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:33:21.082 GMT [210] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:33:21.082 GMT [210] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.073 ms
+2024-11-19 02:33:21.082 GMT [210] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:35:56.720 GMT [219] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.900 ms  parse s22: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:35:56.720 GMT [219] books postgres [unknown] 172.18.0.5 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-19 02:35:56.726 GMT [219] books postgres [unknown] 172.18.0.5 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-19 02:35:56.726 GMT [219] books postgres [unknown] 172.18.0.5 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-19 02:35:56.726 GMT [219] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 4.787 ms  bind s22: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:35:56.726 GMT [219] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:35:56.726 GMT [219] books postgres [unknown] 172.18.0.5 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-19 02:35:56.726 GMT [219] books postgres [unknown] 172.18.0.5 LOG:  00000: execute s22: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-19 02:35:56.726 GMT [219] books postgres [unknown] 172.18.0.5 DETAIL:  Parameters: $1 = '0'
+2024-11-19 02:35:56.726 GMT [219] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-19 02:35:56.726 GMT [219] books postgres [unknown] 172.18.0.5 LOG:  00000: duration: 0.065 ms
+2024-11-19 02:35:56.726 GMT [219] books postgres [unknown] 172.18.0.5 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-19 02:50:01.025 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-19 02:50:01.025 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-19 02:50:01.057 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-19 02:50:01.057 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-19 02:50:01.084 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 FATAL:  57P01: terminating connection due to administrator command
+2024-11-19 02:50:01.084 GMT [164] books postgres pgAdmin 4 - DB:books 172.18.0.9 LOCATION:  ProcessInterrupts, postgres.c:3315
+2024-11-19 02:50:01.088 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 FATAL:  57P01: terminating connection due to administrator command
+2024-11-19 02:50:01.088 GMT [165] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.9 LOCATION:  ProcessInterrupts, postgres.c:3315
+2024-11-19 02:50:01.107 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 FATAL:  57P01: terminating connection due to administrator command
+2024-11-19 02:50:01.107 GMT [163] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.9 LOCATION:  ProcessInterrupts, postgres.c:3315
+2024-11-19 02:50:01.124 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 33) exited with exit code 1
+2024-11-19 02:50:01.124 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-19 02:50:01.379 GMT [28]     LOG:  00000: shutting down
+2024-11-19 02:50:01.379 GMT [28]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-19 02:50:01.398 GMT [28]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-19 02:50:01.398 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-19 02:50:01.573 GMT [28]     LOG:  00000: checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.052 s, sync=0.001 s, total=0.189 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/7E94368, redo lsn=0/7E94368
+2024-11-19 02:50:01.573 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-19 02:50:01.655 GMT [1]     LOG:  00000: database system is shut down
+2024-11-19 02:50:01.655 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

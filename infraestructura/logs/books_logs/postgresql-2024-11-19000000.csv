@@ -1,0 +1,7 @@
+2024-11-19 00:06:58.144 GMT,,,1,,673bd1a4.1,6,,2024-11-18 23:45:40 GMT,,0,LOG,00000,"received fast shutdown request",,,,,,,,"process_pm_shutdown_request, postmaster.c:2273","","postmaster",,0
+2024-11-19 00:06:58.197 GMT,,,1,,673bd1a4.1,7,,2024-11-18 23:45:40 GMT,,0,LOG,00000,"aborting any active transactions",,,,,,,,"process_pm_shutdown_request, postmaster.c:2291","","postmaster",,0
+2024-11-19 00:06:58.242 GMT,,,1,,673bd1a4.1,8,,2024-11-18 23:45:40 GMT,,0,LOG,00000,"background worker ""logical replication launcher"" (PID 33) exited with exit code 1",,,,,,,,"LogChildExit, postmaster.c:3076","","postmaster",,0
+2024-11-19 00:06:58.243 GMT,,,28,,673bd1a5.1c,3,,2024-11-18 23:45:41 GMT,,0,LOG,00000,"shutting down",,,,,,,,"ShutdownXLOG, xlog.c:6611","","checkpointer",,0
+2024-11-19 00:06:58.253 GMT,,,28,,673bd1a5.1c,4,,2024-11-18 23:45:41 GMT,,0,LOG,00000,"checkpoint starting: shutdown immediate",,,,,,,,"LogCheckpointStart, xlog.c:6661","","checkpointer",,0
+2024-11-19 00:06:58.341 GMT,,,28,,673bd1a5.1c,5,,2024-11-18 23:45:41 GMT,,0,LOG,00000,"checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.019 s, sync=0.001 s, total=0.097 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/7E93748, redo lsn=0/7E93748",,,,,,,,"LogCheckpointEnd, xlog.c:6750","","checkpointer",,0
+2024-11-19 00:06:58.387 GMT,,,1,,673bd1a4.1,9,,2024-11-18 23:45:40 GMT,,0,LOG,00000,"database system is shut down",,,,,,,,"UnlinkLockFiles, miscinit.c:1171","","postmaster",,0

@@ -1,0 +1,28 @@
+2024-11-17 20:11:38.997 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-17 20:11:38.997 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-17 20:11:38.997 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-17 20:11:38.997 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-17 20:11:38.997 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-17 20:11:38.997 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-17 20:11:39.003 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-17 20:11:39.003 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-17 20:11:39.031 GMT [30]     LOG:  00000: database system was shut down at 2024-11-17 20:11:26 GMT
+2024-11-17 20:11:39.031 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-17 20:11:39.069 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-17 20:11:39.069 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-17 20:16:39.104 GMT [28]     LOG:  00000: checkpoint starting: time
+2024-11-17 20:16:39.104 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-17 20:16:39.226 GMT [28]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.038 s, sync=0.014 s, total=0.123 s; sync files=2, longest=0.008 s, average=0.007 s; distance=0 kB, estimate=0 kB; lsn=0/7B094B0, redo lsn=0/7B09458
+2024-11-17 20:16:39.226 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-17 20:31:02.574 GMT [92] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 95.620 ms  parse s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE 1=1 OFFSET $1
+2024-11-17 20:31:02.574 GMT [92] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-17 20:31:02.624 GMT [92] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-17 20:31:02.624 GMT [92] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:31:02.632 GMT [92] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 50.909 ms  bind s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE 1=1 OFFSET $1
+2024-11-17 20:31:02.632 GMT [92] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = '0'
+2024-11-17 20:31:02.632 GMT [92] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-17 20:31:02.632 GMT [92] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE 1=1 OFFSET $1
+2024-11-17 20:31:02.632 GMT [92] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = '0'
+2024-11-17 20:31:02.632 GMT [92] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-17 20:31:02.632 GMT [92] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.383 ms
+2024-11-17 20:31:02.632 GMT [92] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332

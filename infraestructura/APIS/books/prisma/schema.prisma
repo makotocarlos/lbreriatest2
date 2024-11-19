@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL_BOOKS")
+}
+
+model Books {
+  id          Int     @id @default(autoincrement())
+  title       String
+  author      String
+  description String
+  imageUrl    String?
+  price       Float   @default(0.0) // Valor predeterminado para nuevas filas
+}

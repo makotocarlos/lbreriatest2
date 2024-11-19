@@ -1,0 +1,16 @@
+2024-11-18 23:45:39.556 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-18 23:45:39.556 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-18 23:45:39.557 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-18 23:45:39.557 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-18 23:45:39.557 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-18 23:45:39.557 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-18 23:45:39.604 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-18 23:45:39.604 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-18 23:45:39.755 GMT [30]     LOG:  00000: database system was shut down at 2024-11-18 23:45:25 GMT
+2024-11-18 23:45:39.755 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-18 23:45:39.886 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-18 23:45:39.886 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-18 23:50:39.832 GMT [28]     LOG:  00000: checkpoint starting: time
+2024-11-18 23:50:39.832 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-18 23:50:39.968 GMT [28]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.028 s, sync=0.012 s, total=0.136 s; sync files=2, longest=0.007 s, average=0.006 s; distance=0 kB, estimate=0 kB; lsn=0/2EA32E0, redo lsn=0/2EA3288
+2024-11-18 23:50:39.968 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750

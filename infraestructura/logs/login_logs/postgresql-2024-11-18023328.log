@@ -1,0 +1,54 @@
+2024-11-18 02:33:28.128 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-18 02:33:28.128 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-18 02:33:28.131 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-18 02:33:28.131 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-18 02:33:28.131 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-18 02:33:28.131 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-18 02:33:28.147 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-18 02:33:28.147 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-18 02:33:28.248 GMT [30]     LOG:  00000: database system was shut down at 2024-11-18 02:33:08 GMT
+2024-11-18 02:33:28.248 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-18 02:33:28.405 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-18 02:33:28.405 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-18 02:36:35.310 GMT [43] login postgres [unknown] 172.18.0.4 LOG:  00000: duration: 94.615 ms  parse s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE 1=1 OFFSET $1
+2024-11-18 02:36:35.310 GMT [43] login postgres [unknown] 172.18.0.4 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-18 02:36:35.359 GMT [43] login postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-18 02:36:35.359 GMT [43] login postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-18 02:36:35.367 GMT [43] login postgres [unknown] 172.18.0.4 LOG:  00000: duration: 55.198 ms  bind s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE 1=1 OFFSET $1
+2024-11-18 02:36:35.367 GMT [43] login postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '0'
+2024-11-18 02:36:35.367 GMT [43] login postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-18 02:36:35.367 GMT [43] login postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE 1=1 OFFSET $1
+2024-11-18 02:36:35.367 GMT [43] login postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '0'
+2024-11-18 02:36:35.367 GMT [43] login postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-18 02:36:35.368 GMT [43] login postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.936 ms
+2024-11-18 02:36:35.368 GMT [43] login postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-18 02:36:44.909 GMT [44] login postgres [unknown] 172.18.0.4 LOG:  00000: duration: 1.216 ms  parse s1: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE 1=1 OFFSET $1
+2024-11-18 02:36:44.909 GMT [44] login postgres [unknown] 172.18.0.4 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-18 02:36:44.917 GMT [44] login postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-18 02:36:44.917 GMT [44] login postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-18 02:36:44.917 GMT [44] login postgres [unknown] 172.18.0.4 LOG:  00000: duration: 7.324 ms  bind s1: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE 1=1 OFFSET $1
+2024-11-18 02:36:44.917 GMT [44] login postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '0'
+2024-11-18 02:36:44.917 GMT [44] login postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-18 02:36:44.917 GMT [44] login postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE 1=1 OFFSET $1
+2024-11-18 02:36:44.917 GMT [44] login postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '0'
+2024-11-18 02:36:44.917 GMT [44] login postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-18 02:36:44.918 GMT [44] login postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.084 ms
+2024-11-18 02:36:44.918 GMT [44] login postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-18 02:38:28.321 GMT [28]     LOG:  00000: checkpoint starting: time
+2024-11-18 02:38:28.321 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-18 02:38:28.434 GMT [28]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.033 s, sync=0.011 s, total=0.113 s; sync files=2, longest=0.006 s, average=0.006 s; distance=0 kB, estimate=0 kB; lsn=0/9467590, redo lsn=0/9467538
+2024-11-18 02:38:28.434 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-18 02:41:31.558 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-18 02:41:31.558 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-18 02:41:31.589 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-18 02:41:31.589 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-18 02:41:31.598 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 33) exited with exit code 1
+2024-11-18 02:41:31.598 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-18 02:41:31.605 GMT [28]     LOG:  00000: shutting down
+2024-11-18 02:41:31.605 GMT [28]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-18 02:41:31.615 GMT [28]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-18 02:41:31.615 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-18 02:41:31.710 GMT [28]     LOG:  00000: checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.018 s, sync=0.001 s, total=0.105 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/9467640, redo lsn=0/9467640
+2024-11-18 02:41:31.710 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-18 02:41:31.751 GMT [1]     LOG:  00000: database system is shut down
+2024-11-18 02:41:31.751 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

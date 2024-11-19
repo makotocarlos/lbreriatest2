@@ -1,0 +1,14 @@
+2024-11-19 00:06:58.145 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-19 00:06:58.145 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-19 00:06:58.192 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-19 00:06:58.192 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-19 00:06:58.265 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 33) exited with exit code 1
+2024-11-19 00:06:58.265 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-19 00:06:58.265 GMT [28]     LOG:  00000: shutting down
+2024-11-19 00:06:58.265 GMT [28]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-19 00:06:58.273 GMT [28]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-19 00:06:58.273 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-19 00:06:58.358 GMT [28]     LOG:  00000: checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.019 s, sync=0.001 s, total=0.093 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/2EA3390, redo lsn=0/2EA3390
+2024-11-19 00:06:58.358 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-19 00:06:58.395 GMT [1]     LOG:  00000: database system is shut down
+2024-11-19 00:06:58.395 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

@@ -1,0 +1,999 @@
+2024-11-19 02:50:29.880 GMT,,,1,,673bfcf5.1,1,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit",,,,,,,,"PostmasterMain, postmaster.c:1080","","postmaster",,0
+2024-11-19 02:50:29.881 GMT,,,1,,673bfcf5.1,2,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"listening on IPv4 address ""0.0.0.0"", port 5432",,,,,,,,"ListenServerPort, pqcomm.c:661","","postmaster",,0
+2024-11-19 02:50:29.881 GMT,,,1,,673bfcf5.1,3,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"listening on IPv6 address ""::"", port 5432",,,,,,,,"ListenServerPort, pqcomm.c:661","","postmaster",,0
+2024-11-19 02:50:29.892 GMT,,,1,,673bfcf5.1,4,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"listening on Unix socket ""/var/run/postgresql/.s.PGSQL.5432""",,,,,,,,"ListenServerPort, pqcomm.c:657","","postmaster",,0
+2024-11-19 02:50:29.947 GMT,,,30,,673bfcf5.1e,1,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"database system was shut down at 2024-11-19 02:50:01 GMT",,,,,,,,"StartupXLOG, xlog.c:5445","","startup",,0
+2024-11-19 02:50:30.034 GMT,,,1,,673bfcf5.1,5,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"database system is ready to accept connections",,,,,,,,"process_pm_child_exit, postmaster.c:2483","","postmaster",,0
+2024-11-19 02:55:30.018 GMT,,,28,,673bfcf5.1c,1,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"checkpoint starting: time",,,,,,,,"LogCheckpointStart, xlog.c:6661","","checkpointer",,0
+2024-11-19 02:55:30.217 GMT,,,28,,673bfcf5.1c,2,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.070 s, sync=0.025 s, total=0.200 s; sync files=2, longest=0.013 s, average=0.013 s; distance=0 kB, estimate=0 kB; lsn=0/51B1800, redo lsn=0/51B17A8",,,,,,,,"LogCheckpointEnd, xlog.c:6750","","checkpointer",,0
+2024-11-19 03:03:13.789 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,1,"idle",2024-11-19 03:03:13 GMT,0/2,0,LOG,00000,"statement: BEGIN",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:03:13.792 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,2,"BEGIN",2024-11-19 03:03:13 GMT,0/2,0,LOG,00000,"duration: 4.152 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:03:13.951 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,3,"PARSE",2024-11-19 03:03:13 GMT,0/2,0,LOG,00000,"duration: 86.529 ms  parse s0: INSERT INTO ""public"".""orders"" (""userId"",""totalAmount"",""status"",""createdAt"",""updatedAt"") VALUES ($1,$2,$3,$4,$5) RETURNING ""public"".""orders"".""id""",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-19 03:03:13.971 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,4,"BIND",2024-11-19 03:03:13 GMT,0/2,0,LOG,00000,"duration: 8.849 ms  bind s0: INSERT INTO ""public"".""orders"" (""userId"",""totalAmount"",""status"",""createdAt"",""updatedAt"") VALUES ($1,$2,$3,$4,$5) RETURNING ""public"".""orders"".""id""","Parameters: $1 = '4', $2 = '19.99', $3 = 'pendiente', $4 = '2024-11-19 03:03:13.72', $5 = '2024-11-19 03:03:13.72'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:03:13.971 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,5,"INSERT",2024-11-19 03:03:13 GMT,0/2,0,LOG,00000,"execute s0: INSERT INTO ""public"".""orders"" (""userId"",""totalAmount"",""status"",""createdAt"",""updatedAt"") VALUES ($1,$2,$3,$4,$5) RETURNING ""public"".""orders"".""id""","Parameters: $1 = '4', $2 = '19.99', $3 = 'pendiente', $4 = '2024-11-19 03:03:13.72', $5 = '2024-11-19 03:03:13.72'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:03:13.972 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,6,"INSERT",2024-11-19 03:03:13 GMT,0/2,0,LOG,00000,"AUDIT: SESSION,1,1,WRITE,INSERT,,,""INSERT INTO """"public"""".""""orders"""" (""""userId"""",""""totalAmount"""",""""status"""",""""createdAt"""",""""updatedAt"""") VALUES ($1,$2,$3,$4,$5) RETURNING """"public"""".""""orders"""".""""id"""""",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:03:14.015 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,7,"INSERT",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"duration: 44.028 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:03:14.028 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,8,"PARSE",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"duration: 1.354 ms  parse s1: INSERT INTO ""public"".""items"" (""orderId"",""bookId"",""quantity"",""price"") VALUES ($1,$2,$3,$4) RETURNING ""public"".""items"".""id""",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-19 03:03:14.029 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,9,"BIND",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"duration: 0.137 ms  bind s1: INSERT INTO ""public"".""items"" (""orderId"",""bookId"",""quantity"",""price"") VALUES ($1,$2,$3,$4) RETURNING ""public"".""items"".""id""","Parameters: $1 = '3', $2 = '7', $3 = '1', $4 = '19.99'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:03:14.029 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,10,"INSERT",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"execute s1: INSERT INTO ""public"".""items"" (""orderId"",""bookId"",""quantity"",""price"") VALUES ($1,$2,$3,$4) RETURNING ""public"".""items"".""id""","Parameters: $1 = '3', $2 = '7', $3 = '1', $4 = '19.99'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:03:14.029 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,11,"INSERT",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"AUDIT: SESSION,2,1,WRITE,INSERT,,,""INSERT INTO """"public"""".""""items"""" (""""orderId"""",""""bookId"""",""""quantity"""",""""price"""") VALUES ($1,$2,$3,$4) RETURNING """"public"""".""""items"""".""""id"""""",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:03:14.113 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,12,"INSERT",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"AUDIT: SESSION,2,2,READ,SELECT,,,""SELECT 1 FROM ONLY """"public"""".""""orders"""" x WHERE """"id"""" OPERATOR(pg_catalog.=) $1 FOR KEY SHARE OF x"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:03:14.115 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,13,"INSERT",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"duration: 85.654 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:03:14.118 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,14,"PARSE",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"duration: 0.373 ms  parse s2: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE ""public"".""orders"".""id"" = $1 LIMIT $2 OFFSET $3",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-19 03:03:14.119 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,15,"BIND",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE """"public"""".""""orders"""".""""id"""" = $1 LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:03:14.119 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,16,"BIND",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"duration: 0.285 ms  bind s2: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE ""public"".""orders"".""id"" = $1 LIMIT $2 OFFSET $3","Parameters: $1 = '3', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:03:14.119 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,17,"SELECT",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"execute s2: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE ""public"".""orders"".""id"" = $1 LIMIT $2 OFFSET $3","Parameters: $1 = '3', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:03:14.119 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,18,"SELECT",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"duration: 0.073 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:03:14.121 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,19,"idle in transaction",2024-11-19 03:03:13 GMT,0/2,796,LOG,00000,"statement: COMMIT",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:03:14.126 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,20,"COMMIT",2024-11-19 03:03:13 GMT,0/0,0,LOG,00000,"duration: 4.737 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:03:46.998 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,1,"idle",2024-11-19 03:03:46 GMT,1/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.068 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,2,"SELECT",2024-11-19 03:03:46 GMT,1/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.071 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,3,"SET",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 72.643 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.072 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,4,"idle",2024-11-19 03:03:46 GMT,1/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.074 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,5,"SELECT",2024-11-19 03:03:46 GMT,1/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.074 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,6,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 2.245 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.075 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,7,"idle",2024-11-19 03:03:46 GMT,1/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.130 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,8,"SELECT",2024-11-19 03:03:46 GMT,1/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.136 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,9,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 60.701 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.136 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,10,"idle",2024-11-19 03:03:46 GMT,1/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.159 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,11,"SELECT",2024-11-19 03:03:46 GMT,1/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.163 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,12,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 26.430 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.164 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,13,"idle",2024-11-19 03:03:46 GMT,1/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.227 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,14,"SELECT",2024-11-19 03:03:46 GMT,1/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.229 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,15,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 64.937 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:47.363 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,1,"idle",2024-11-19 03:03:47 GMT,2/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.438 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,2,"SELECT",2024-11-19 03:03:47 GMT,2/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.440 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,3,"SET",2024-11-19 03:03:47 GMT,2/0,0,LOG,00000,"duration: 77.237 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.441 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,4,"idle",2024-11-19 03:03:47 GMT,2/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.444 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,5,"SELECT",2024-11-19 03:03:47 GMT,2/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.444 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,6,"SELECT",2024-11-19 03:03:47 GMT,2/0,0,LOG,00000,"duration: 3.246 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.445 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,7,"idle",2024-11-19 03:03:47 GMT,2/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.499 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,8,"SELECT",2024-11-19 03:03:47 GMT,2/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.504 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,9,"SELECT",2024-11-19 03:03:47 GMT,2/0,0,LOG,00000,"duration: 58.475 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.505 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,10,"idle",2024-11-19 03:03:47 GMT,2/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.527 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,11,"SELECT",2024-11-19 03:03:47 GMT,2/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.529 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,12,"SELECT",2024-11-19 03:03:47 GMT,2/0,0,LOG,00000,"duration: 23.914 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.530 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,13,"idle",2024-11-19 03:03:47 GMT,2/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.575 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,14,"SELECT",2024-11-19 03:03:47 GMT,2/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.575 GMT,"postgres","orders_db_dev",75,"172.18.0.8:33654",673c0013.4b,15,"SELECT",2024-11-19 03:03:47 GMT,2/0,0,LOG,00000,"duration: 46.030 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders_db_dev","client backend",,0
+2024-11-19 03:03:47.749 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,1,"idle",2024-11-19 03:03:47 GMT,3/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.773 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,2,"SELECT",2024-11-19 03:03:47 GMT,3/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.777 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,3,"SET",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 27.977 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.778 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,4,"idle",2024-11-19 03:03:47 GMT,3/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.780 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,5,"SELECT",2024-11-19 03:03:47 GMT,3/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.781 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,6,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 2.699 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.782 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,7,"idle",2024-11-19 03:03:47 GMT,3/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.807 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,8,"SELECT",2024-11-19 03:03:47 GMT,3/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.808 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,9,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 26.063 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.809 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,10,"idle",2024-11-19 03:03:47 GMT,3/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.831 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,11,"SELECT",2024-11-19 03:03:47 GMT,3/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.831 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,12,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 22.807 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.832 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,13,"idle",2024-11-19 03:03:47 GMT,3/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.871 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,14,"SELECT",2024-11-19 03:03:47 GMT,3/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:47.872 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,15,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 39.454 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:48.511 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,16,"idle",2024-11-19 03:03:46 GMT,1/7,0,LOG,00000,"statement: SELECT CASE WHEN usesuper
+       THEN pg_catalog.pg_is_in_recovery()
+       ELSE FALSE
+       END as inrecovery,
+       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+       THEN pg_is_wal_replay_paused()
+       ELSE FALSE
+       END as isreplaypaused
+FROM pg_catalog.pg_user WHERE usename=current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:48.521 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,17,"SELECT",2024-11-19 03:03:46 GMT,1/7,0,LOG,00000,"AUDIT: SESSION,6,1,READ,SELECT,,,""SELECT CASE WHEN usesuper
+       THEN pg_catalog.pg_is_in_recovery()
+       ELSE FALSE
+       END as inrecovery,
+       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+       THEN pg_is_wal_replay_paused()
+       ELSE FALSE
+       END as isreplaypaused
+FROM pg_catalog.pg_user WHERE usename=current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:48.523 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,18,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 12.905 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:48.944 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,19,"idle",2024-11-19 03:03:46 GMT,1/8,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:48.987 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,20,"SELECT",2024-11-19 03:03:46 GMT,1/8,0,LOG,00000,"AUDIT: SESSION,7,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:48.990 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,21,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 46.796 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:49.713 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,22,"idle",2024-11-19 03:03:46 GMT,1/9,0,LOG,00000,"statement: 
+SELECT
+    has_table_privilege(
+      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+    ) has_priviledge
+WHERE EXISTS(
+    SELECT has_schema_privilege('pgagent', 'USAGE')
+    WHERE EXISTS(
+        SELECT cl.oid FROM pg_catalog.pg_class cl
+        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+        WHERE relname='pga_job' AND nspname='pgagent'
+    )
+)
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:49.732 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,23,"SELECT",2024-11-19 03:03:46 GMT,1/9,0,LOG,00000,"AUDIT: SESSION,8,1,READ,SELECT,,,""SELECT
+    has_table_privilege(
+      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+    ) has_priviledge
+WHERE EXISTS(
+    SELECT has_schema_privilege('pgagent', 'USAGE')
+    WHERE EXISTS(
+        SELECT cl.oid FROM pg_catalog.pg_class cl
+        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+        WHERE relname='pga_job' AND nspname='pgagent'
+    )
+)"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:49.734 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,24,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 21.220 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:49.811 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,25,"idle",2024-11-19 03:03:46 GMT,1/10,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:49.812 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,26,"SELECT",2024-11-19 03:03:46 GMT,1/10,0,LOG,00000,"AUDIT: SESSION,9,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:49.813 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,27,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 1.634 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:49.838 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,28,"idle",2024-11-19 03:03:46 GMT,1/11,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:49.839 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,29,"SELECT",2024-11-19 03:03:46 GMT,1/11,0,LOG,00000,"AUDIT: SESSION,10,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:49.839 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,30,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 1.463 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:50.125 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,31,"idle",2024-11-19 03:03:46 GMT,1/12,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:50.166 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,32,"SELECT",2024-11-19 03:03:46 GMT,1/12,0,LOG,00000,"AUDIT: SESSION,11,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:50.172 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,33,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 47.613 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:50.263 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,34,"idle",2024-11-19 03:03:46 GMT,1/13,0,LOG,00000,"statement: SELECT
+    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+    db.datistemplate AS is_template,
+    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+    descr.description
+FROM
+    pg_catalog.pg_database db
+    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+    )
+WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+
+ORDER BY datname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:50.301 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,35,"SELECT",2024-11-19 03:03:46 GMT,1/13,0,LOG,00000,"AUDIT: SESSION,12,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+    db.datistemplate AS is_template,
+    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+    descr.description
+FROM
+    pg_catalog.pg_database db
+    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+    )
+WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+
+ORDER BY datname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:50.304 GMT,"postgres","postgres",74,"172.18.0.8:33646",673c0012.4a,36,"SELECT",2024-11-19 03:03:46 GMT,1/0,0,LOG,00000,"duration: 41.798 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-19 03:03:50.620 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,16,"idle",2024-11-19 03:03:47 GMT,3/7,0,LOG,00000,"statement: 
+            SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+                'edb_job_scheduler', 'dbms_scheduler') ",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:50.647 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,17,"SELECT",2024-11-19 03:03:47 GMT,3/7,0,LOG,00000,"AUDIT: SESSION,6,1,READ,SELECT,,,""SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+                'edb_job_scheduler', 'dbms_scheduler')"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:50.648 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,18,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 28.702 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:50.822 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,19,"idle",2024-11-19 03:03:47 GMT,3/8,0,LOG,00000,"statement: SELECT
+    nsp.oid,
+    nsp.nspname as name,
+    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+    des.description
+FROM
+    pg_catalog.pg_namespace nsp
+    LEFT OUTER JOIN pg_catalog.pg_description des ON
+        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+WHERE
+             nspname NOT LIKE E'pg\\_%' AND
+            NOT (
+(nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1))
+    )
+
+    
+ORDER BY nspname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:50.920 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,20,"SELECT",2024-11-19 03:03:47 GMT,3/8,0,LOG,00000,"AUDIT: SESSION,7,1,READ,SELECT,,,""SELECT
+    nsp.oid,
+    nsp.nspname as name,
+    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+    des.description
+FROM
+    pg_catalog.pg_namespace nsp
+    LEFT OUTER JOIN pg_catalog.pg_description des ON
+        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+WHERE
+             nspname NOT LIKE E'pg\\_%' AND
+            NOT (
+(nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1))
+    )
+
+    
+ORDER BY nspname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:50.931 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,21,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 109.132 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:51.038 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,22,"idle",2024-11-19 03:03:47 GMT,3/9,0,LOG,00000,"statement: SELECT
+    nsp.nspname as schema_name,
+    (nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+    CASE
+    WHEN nsp.nspname = ANY('{information_schema}')
+        THEN false
+    ELSE true END AS db_support
+FROM
+    pg_catalog.pg_namespace nsp
+WHERE
+    nsp.oid = 2200::OID;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:51.040 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,23,"SELECT",2024-11-19 03:03:47 GMT,3/9,0,LOG,00000,"AUDIT: SESSION,8,1,READ,SELECT,,,""SELECT
+    nsp.nspname as schema_name,
+    (nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+    CASE
+    WHEN nsp.nspname = ANY('{information_schema}')
+        THEN false
+    ELSE true END AS db_support
+FROM
+    pg_catalog.pg_namespace nsp
+WHERE
+    nsp.oid = 2200::OID"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:51.041 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,24,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 2.732 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:51.267 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,25,"idle",2024-11-19 03:03:47 GMT,3/10,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:51.304 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,26,"SELECT",2024-11-19 03:03:47 GMT,3/10,0,LOG,00000,"AUDIT: SESSION,9,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:51.308 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,27,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 41.239 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:51.627 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,28,"idle",2024-11-19 03:03:47 GMT,3/11,0,LOG,00000,"statement: SELECT rel.oid, rel.relname AS name,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+    des.description
+FROM pg_catalog.pg_class rel
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+    AND NOT rel.relispartition
+        ORDER BY rel.relname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:51.656 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,29,"SELECT",2024-11-19 03:03:47 GMT,3/11,0,LOG,00000,"AUDIT: SESSION,10,1,READ,SELECT,,,""SELECT rel.oid, rel.relname AS name,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+    des.description
+FROM pg_catalog.pg_class rel
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+    AND NOT rel.relispartition
+        ORDER BY rel.relname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:51.657 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,30,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 30.059 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:56.428 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,1,"idle",2024-11-19 03:03:56 GMT,4/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.429 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,2,"SELECT",2024-11-19 03:03:56 GMT,4/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.432 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,3,"SET",2024-11-19 03:03:56 GMT,4/0,0,LOG,00000,"duration: 3.382 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.436 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,4,"idle",2024-11-19 03:03:56 GMT,4/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.436 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,5,"SELECT",2024-11-19 03:03:56 GMT,4/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.436 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,6,"SELECT",2024-11-19 03:03:56 GMT,4/0,0,LOG,00000,"duration: 0.384 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.440 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,7,"idle",2024-11-19 03:03:56 GMT,4/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.444 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,8,"SELECT",2024-11-19 03:03:56 GMT,4/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.445 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,9,"SELECT",2024-11-19 03:03:56 GMT,4/0,0,LOG,00000,"duration: 4.979 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.449 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,10,"idle",2024-11-19 03:03:56 GMT,4/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.450 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,11,"SELECT",2024-11-19 03:03:56 GMT,4/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.451 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,12,"SELECT",2024-11-19 03:03:56 GMT,4/0,0,LOG,00000,"duration: 1.570 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.453 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,13,"idle",2024-11-19 03:03:56 GMT,4/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.471 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,14,"SELECT",2024-11-19 03:03:56 GMT,4/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.472 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,15,"SELECT",2024-11-19 03:03:56 GMT,4/0,0,LOG,00000,"duration: 18.584 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.527 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,31,"idle",2024-11-19 03:03:47 GMT,3/12,0,LOG,00000,"statement: SELECT n.nspname, r.relname
+FROM pg_catalog.pg_class r
+    LEFT JOIN pg_catalog.pg_namespace n ON (r.relnamespace = n.oid)
+WHERE r.oid = 16747;
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:56.527 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,32,"SELECT",2024-11-19 03:03:47 GMT,3/12,0,LOG,00000,"AUDIT: SESSION,11,1,READ,SELECT,,,""SELECT n.nspname, r.relname
+FROM pg_catalog.pg_class r
+    LEFT JOIN pg_catalog.pg_namespace n ON (r.relnamespace = n.oid)
+WHERE r.oid = 16747"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:56.527 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,33,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 0.712 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:56.665 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,34,"idle",2024-11-19 03:03:47 GMT,3/13,0,LOG,00000,"statement: SELECT at.attname, at.attnum, ty.typname
+FROM pg_catalog.pg_attribute at LEFT JOIN pg_catalog.pg_type ty ON (ty.oid = at.atttypid)
+JOIN pg_catalog.pg_class as cl ON cl.oid=AT.attrelid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=cl.relnamespace
+WHERE
+    cl.relname = 'orders' AND nsp.nspname='public' AND
+attnum = ANY (
+(SELECT con.conkey FROM pg_catalog.pg_class rel LEFT OUTER JOIN pg_catalog.pg_constraint con ON con.conrelid=rel.oid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=REL.relnamespace
+AND con.contype='p' WHERE rel.relkind IN ('r','s','t', 'p') AND
+    rel.relname = 'orders' AND nsp.nspname='public'
+)::oid[])",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:56.724 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,35,"SELECT",2024-11-19 03:03:47 GMT,3/13,0,LOG,00000,"AUDIT: SESSION,12,1,READ,SELECT,,,""SELECT at.attname, at.attnum, ty.typname
+FROM pg_catalog.pg_attribute at LEFT JOIN pg_catalog.pg_type ty ON (ty.oid = at.atttypid)
+JOIN pg_catalog.pg_class as cl ON cl.oid=AT.attrelid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=cl.relnamespace
+WHERE
+    cl.relname = 'orders' AND nsp.nspname='public' AND
+attnum = ANY (
+(SELECT con.conkey FROM pg_catalog.pg_class rel LEFT OUTER JOIN pg_catalog.pg_constraint con ON con.conrelid=rel.oid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=REL.relnamespace
+AND con.contype='p' WHERE rel.relkind IN ('r','s','t', 'p') AND
+    rel.relname = 'orders' AND nsp.nspname='public'
+)::oid[])"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:56.728 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,36,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 63.351 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:56.809 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,37,"idle",2024-11-19 03:03:47 GMT,3/14,0,LOG,00000,"statement: SELECT at.attname, at.attnum, ty.typname
+FROM pg_catalog.pg_attribute at LEFT JOIN pg_catalog.pg_type ty ON (ty.oid = at.atttypid)
+JOIN pg_catalog.pg_class as cl ON cl.oid=AT.attrelid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=cl.relnamespace
+WHERE
+    cl.relname = 'orders' AND nsp.nspname='public' AND
+attnum = ANY (
+(SELECT con.conkey FROM pg_catalog.pg_class rel LEFT OUTER JOIN pg_catalog.pg_constraint con ON con.conrelid=rel.oid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=REL.relnamespace
+AND con.contype='p' WHERE rel.relkind IN ('r','s','t', 'p') AND
+    rel.relname = 'orders' AND nsp.nspname='public'
+)::oid[])",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:56.812 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,38,"SELECT",2024-11-19 03:03:47 GMT,3/14,0,LOG,00000,"AUDIT: SESSION,13,1,READ,SELECT,,,""SELECT at.attname, at.attnum, ty.typname
+FROM pg_catalog.pg_attribute at LEFT JOIN pg_catalog.pg_type ty ON (ty.oid = at.atttypid)
+JOIN pg_catalog.pg_class as cl ON cl.oid=AT.attrelid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=cl.relnamespace
+WHERE
+    cl.relname = 'orders' AND nsp.nspname='public' AND
+attnum = ANY (
+(SELECT con.conkey FROM pg_catalog.pg_class rel LEFT OUTER JOIN pg_catalog.pg_constraint con ON con.conrelid=rel.oid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=REL.relnamespace
+AND con.contype='p' WHERE rel.relkind IN ('r','s','t', 'p') AND
+    rel.relname = 'orders' AND nsp.nspname='public'
+)::oid[])"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:56.812 GMT,"postgres","orders",76,"172.18.0.8:33660",673c0013.4c,39,"SELECT",2024-11-19 03:03:47 GMT,3/0,0,LOG,00000,"duration: 3.007 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:orders","client backend",,0
+2024-11-19 03:03:56.825 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,16,"idle",2024-11-19 03:03:56 GMT,4/7,0,LOG,00000,"statement: SELECT * FROM public.orders
+ORDER BY id ASC ",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.828 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,17,"SELECT",2024-11-19 03:03:56 GMT,4/7,0,LOG,00000,"AUDIT: SESSION,6,1,READ,SELECT,,,""SELECT * FROM public.orders
+ORDER BY id ASC"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:56.829 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,18,"SELECT",2024-11-19 03:03:56 GMT,4/0,0,LOG,00000,"duration: 4.412 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:57.073 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,19,"idle",2024-11-19 03:03:56 GMT,4/8,0,LOG,00000,"statement: SELECT DISTINCT att.attname as name, att.attnum as OID, pg_catalog.format_type(ty.oid,NULL) AS datatype,
+att.attnotnull as not_null, att.atthasdef as has_default_val, des.description, seq.seqtypid
+FROM pg_catalog.pg_attribute att
+    JOIN pg_catalog.pg_type ty ON ty.oid=atttypid
+    JOIN pg_catalog.pg_namespace tn ON tn.oid=ty.typnamespace
+    JOIN pg_catalog.pg_class cl ON cl.oid=att.attrelid
+    JOIN pg_catalog.pg_namespace na ON na.oid=cl.relnamespace
+    LEFT OUTER JOIN pg_catalog.pg_type et ON et.oid=ty.typelem
+    LEFT OUTER JOIN pg_catalog.pg_attrdef def ON adrelid=att.attrelid AND adnum=att.attnum
+    LEFT OUTER JOIN (pg_catalog.pg_depend JOIN pg_catalog.pg_class cs ON classid='pg_class'::regclass AND objid=cs.oid AND cs.relkind='S') ON refobjid=att.attrelid AND refobjsubid=att.attnum
+    LEFT OUTER JOIN pg_catalog.pg_namespace ns ON ns.oid=cs.relnamespace
+    LEFT OUTER JOIN pg_catalog.pg_index pi ON pi.indrelid=att.attrelid AND indisprimary
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=att.attrelid AND des.objsubid=att.attnum AND des.classoid='pg_class'::regclass)
+    LEFT OUTER JOIN pg_catalog.pg_sequence seq ON cs.oid=seq.seqrelid
+WHERE
+
+    att.attrelid = 16747::oid
+    AND att.attnum > 0
+    AND att.attisdropped IS FALSE
+ORDER BY att.attnum",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:57.139 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,20,"SELECT",2024-11-19 03:03:56 GMT,4/8,0,LOG,00000,"AUDIT: SESSION,7,1,READ,SELECT,,,""SELECT DISTINCT att.attname as name, att.attnum as OID, pg_catalog.format_type(ty.oid,NULL) AS datatype,
+att.attnotnull as not_null, att.atthasdef as has_default_val, des.description, seq.seqtypid
+FROM pg_catalog.pg_attribute att
+    JOIN pg_catalog.pg_type ty ON ty.oid=atttypid
+    JOIN pg_catalog.pg_namespace tn ON tn.oid=ty.typnamespace
+    JOIN pg_catalog.pg_class cl ON cl.oid=att.attrelid
+    JOIN pg_catalog.pg_namespace na ON na.oid=cl.relnamespace
+    LEFT OUTER JOIN pg_catalog.pg_type et ON et.oid=ty.typelem
+    LEFT OUTER JOIN pg_catalog.pg_attrdef def ON adrelid=att.attrelid AND adnum=att.attnum
+    LEFT OUTER JOIN (pg_catalog.pg_depend JOIN pg_catalog.pg_class cs ON classid='pg_class'::regclass AND objid=cs.oid AND cs.relkind='S') ON refobjid=att.attrelid AND refobjsubid=att.attnum
+    LEFT OUTER JOIN pg_catalog.pg_namespace ns ON ns.oid=cs.relnamespace
+    LEFT OUTER JOIN pg_catalog.pg_index pi ON pi.indrelid=att.attrelid AND indisprimary
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=att.attrelid AND des.objsubid=att.attnum AND des.classoid='pg_class'::regclass)
+    LEFT OUTER JOIN pg_catalog.pg_sequence seq ON cs.oid=seq.seqrelid
+WHERE
+
+    att.attrelid = 16747::oid
+    AND att.attnum > 0
+    AND att.attisdropped IS FALSE
+ORDER BY att.attnum"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:57.145 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,21,"SELECT",2024-11-19 03:03:56 GMT,4/0,0,LOG,00000,"duration: 72.510 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:57.169 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,22,"PARSE",2024-11-19 03:03:56 GMT,4/9,0,LOG,00000,"duration: 0.311 ms  parse <unnamed>: SELECT oid, pg_catalog.format_type(oid, NULL) AS typname FROM pg_catalog.pg_type WHERE oid = ANY($1) ORDER BY oid;",,,,,,,,"exec_parse_message, postgres.c:1609","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:57.169 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,23,"BIND",2024-11-19 03:03:56 GMT,4/9,0,LOG,00000,"AUDIT: SESSION,8,1,READ,SELECT,,,""SELECT oid, pg_catalog.format_type(oid, NULL) AS typname FROM pg_catalog.pg_type WHERE oid = ANY($1) ORDER BY oid"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:57.170 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,24,"BIND",2024-11-19 03:03:56 GMT,4/9,0,LOG,00000,"duration: 0.224 ms  bind <unnamed>: SELECT oid, pg_catalog.format_type(oid, NULL) AS typname FROM pg_catalog.pg_type WHERE oid = ANY($1) ORDER BY oid;","Parameters: $1 = '{23,23,701,25,1114,1114}'",,,,,,,"exec_bind_message, postgres.c:2075","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:57.170 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,25,"SELECT",2024-11-19 03:03:56 GMT,4/9,0,LOG,00000,"execute <unnamed>: SELECT oid, pg_catalog.format_type(oid, NULL) AS typname FROM pg_catalog.pg_type WHERE oid = ANY($1) ORDER BY oid;","Parameters: $1 = '{23,23,701,25,1114,1114}'",,,,,,,"exec_execute_message, postgres.c:2212","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:03:57.170 GMT,"postgres","orders",78,"172.18.0.8:44342",673c001c.4e,26,"SELECT",2024-11-19 03:03:56 GMT,4/9,0,LOG,00000,"duration: 0.071 ms",,,,,,,,"exec_execute_message, postgres.c:2332","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:04:33.477 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,21,"idle",2024-11-19 03:03:13 GMT,0/3,0,LOG,00000,"statement: SELECT 1",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:04:33.477 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,22,"SELECT",2024-11-19 03:03:13 GMT,0/3,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,SELECT 1,<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:04:33.477 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,23,"SELECT",2024-11-19 03:03:13 GMT,0/0,0,LOG,00000,"duration: 0.380 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:04:33.479 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,24,"idle",2024-11-19 03:03:13 GMT,0/4,0,LOG,00000,"statement: BEGIN",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:04:33.479 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,25,"BEGIN",2024-11-19 03:03:13 GMT,0/4,0,LOG,00000,"duration: 0.115 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:04:33.481 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,26,"BIND",2024-11-19 03:03:13 GMT,0/4,0,LOG,00000,"duration: 0.247 ms  bind s0: INSERT INTO ""public"".""orders"" (""userId"",""totalAmount"",""status"",""createdAt"",""updatedAt"") VALUES ($1,$2,$3,$4,$5) RETURNING ""public"".""orders"".""id""","Parameters: $1 = '4', $2 = '39.98', $3 = 'pendiente', $4 = '2024-11-19 03:04:33.476', $5 = '2024-11-19 03:04:33.476'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:04:33.481 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,27,"INSERT",2024-11-19 03:03:13 GMT,0/4,0,LOG,00000,"execute s0: INSERT INTO ""public"".""orders"" (""userId"",""totalAmount"",""status"",""createdAt"",""updatedAt"") VALUES ($1,$2,$3,$4,$5) RETURNING ""public"".""orders"".""id""","Parameters: $1 = '4', $2 = '39.98', $3 = 'pendiente', $4 = '2024-11-19 03:04:33.476', $5 = '2024-11-19 03:04:33.476'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:04:33.481 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,28,"INSERT",2024-11-19 03:03:13 GMT,0/4,0,LOG,00000,"AUDIT: SESSION,5,1,WRITE,INSERT,,,""INSERT INTO """"public"""".""""orders"""" (""""userId"""",""""totalAmount"""",""""status"""",""""createdAt"""",""""updatedAt"""") VALUES ($1,$2,$3,$4,$5) RETURNING """"public"""".""""orders"""".""""id"""""",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:04:33.481 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,29,"INSERT",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"duration: 0.361 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:04:33.482 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,30,"BIND",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"duration: 0.116 ms  bind s1: INSERT INTO ""public"".""items"" (""orderId"",""bookId"",""quantity"",""price"") VALUES ($1,$2,$3,$4) RETURNING ""public"".""items"".""id""","Parameters: $1 = '4', $2 = '7', $3 = '2', $4 = '19.99'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:04:33.482 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,31,"INSERT",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"execute s1: INSERT INTO ""public"".""items"" (""orderId"",""bookId"",""quantity"",""price"") VALUES ($1,$2,$3,$4) RETURNING ""public"".""items"".""id""","Parameters: $1 = '4', $2 = '7', $3 = '2', $4 = '19.99'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:04:33.482 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,32,"INSERT",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"AUDIT: SESSION,6,1,WRITE,INSERT,,,""INSERT INTO """"public"""".""""items"""" (""""orderId"""",""""bookId"""",""""quantity"""",""""price"""") VALUES ($1,$2,$3,$4) RETURNING """"public"""".""""items"""".""""id"""""",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:04:33.482 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,33,"INSERT",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"AUDIT: SESSION,6,2,READ,SELECT,,,""SELECT 1 FROM ONLY """"public"""".""""orders"""" x WHERE """"id"""" OPERATOR(pg_catalog.=) $1 FOR KEY SHARE OF x"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:04:33.483 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,34,"INSERT",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"duration: 0.516 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:04:33.485 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,35,"BIND",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"AUDIT: SESSION,7,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE """"public"""".""""orders"""".""""id"""" = $1 LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:04:33.485 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,36,"BIND",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"duration: 0.343 ms  bind s2: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE ""public"".""orders"".""id"" = $1 LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:04:33.485 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,37,"SELECT",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"execute s2: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE ""public"".""orders"".""id"" = $1 LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:04:33.485 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,38,"SELECT",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"duration: 0.082 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:04:33.486 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,39,"idle in transaction",2024-11-19 03:03:13 GMT,0/4,797,LOG,00000,"statement: COMMIT",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:04:33.488 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,40,"COMMIT",2024-11-19 03:03:13 GMT,0/0,0,LOG,00000,"duration: 2.226 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:05:08.059 GMT,"postgres","orders",82,"172.18.0.8:42316",673c0063.52,1,"idle",2024-11-19 03:05:07 GMT,5/2,0,LOG,00000,"statement: BEGIN",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:05:08.060 GMT,"postgres","orders",82,"172.18.0.8:42316",673c0063.52,2,"BEGIN",2024-11-19 03:05:07 GMT,5/2,0,LOG,00000,"duration: 1.067 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:05:08.072 GMT,"postgres","orders",82,"172.18.0.8:42316",673c0063.52,3,"idle in transaction",2024-11-19 03:05:07 GMT,5/2,0,LOG,00000,"statement: SELECT pg_cancel_backend(78);",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:05:08.082 GMT,"postgres","orders",82,"172.18.0.8:42316",673c0063.52,4,"SELECT",2024-11-19 03:05:07 GMT,5/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,SELECT pg_cancel_backend(78),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:05:08.083 GMT,"postgres","orders",82,"172.18.0.8:42316",673c0063.52,5,"SELECT",2024-11-19 03:05:07 GMT,5/2,0,LOG,00000,"duration: 10.551 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:6683746","client backend",,0
+2024-11-19 03:05:30.302 GMT,,,28,,673bfcf5.1c,3,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"checkpoint starting: time",,,,,,,,"LogCheckpointStart, xlog.c:6661","","checkpointer",,0
+2024-11-19 03:05:31.182 GMT,,,28,,673bfcf5.1c,4,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"checkpoint complete: wrote 7 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.748 s, sync=0.018 s, total=0.885 s; sync files=7, longest=0.012 s, average=0.003 s; distance=1 kB, estimate=1 kB; lsn=0/51B1FE0, redo lsn=0/51B1F88",,,,,,,,"LogCheckpointEnd, xlog.c:6750","","checkpointer",,0
+2024-11-19 03:06:04.185 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,41,"idle",2024-11-19 03:03:13 GMT,0/5,0,LOG,00000,"statement: SELECT 1",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:06:04.185 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,42,"SELECT",2024-11-19 03:03:13 GMT,0/5,0,LOG,00000,"AUDIT: SESSION,8,1,READ,SELECT,,,SELECT 1,<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:04.186 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,43,"SELECT",2024-11-19 03:03:13 GMT,0/0,0,LOG,00000,"duration: 0.439 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:06:04.189 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,44,"PARSE",2024-11-19 03:03:13 GMT,0/6,0,LOG,00000,"duration: 0.231 ms  parse s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-19 03:06:04.264 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,45,"BIND",2024-11-19 03:03:13 GMT,0/7,0,LOG,00000,"AUDIT: SESSION,9,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:04.265 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,46,"BIND",2024-11-19 03:03:13 GMT,0/7,0,LOG,00000,"duration: 0.385 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:04.265 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,47,"SELECT",2024-11-19 03:03:13 GMT,0/7,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:04.265 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,48,"SELECT",2024-11-19 03:03:13 GMT,0/7,0,LOG,00000,"duration: 0.089 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:04.270 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,49,"PARSE",2024-11-19 03:03:13 GMT,0/8,0,LOG,00000,"duration: 0.150 ms  parse s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-19 03:06:04.271 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,50,"BIND",2024-11-19 03:03:13 GMT,0/9,0,LOG,00000,"AUDIT: SESSION,10,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:04.271 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,51,"BIND",2024-11-19 03:03:13 GMT,0/9,0,LOG,00000,"duration: 0.262 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:04.271 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,52,"SELECT",2024-11-19 03:03:13 GMT,0/9,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:04.271 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,53,"SELECT",2024-11-19 03:03:13 GMT,0/9,0,LOG,00000,"duration: 0.053 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:17.366 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,54,"BIND",2024-11-19 03:03:13 GMT,0/10,0,LOG,00000,"AUDIT: SESSION,11,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:17.366 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,55,"BIND",2024-11-19 03:03:13 GMT,0/10,0,LOG,00000,"duration: 0.448 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:17.366 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,56,"SELECT",2024-11-19 03:03:13 GMT,0/10,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:17.367 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,57,"SELECT",2024-11-19 03:03:13 GMT,0/10,0,LOG,00000,"duration: 0.636 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:17.369 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,58,"BIND",2024-11-19 03:03:13 GMT,0/11,0,LOG,00000,"AUDIT: SESSION,12,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:17.369 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,59,"BIND",2024-11-19 03:03:13 GMT,0/11,0,LOG,00000,"duration: 0.289 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:17.369 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,60,"SELECT",2024-11-19 03:03:13 GMT,0/11,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:17.369 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,61,"SELECT",2024-11-19 03:03:13 GMT,0/11,0,LOG,00000,"duration: 0.092 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:18.263 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,62,"BIND",2024-11-19 03:03:13 GMT,0/12,0,LOG,00000,"AUDIT: SESSION,13,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:18.263 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,63,"BIND",2024-11-19 03:03:13 GMT,0/12,0,LOG,00000,"duration: 0.479 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:18.263 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,64,"SELECT",2024-11-19 03:03:13 GMT,0/12,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:18.264 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,65,"SELECT",2024-11-19 03:03:13 GMT,0/12,0,LOG,00000,"duration: 0.129 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:18.266 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,66,"BIND",2024-11-19 03:03:13 GMT,0/13,0,LOG,00000,"AUDIT: SESSION,14,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:18.266 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,67,"BIND",2024-11-19 03:03:13 GMT,0/13,0,LOG,00000,"duration: 0.750 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:18.266 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,68,"SELECT",2024-11-19 03:03:13 GMT,0/13,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:18.266 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,69,"SELECT",2024-11-19 03:03:13 GMT,0/13,0,LOG,00000,"duration: 0.060 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:27.950 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,70,"idle",2024-11-19 03:03:13 GMT,0/14,0,LOG,00000,"statement: SELECT 1",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:06:27.950 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,71,"SELECT",2024-11-19 03:03:13 GMT,0/14,0,LOG,00000,"AUDIT: SESSION,15,1,READ,SELECT,,,SELECT 1,<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:27.950 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,72,"SELECT",2024-11-19 03:03:13 GMT,0/0,0,LOG,00000,"duration: 0.407 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:06:27.952 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,73,"BIND",2024-11-19 03:03:13 GMT,0/15,0,LOG,00000,"AUDIT: SESSION,16,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:27.952 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,74,"BIND",2024-11-19 03:03:13 GMT,0/15,0,LOG,00000,"duration: 0.268 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:27.952 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,75,"SELECT",2024-11-19 03:03:13 GMT,0/15,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:27.952 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,76,"SELECT",2024-11-19 03:03:13 GMT,0/15,0,LOG,00000,"duration: 0.066 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:27.953 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,77,"BIND",2024-11-19 03:03:13 GMT,0/16,0,LOG,00000,"AUDIT: SESSION,17,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:27.953 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,78,"BIND",2024-11-19 03:03:13 GMT,0/16,0,LOG,00000,"duration: 0.288 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:27.953 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,79,"SELECT",2024-11-19 03:03:13 GMT,0/16,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:27.953 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,80,"SELECT",2024-11-19 03:03:13 GMT,0/16,0,LOG,00000,"duration: 0.069 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:30.069 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,81,"BIND",2024-11-19 03:03:13 GMT,0/17,0,LOG,00000,"AUDIT: SESSION,18,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:30.069 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,82,"BIND",2024-11-19 03:03:13 GMT,0/17,0,LOG,00000,"duration: 0.771 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:30.069 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,83,"SELECT",2024-11-19 03:03:13 GMT,0/17,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:30.069 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,84,"SELECT",2024-11-19 03:03:13 GMT,0/17,0,LOG,00000,"duration: 0.115 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:30.070 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,85,"BIND",2024-11-19 03:03:13 GMT,0/18,0,LOG,00000,"AUDIT: SESSION,19,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:30.070 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,86,"BIND",2024-11-19 03:03:13 GMT,0/18,0,LOG,00000,"duration: 0.243 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:30.070 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,87,"SELECT",2024-11-19 03:03:13 GMT,0/18,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:30.070 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,88,"SELECT",2024-11-19 03:03:13 GMT,0/18,0,LOG,00000,"duration: 0.064 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:31.222 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,89,"BIND",2024-11-19 03:03:13 GMT,0/19,0,LOG,00000,"AUDIT: SESSION,20,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:31.222 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,90,"BIND",2024-11-19 03:03:13 GMT,0/19,0,LOG,00000,"duration: 0.560 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:31.222 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,91,"SELECT",2024-11-19 03:03:13 GMT,0/19,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:31.222 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,92,"SELECT",2024-11-19 03:03:13 GMT,0/19,0,LOG,00000,"duration: 0.092 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:31.223 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,93,"BIND",2024-11-19 03:03:13 GMT,0/20,0,LOG,00000,"AUDIT: SESSION,21,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:31.223 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,94,"BIND",2024-11-19 03:03:13 GMT,0/20,0,LOG,00000,"duration: 0.497 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:31.224 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,95,"SELECT",2024-11-19 03:03:13 GMT,0/20,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:31.224 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,96,"SELECT",2024-11-19 03:03:13 GMT,0/20,0,LOG,00000,"duration: 0.609 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:32.467 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,97,"BIND",2024-11-19 03:03:13 GMT,0/21,0,LOG,00000,"AUDIT: SESSION,22,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:32.467 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,98,"BIND",2024-11-19 03:03:13 GMT,0/21,0,LOG,00000,"duration: 0.428 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:32.467 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,99,"SELECT",2024-11-19 03:03:13 GMT,0/21,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:32.467 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,100,"SELECT",2024-11-19 03:03:13 GMT,0/21,0,LOG,00000,"duration: 0.090 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:32.468 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,101,"BIND",2024-11-19 03:03:13 GMT,0/22,0,LOG,00000,"AUDIT: SESSION,23,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:32.469 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,102,"BIND",2024-11-19 03:03:13 GMT,0/22,0,LOG,00000,"duration: 0.189 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:32.469 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,103,"SELECT",2024-11-19 03:03:13 GMT,0/22,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:32.469 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,104,"SELECT",2024-11-19 03:03:13 GMT,0/22,0,LOG,00000,"duration: 0.074 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:33.740 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,105,"BIND",2024-11-19 03:03:13 GMT,0/23,0,LOG,00000,"AUDIT: SESSION,24,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:33.740 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,106,"BIND",2024-11-19 03:03:13 GMT,0/23,0,LOG,00000,"duration: 0.343 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:33.740 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,107,"SELECT",2024-11-19 03:03:13 GMT,0/23,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:33.740 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,108,"SELECT",2024-11-19 03:03:13 GMT,0/23,0,LOG,00000,"duration: 0.064 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:06:33.741 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,109,"BIND",2024-11-19 03:03:13 GMT,0/24,0,LOG,00000,"AUDIT: SESSION,25,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:06:33.741 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,110,"BIND",2024-11-19 03:03:13 GMT,0/24,0,LOG,00000,"duration: 0.135 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:06:33.741 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,111,"SELECT",2024-11-19 03:03:13 GMT,0/24,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:06:33.741 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,112,"SELECT",2024-11-19 03:03:13 GMT,0/24,0,LOG,00000,"duration: 0.104 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:07:29.280 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,113,"idle",2024-11-19 03:03:13 GMT,0/25,0,LOG,00000,"statement: SELECT 1",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:07:29.281 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,114,"SELECT",2024-11-19 03:03:13 GMT,0/25,0,LOG,00000,"AUDIT: SESSION,26,1,READ,SELECT,,,SELECT 1,<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:07:29.281 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,115,"SELECT",2024-11-19 03:03:13 GMT,0/0,0,LOG,00000,"duration: 1.242 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:07:29.358 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,116,"BIND",2024-11-19 03:03:13 GMT,0/26,0,LOG,00000,"AUDIT: SESSION,27,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:07:29.358 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,117,"BIND",2024-11-19 03:03:13 GMT,0/26,0,LOG,00000,"duration: 1.195 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:07:29.359 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,118,"SELECT",2024-11-19 03:03:13 GMT,0/26,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '4', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:07:29.359 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,119,"SELECT",2024-11-19 03:03:13 GMT,0/26,0,LOG,00000,"duration: 0.091 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:07:29.360 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,120,"BIND",2024-11-19 03:03:13 GMT,0/27,0,LOG,00000,"AUDIT: SESSION,28,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:07:29.360 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,121,"BIND",2024-11-19 03:03:13 GMT,0/27,0,LOG,00000,"duration: 0.149 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:07:29.360 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,122,"SELECT",2024-11-19 03:03:13 GMT,0/27,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '4', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:07:29.360 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,123,"SELECT",2024-11-19 03:03:13 GMT,0/27,0,LOG,00000,"duration: 0.064 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:07:51.769 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,124,"idle",2024-11-19 03:03:13 GMT,0/28,0,LOG,00000,"statement: SELECT 1",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:07:51.769 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,125,"SELECT",2024-11-19 03:03:13 GMT,0/28,0,LOG,00000,"AUDIT: SESSION,29,1,READ,SELECT,,,SELECT 1,<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:07:51.769 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,126,"SELECT",2024-11-19 03:03:13 GMT,0/0,0,LOG,00000,"duration: 0.502 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:07:51.771 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,127,"BIND",2024-11-19 03:03:13 GMT,0/29,0,LOG,00000,"AUDIT: SESSION,30,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:07:51.771 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,128,"BIND",2024-11-19 03:03:13 GMT,0/29,0,LOG,00000,"duration: 0.357 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '1', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:07:51.771 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,129,"SELECT",2024-11-19 03:03:13 GMT,0/29,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '1', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:07:51.771 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,130,"SELECT",2024-11-19 03:03:13 GMT,0/29,0,LOG,00000,"duration: 0.097 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:07:51.773 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,131,"BIND",2024-11-19 03:03:13 GMT,0/30,0,LOG,00000,"AUDIT: SESSION,31,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:07:51.773 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,132,"BIND",2024-11-19 03:03:13 GMT,0/30,0,LOG,00000,"duration: 0.179 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '1', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:07:51.773 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,133,"SELECT",2024-11-19 03:03:13 GMT,0/30,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '1', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:07:51.773 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,134,"SELECT",2024-11-19 03:03:13 GMT,0/30,0,LOG,00000,"duration: 0.084 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:08:02.726 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,135,"BIND",2024-11-19 03:03:13 GMT,0/31,0,LOG,00000,"AUDIT: SESSION,32,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:08:02.726 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,136,"BIND",2024-11-19 03:03:13 GMT,0/31,0,LOG,00000,"duration: 0.494 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '1', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:08:02.726 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,137,"SELECT",2024-11-19 03:03:13 GMT,0/31,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '1', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:08:02.726 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,138,"SELECT",2024-11-19 03:03:13 GMT,0/31,0,LOG,00000,"duration: 0.124 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:08:02.727 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,139,"BIND",2024-11-19 03:03:13 GMT,0/32,0,LOG,00000,"AUDIT: SESSION,33,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:08:02.728 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,140,"BIND",2024-11-19 03:03:13 GMT,0/32,0,LOG,00000,"duration: 0.180 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '1', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:08:02.728 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,141,"SELECT",2024-11-19 03:03:13 GMT,0/32,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '1', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:08:02.728 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,142,"SELECT",2024-11-19 03:03:13 GMT,0/32,0,LOG,00000,"duration: 0.095 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:08:13.459 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,143,"idle",2024-11-19 03:03:13 GMT,0/33,0,LOG,00000,"statement: SELECT 1",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:08:13.460 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,144,"SELECT",2024-11-19 03:03:13 GMT,0/33,0,LOG,00000,"AUDIT: SESSION,34,1,READ,SELECT,,,SELECT 1,<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:08:13.460 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,145,"SELECT",2024-11-19 03:03:13 GMT,0/0,0,LOG,00000,"duration: 0.349 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:08:13.461 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,146,"BIND",2024-11-19 03:03:13 GMT,0/34,0,LOG,00000,"AUDIT: SESSION,35,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:08:13.461 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,147,"BIND",2024-11-19 03:03:13 GMT,0/34,0,LOG,00000,"duration: 0.327 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '2', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:08:13.461 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,148,"SELECT",2024-11-19 03:03:13 GMT,0/34,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '2', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:08:13.461 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,149,"SELECT",2024-11-19 03:03:13 GMT,0/34,0,LOG,00000,"duration: 0.075 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:08:13.462 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,150,"BIND",2024-11-19 03:03:13 GMT,0/35,0,LOG,00000,"AUDIT: SESSION,36,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:08:13.462 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,151,"BIND",2024-11-19 03:03:13 GMT,0/35,0,LOG,00000,"duration: 0.208 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '2', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:08:13.463 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,152,"SELECT",2024-11-19 03:03:13 GMT,0/35,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '2', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:08:13.463 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,153,"SELECT",2024-11-19 03:03:13 GMT,0/35,0,LOG,00000,"duration: 0.149 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:08:25.411 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,154,"BIND",2024-11-19 03:03:13 GMT,0/36,0,LOG,00000,"AUDIT: SESSION,37,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE (""""public"""".""""orders"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:08:25.412 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,155,"BIND",2024-11-19 03:03:13 GMT,0/36,0,LOG,00000,"duration: 0.476 ms  bind s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '3', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:08:25.412 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,156,"SELECT",2024-11-19 03:03:13 GMT,0/36,0,LOG,00000,"execute s3: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '3', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:08:25.412 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,157,"SELECT",2024-11-19 03:03:13 GMT,0/36,0,LOG,00000,"duration: 0.081 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:08:25.412 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,158,"BIND",2024-11-19 03:03:13 GMT,0/37,0,LOG,00000,"AUDIT: SESSION,38,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1) OFFSET $2"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:08:25.413 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,159,"BIND",2024-11-19 03:03:13 GMT,0/37,0,LOG,00000,"duration: 0.140 ms  bind s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '3', $2 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:08:25.413 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,160,"SELECT",2024-11-19 03:03:13 GMT,0/37,0,LOG,00000,"execute s4: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2","Parameters: $1 = '3', $2 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:08:25.413 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,161,"SELECT",2024-11-19 03:03:13 GMT,0/37,0,LOG,00000,"duration: 0.090 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:08:53.948 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,162,"idle",2024-11-19 03:03:13 GMT,0/38,0,LOG,00000,"statement: SELECT 1",,,,,,,,"exec_simple_query, postgres.c:1075","","client backend",,0
+2024-11-19 03:08:53.949 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,163,"SELECT",2024-11-19 03:03:13 GMT,0/38,0,LOG,00000,"AUDIT: SESSION,39,1,READ,SELECT,,,SELECT 1,<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:08:53.949 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,164,"SELECT",2024-11-19 03:03:13 GMT,0/0,0,LOG,00000,"duration: 0.871 ms",,,,,,,,"exec_simple_query, postgres.c:1368","","client backend",,0
+2024-11-19 03:08:53.951 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,165,"PARSE",2024-11-19 03:03:13 GMT,0/39,0,LOG,00000,"duration: 0.500 ms  parse s5: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE 1=1 OFFSET $1",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-19 03:08:53.952 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,166,"BIND",2024-11-19 03:03:13 GMT,0/40,0,LOG,00000,"AUDIT: SESSION,40,1,READ,SELECT,,,""SELECT """"public"""".""""orders"""".""""id"""", """"public"""".""""orders"""".""""userId"""", """"public"""".""""orders"""".""""totalAmount"""", """"public"""".""""orders"""".""""status"""", """"public"""".""""orders"""".""""createdAt"""", """"public"""".""""orders"""".""""updatedAt"""" FROM """"public"""".""""orders"""" WHERE 1=1 OFFSET $1"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:08:53.952 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,167,"BIND",2024-11-19 03:03:13 GMT,0/40,0,LOG,00000,"duration: 0.182 ms  bind s5: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:08:53.952 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,168,"SELECT",2024-11-19 03:03:13 GMT,0/40,0,LOG,00000,"execute s5: SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:08:53.952 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,169,"SELECT",2024-11-19 03:03:13 GMT,0/40,0,LOG,00000,"duration: 0.065 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:08:53.953 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,170,"PARSE",2024-11-19 03:03:13 GMT,0/41,0,LOG,00000,"duration: 0.437 ms  parse s6: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1,$2,$3,$4) OFFSET $5",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-19 03:08:53.955 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,171,"BIND",2024-11-19 03:03:13 GMT,0/42,0,LOG,00000,"AUDIT: SESSION,41,1,READ,SELECT,,,""SELECT """"public"""".""""items"""".""""id"""", """"public"""".""""items"""".""""orderId"""", """"public"""".""""items"""".""""bookId"""", """"public"""".""""items"""".""""quantity"""", """"public"""".""""items"""".""""price"""" FROM """"public"""".""""items"""" WHERE """"public"""".""""items"""".""""orderId"""" IN ($1,$2,$3,$4) OFFSET $5"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-19 03:08:53.955 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,172,"BIND",2024-11-19 03:03:13 GMT,0/42,0,LOG,00000,"duration: 1.037 ms  bind s6: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1,$2,$3,$4) OFFSET $5","Parameters: $1 = '1', $2 = '2', $3 = '3', $4 = '4', $5 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-19 03:08:53.955 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,173,"SELECT",2024-11-19 03:03:13 GMT,0/42,0,LOG,00000,"execute s6: SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1,$2,$3,$4) OFFSET $5","Parameters: $1 = '1', $2 = '2', $3 = '3', $4 = '4', $5 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-19 03:08:53.955 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,174,"SELECT",2024-11-19 03:03:13 GMT,0/42,0,LOG,00000,"duration: 0.076 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-19 03:20:56.083 GMT,,,1,,673bfcf5.1,6,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"received fast shutdown request",,,,,,,,"process_pm_shutdown_request, postmaster.c:2273","","postmaster",,0
+2024-11-19 03:20:56.109 GMT,,,1,,673bfcf5.1,7,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"aborting any active transactions",,,,,,,,"process_pm_shutdown_request, postmaster.c:2291","","postmaster",,0
+2024-11-19 03:20:56.119 GMT,"postgres","orders",72,"172.18.0.5:37446",673bfff1.48,175,"idle",2024-11-19 03:03:13 GMT,0/0,0,FATAL,57P01,"terminating connection due to administrator command",,,,,,,,"ProcessInterrupts, postgres.c:3315","","client backend",,0
+2024-11-19 03:20:56.190 GMT,,,1,,673bfcf5.1,8,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"background worker ""logical replication launcher"" (PID 33) exited with exit code 1",,,,,,,,"LogChildExit, postmaster.c:3076","","postmaster",,0
+2024-11-19 03:20:56.394 GMT,,,28,,673bfcf5.1c,5,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"shutting down",,,,,,,,"ShutdownXLOG, xlog.c:6611","","checkpointer",,0
+2024-11-19 03:20:56.413 GMT,,,28,,673bfcf5.1c,6,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"checkpoint starting: shutdown immediate",,,,,,,,"LogCheckpointStart, xlog.c:6661","","checkpointer",,0
+2024-11-19 03:20:56.599 GMT,,,28,,673bfcf5.1c,7,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.073 s, sync=0.004 s, total=0.205 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=1 kB; lsn=0/51B20A8, redo lsn=0/51B20A8",,,,,,,,"LogCheckpointEnd, xlog.c:6750","","checkpointer",,0
+2024-11-19 03:20:56.677 GMT,,,1,,673bfcf5.1,9,,2024-11-19 02:50:29 GMT,,0,LOG,00000,"database system is shut down",,,,,,,,"UnlinkLockFiles, miscinit.c:1171","","postmaster",,0

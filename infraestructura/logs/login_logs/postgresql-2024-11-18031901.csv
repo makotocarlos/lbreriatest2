@@ -1,0 +1,276 @@
+2024-11-18 03:19:01.929 GMT,,,1,,673ab225.1,1,,2024-11-18 03:19:01 GMT,,0,LOG,00000,"starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit",,,,,,,,"PostmasterMain, postmaster.c:1080","","postmaster",,0
+2024-11-18 03:19:01.930 GMT,,,1,,673ab225.1,2,,2024-11-18 03:19:01 GMT,,0,LOG,00000,"listening on IPv4 address ""0.0.0.0"", port 5432",,,,,,,,"ListenServerPort, pqcomm.c:661","","postmaster",,0
+2024-11-18 03:19:01.930 GMT,,,1,,673ab225.1,3,,2024-11-18 03:19:01 GMT,,0,LOG,00000,"listening on IPv6 address ""::"", port 5432",,,,,,,,"ListenServerPort, pqcomm.c:661","","postmaster",,0
+2024-11-18 03:19:01.944 GMT,,,1,,673ab225.1,4,,2024-11-18 03:19:01 GMT,,0,LOG,00000,"listening on Unix socket ""/var/run/postgresql/.s.PGSQL.5432""",,,,,,,,"ListenServerPort, pqcomm.c:657","","postmaster",,0
+2024-11-18 03:19:02.077 GMT,,,30,,673ab226.1e,1,,2024-11-18 03:19:02 GMT,,0,LOG,00000,"database system was shut down at 2024-11-18 03:18:51 GMT",,,,,,,,"StartupXLOG, xlog.c:5445","","startup",,0
+2024-11-18 03:19:02.225 GMT,,,1,,673ab225.1,5,,2024-11-18 03:19:01 GMT,,0,LOG,00000,"database system is ready to accept connections",,,,,,,,"process_pm_child_exit, postmaster.c:2483","","postmaster",,0
+2024-11-18 03:20:20.687 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,1,"idle",2024-11-18 03:20:20 GMT,0/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.754 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,2,"SELECT",2024-11-18 03:20:20 GMT,0/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.761 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,3,"SET",2024-11-18 03:20:20 GMT,0/0,0,LOG,00000,"duration: 76.283 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.763 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,4,"idle",2024-11-18 03:20:20 GMT,0/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.765 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,5,"SELECT",2024-11-18 03:20:20 GMT,0/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.766 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,6,"SELECT",2024-11-18 03:20:20 GMT,0/0,0,LOG,00000,"duration: 3.196 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.770 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,7,"idle",2024-11-18 03:20:20 GMT,0/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.832 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,8,"SELECT",2024-11-18 03:20:20 GMT,0/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.840 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,9,"SELECT",2024-11-18 03:20:20 GMT,0/0,0,LOG,00000,"duration: 72.130 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.842 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,10,"idle",2024-11-18 03:20:20 GMT,0/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.867 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,11,"SELECT",2024-11-18 03:20:20 GMT,0/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.871 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,12,"SELECT",2024-11-18 03:20:20 GMT,0/0,0,LOG,00000,"duration: 28.155 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.872 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,13,"idle",2024-11-18 03:20:20 GMT,0/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.926 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,14,"SELECT",2024-11-18 03:20:20 GMT,0/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:20.929 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,15,"SELECT",2024-11-18 03:20:20 GMT,0/0,0,LOG,00000,"duration: 57.081 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:21.094 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,1,"idle",2024-11-18 03:20:20 GMT,1/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.147 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,2,"SELECT",2024-11-18 03:20:20 GMT,1/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.149 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,3,"SET",2024-11-18 03:20:20 GMT,1/0,0,LOG,00000,"duration: 55.889 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.150 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,4,"idle",2024-11-18 03:20:20 GMT,1/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.152 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,5,"SELECT",2024-11-18 03:20:20 GMT,1/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.152 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,6,"SELECT",2024-11-18 03:20:20 GMT,1/0,0,LOG,00000,"duration: 2.178 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.153 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,7,"idle",2024-11-18 03:20:20 GMT,1/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.189 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,8,"SELECT",2024-11-18 03:20:20 GMT,1/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.193 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,9,"SELECT",2024-11-18 03:20:20 GMT,1/0,0,LOG,00000,"duration: 39.711 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.194 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,10,"idle",2024-11-18 03:20:20 GMT,1/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.208 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,11,"SELECT",2024-11-18 03:20:20 GMT,1/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.209 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,12,"SELECT",2024-11-18 03:20:20 GMT,1/0,0,LOG,00000,"duration: 15.183 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.210 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,13,"idle",2024-11-18 03:20:20 GMT,1/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.237 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,14,"SELECT",2024-11-18 03:20:20 GMT,1/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.237 GMT,"postgres","login",38,"172.18.0.7:40844",673ab274.26,15,"SELECT",2024-11-18 03:20:20 GMT,1/0,0,LOG,00000,"duration: 27.498 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:login","client backend",,0
+2024-11-18 03:20:21.355 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,1,"idle",2024-11-18 03:20:21 GMT,2/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.438 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,2,"SELECT",2024-11-18 03:20:21 GMT,2/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.443 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,3,"SET",2024-11-18 03:20:21 GMT,2/0,0,LOG,00000,"duration: 88.666 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.444 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,4,"idle",2024-11-18 03:20:21 GMT,2/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.446 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,5,"SELECT",2024-11-18 03:20:21 GMT,2/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.446 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,6,"SELECT",2024-11-18 03:20:21 GMT,2/0,0,LOG,00000,"duration: 2.162 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.447 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,7,"idle",2024-11-18 03:20:21 GMT,2/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.490 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,8,"SELECT",2024-11-18 03:20:21 GMT,2/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.493 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,9,"SELECT",2024-11-18 03:20:21 GMT,2/0,0,LOG,00000,"duration: 46.512 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.494 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,10,"idle",2024-11-18 03:20:21 GMT,2/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.510 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,11,"SELECT",2024-11-18 03:20:21 GMT,2/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.512 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,12,"SELECT",2024-11-18 03:20:21 GMT,2/0,0,LOG,00000,"duration: 17.216 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.513 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,13,"idle",2024-11-18 03:20:21 GMT,2/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.545 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,14,"SELECT",2024-11-18 03:20:21 GMT,2/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:21.547 GMT,"postgres","user_db_dev",39,"172.18.0.7:40850",673ab275.27,15,"SELECT",2024-11-18 03:20:21 GMT,2/0,0,LOG,00000,"duration: 34.175 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:user_db_dev","client backend",,0
+2024-11-18 03:20:22.844 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,16,"idle",2024-11-18 03:20:20 GMT,0/7,0,LOG,00000,"statement: SELECT CASE WHEN usesuper
+       THEN pg_catalog.pg_is_in_recovery()
+       ELSE FALSE
+       END as inrecovery,
+       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+       THEN pg_is_wal_replay_paused()
+       ELSE FALSE
+       END as isreplaypaused
+FROM pg_catalog.pg_user WHERE usename=current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:22.849 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,17,"SELECT",2024-11-18 03:20:20 GMT,0/7,0,LOG,00000,"AUDIT: SESSION,6,1,READ,SELECT,,,""SELECT CASE WHEN usesuper
+       THEN pg_catalog.pg_is_in_recovery()
+       ELSE FALSE
+       END as inrecovery,
+       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+       THEN pg_is_wal_replay_paused()
+       ELSE FALSE
+       END as isreplaypaused
+FROM pg_catalog.pg_user WHERE usename=current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:22.850 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,18,"SELECT",2024-11-18 03:20:20 GMT,0/0,0,LOG,00000,"duration: 5.726 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:23.056 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,19,"idle",2024-11-18 03:20:20 GMT,0/8,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:23.095 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,20,"SELECT",2024-11-18 03:20:20 GMT,0/8,0,LOG,00000,"AUDIT: SESSION,7,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:20:23.097 GMT,"postgres","postgres",37,"172.18.0.7:40828",673ab274.25,21,"SELECT",2024-11-18 03:20:20 GMT,0/0,0,LOG,00000,"duration: 41.769 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 03:24:02.096 GMT,,,28,,673ab226.1c,1,,2024-11-18 03:19:02 GMT,,0,LOG,00000,"checkpoint starting: time",,,,,,,,"LogCheckpointStart, xlog.c:6661","","checkpointer",,0
+2024-11-18 03:24:02.217 GMT,,,28,,673ab226.1c,2,,2024-11-18 03:19:02 GMT,,0,LOG,00000,"checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.033 s, sync=0.011 s, total=0.122 s; sync files=2, longest=0.006 s, average=0.006 s; distance=0 kB, estimate=0 kB; lsn=0/94685F8, redo lsn=0/94685A0",,,,,,,,"LogCheckpointEnd, xlog.c:6750","","checkpointer",,0

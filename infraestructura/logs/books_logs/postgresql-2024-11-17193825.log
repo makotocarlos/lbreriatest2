@@ -1,0 +1,2002 @@
+2024-11-17 19:38:25.128 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-17 19:38:25.128 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-17 19:38:25.128 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-17 19:38:25.128 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-17 19:38:25.128 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-17 19:38:25.128 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-17 19:38:25.137 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-17 19:38:25.137 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-17 19:38:25.190 GMT [67]     LOG:  00000: database system was shut down at 2024-11-17 19:38:24 GMT
+2024-11-17 19:38:25.190 GMT [67]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-17 19:38:25.244 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-17 19:38:25.244 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-17 19:43:25.258 GMT [65]     LOG:  00000: checkpoint starting: time
+2024-11-17 19:43:25.258 GMT [65]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-17 19:43:28.751 GMT [65]     LOG:  00000: checkpoint complete: wrote 36 buffers (0.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=3.391 s, sync=0.028 s, total=3.493 s; sync files=11, longest=0.008 s, average=0.003 s; distance=173 kB, estimate=173 kB; lsn=0/1933DF8, redo lsn=0/1933DA0
+2024-11-17 19:43:28.751 GMT [65]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-17 19:44:42.907 GMT [83] postgres postgres [unknown] 172.18.0.6 FATAL:  28P01: password authentication failed for user "postgres"
+2024-11-17 19:44:42.907 GMT [83] postgres postgres [unknown] 172.18.0.6 DETAIL:  Connection matched file "/var/lib/postgresql/data/pg_hba.conf" line 128: "host all all all scram-sha-256"
+2024-11-17 19:44:42.907 GMT [83] postgres postgres [unknown] 172.18.0.6 LOCATION:  auth_failed, auth.c:321
+2024-11-17 19:45:43.112 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-17 19:45:43.112 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:43.163 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-17 19:45:43.163 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:43.166 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 54.542 ms
+2024-11-17 19:45:43.166 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:43.166 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SELECT version()
+2024-11-17 19:45:43.166 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:43.168 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-17 19:45:43.168 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:43.169 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 2.252 ms
+2024-11-17 19:45:43.169 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:43.170 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-17 19:45:43.170 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:43.223 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-17 19:45:43.223 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:43.228 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 58.634 ms
+2024-11-17 19:45:43.228 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:43.229 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-17 19:45:43.229 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:43.247 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-17 19:45:43.247 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:43.248 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 19.055 ms
+2024-11-17 19:45:43.248 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:43.250 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-17 19:45:43.250 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:43.300 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-17 19:45:43.300 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:43.302 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 52.948 ms
+2024-11-17 19:45:43.302 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:43.305 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type;
+2024-11-17 19:45:43.305 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:43.338 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,6,1,READ,SELECT,,,"SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type",<not logged>
+2024-11-17 19:45:43.338 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:43.341 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 35.955 ms
+2024-11-17 19:45:43.341 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:43.594 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS "Hits"
+	) t
+	
+2024-11-17 19:45:43.594 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:43.641 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,7,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:45:43.641 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:43.644 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 50.608 ms
+2024-11-17 19:45:43.644 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:45.954 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    has_table_privilege(
+	      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+	    ) has_priviledge
+	WHERE EXISTS(
+	    SELECT has_schema_privilege('pgagent', 'USAGE')
+	    WHERE EXISTS(
+	        SELECT cl.oid FROM pg_catalog.pg_class cl
+	        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+	        WHERE relname='pga_job' AND nspname='pgagent'
+	    )
+	)
+	
+2024-11-17 19:45:45.954 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:45.971 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,8,1,READ,SELECT,,,"SELECT
+	    has_table_privilege(
+	      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+	    ) has_priviledge
+	WHERE EXISTS(
+	    SELECT has_schema_privilege('pgagent', 'USAGE')
+	    WHERE EXISTS(
+	        SELECT cl.oid FROM pg_catalog.pg_class cl
+	        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+	        WHERE relname='pga_job' AND nspname='pgagent'
+	    )
+	)",<not logged>
+2024-11-17 19:45:45.971 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:45.975 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 21.838 ms
+2024-11-17 19:45:45.975 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:46.035 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type;
+2024-11-17 19:45:46.035 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:46.036 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,9,1,READ,SELECT,,,"SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type",<not logged>
+2024-11-17 19:45:46.036 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:46.036 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 1.276 ms
+2024-11-17 19:45:46.036 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:46.051 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type;
+2024-11-17 19:45:46.051 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:46.052 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,10,1,READ,SELECT,,,"SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type",<not logged>
+2024-11-17 19:45:46.052 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:46.052 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 1.188 ms
+2024-11-17 19:45:46.052 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:46.111 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SELECT
+	    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+	    db.datistemplate AS is_template,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+	    descr.description
+	FROM
+	    pg_catalog.pg_database db
+	    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+	    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+	        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+	    )
+	WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+	
+	ORDER BY datname;
+2024-11-17 19:45:46.111 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:46.147 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,11,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+	    db.datistemplate AS is_template,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+	    descr.description
+	FROM
+	    pg_catalog.pg_database db
+	    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+	    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+	        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+	    )
+	WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+	
+	ORDER BY datname",<not logged>
+2024-11-17 19:45:46.147 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:46.148 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 37.164 ms
+2024-11-17 19:45:46.148 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:48.663 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS "Hits"
+	) t
+	
+2024-11-17 19:45:48.663 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:48.674 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,12,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:45:48.674 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:48.676 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 13.239 ms
+2024-11-17 19:45:48.676 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.256 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_catalog.pg_encoding_to_char(db.encoding) AS serverencoding,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.oid = 16384
+2024-11-17 19:45:49.256 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.257 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,13,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_catalog.pg_encoding_to_char(db.encoding) AS serverencoding,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.oid = 16384",<not logged>
+2024-11-17 19:45:49.257 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.257 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 1.238 ms
+2024-11-17 19:45:49.257 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.514 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-17 19:45:49.514 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.571 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-17 19:45:49.571 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.574 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 59.708 ms
+2024-11-17 19:45:49.574 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.575 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SELECT version()
+2024-11-17 19:45:49.575 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.577 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-17 19:45:49.577 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.577 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 2.322 ms
+2024-11-17 19:45:49.577 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.578 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-17 19:45:49.578 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.609 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-17 19:45:49.609 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.610 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-17 19:45:49.610 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.613 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 3.783 ms
+2024-11-17 19:45:49.613 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.614 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SELECT version()
+2024-11-17 19:45:49.614 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.614 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-17 19:45:49.614 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.614 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 0.315 ms
+2024-11-17 19:45:49.614 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.615 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-17 19:45:49.615 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.621 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-17 19:45:49.621 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.621 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-17 19:45:49.621 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.626 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 11.215 ms
+2024-11-17 19:45:49.626 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.626 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 48.269 ms
+2024-11-17 19:45:49.626 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.627 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-17 19:45:49.627 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.627 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-17 19:45:49.627 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.641 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-17 19:45:49.641 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.641 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-17 19:45:49.641 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.642 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 15.556 ms
+2024-11-17 19:45:49.642 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.642 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 15.075 ms
+2024-11-17 19:45:49.642 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.643 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-17 19:45:49.643 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.644 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-17 19:45:49.644 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.681 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-17 19:45:49.681 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.681 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-17 19:45:49.681 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.682 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 38.613 ms
+2024-11-17 19:45:49.682 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.682 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 38.334 ms
+2024-11-17 19:45:49.682 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:49.862 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	            SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+	                'edb_job_scheduler', 'dbms_scheduler') 
+2024-11-17 19:45:49.862 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:49.881 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,6,1,READ,SELECT,,,"SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+	                'edb_job_scheduler', 'dbms_scheduler')",<not logged>
+2024-11-17 19:45:49.881 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:49.882 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 20.766 ms
+2024-11-17 19:45:49.882 GMT [87] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:50.002 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:45:50.002 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:50.089 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,6,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:45:50.089 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:50.096 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 94.349 ms
+2024-11-17 19:45:50.096 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:52.800 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SELECT
+	    nsp.oid,
+	    nsp.nspname as name,
+	    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+	    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+	    des.description
+	FROM
+	    pg_catalog.pg_namespace nsp
+	    LEFT OUTER JOIN pg_catalog.pg_description des ON
+	        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+	WHERE
+	             nspname NOT LIKE E'pg\\_%' AND
+	            NOT (
+	(nsp.nspname = 'pg_catalog' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+	            relnamespace = nsp.oid LIMIT 1)) OR
+	    (nsp.nspname = 'pgagent' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+	            relnamespace = nsp.oid LIMIT 1)) OR
+	    (nsp.nspname = 'information_schema' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+	            relnamespace = nsp.oid LIMIT 1))
+	    )
+	
+	    
+	ORDER BY nspname;
+2024-11-17 19:45:52.800 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:52.852 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,7,1,READ,SELECT,,,"SELECT
+	    nsp.oid,
+	    nsp.nspname as name,
+	    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+	    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+	    des.description
+	FROM
+	    pg_catalog.pg_namespace nsp
+	    LEFT OUTER JOIN pg_catalog.pg_description des ON
+	        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+	WHERE
+	             nspname NOT LIKE E'pg\\_%' AND
+	            NOT (
+	(nsp.nspname = 'pg_catalog' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+	            relnamespace = nsp.oid LIMIT 1)) OR
+	    (nsp.nspname = 'pgagent' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+	            relnamespace = nsp.oid LIMIT 1)) OR
+	    (nsp.nspname = 'information_schema' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+	            relnamespace = nsp.oid LIMIT 1))
+	    )
+	
+	    
+	ORDER BY nspname",<not logged>
+2024-11-17 19:45:52.852 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:52.861 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 61.968 ms
+2024-11-17 19:45:52.861 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:53.275 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SELECT
+	    nsp.nspname as schema_name,
+	    (nsp.nspname = 'pg_catalog' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+	            relnamespace = nsp.oid LIMIT 1)) OR
+	    (nsp.nspname = 'pgagent' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+	            relnamespace = nsp.oid LIMIT 1)) OR
+	    (nsp.nspname = 'information_schema' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+	            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+	    CASE
+	    WHEN nsp.nspname = ANY('{information_schema}')
+	        THEN false
+	    ELSE true END AS db_support
+	FROM
+	    pg_catalog.pg_namespace nsp
+	WHERE
+	    nsp.oid = 2200::OID;
+2024-11-17 19:45:53.275 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:53.277 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,8,1,READ,SELECT,,,"SELECT
+	    nsp.nspname as schema_name,
+	    (nsp.nspname = 'pg_catalog' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+	            relnamespace = nsp.oid LIMIT 1)) OR
+	    (nsp.nspname = 'pgagent' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+	            relnamespace = nsp.oid LIMIT 1)) OR
+	    (nsp.nspname = 'information_schema' AND EXISTS
+	        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+	            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+	    CASE
+	    WHEN nsp.nspname = ANY('{information_schema}')
+	        THEN false
+	    ELSE true END AS db_support
+	FROM
+	    pg_catalog.pg_namespace nsp
+	WHERE
+	    nsp.oid = 2200::OID",<not logged>
+2024-11-17 19:45:53.277 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:53.277 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 2.606 ms
+2024-11-17 19:45:53.277 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:55.098 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:45:55.098 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:55.111 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,9,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:45:55.111 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:55.113 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 15.023 ms
+2024-11-17 19:45:55.113 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:45:55.241 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SELECT rel.oid, rel.relname AS name,
+	    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+	    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+	    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+	    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+	    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+	    des.description
+	FROM pg_catalog.pg_class rel
+	    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+	    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+	    AND NOT rel.relispartition
+	        ORDER BY rel.relname;
+2024-11-17 19:45:55.241 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:45:55.265 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,10,1,READ,SELECT,,,"SELECT rel.oid, rel.relname AS name,
+	    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+	    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+	    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+	    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+	    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+	    des.description
+	FROM pg_catalog.pg_class rel
+	    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+	    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+	    AND NOT rel.relispartition
+	        ORDER BY rel.relname",<not logged>
+2024-11-17 19:45:55.265 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:45:55.268 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 27.598 ms
+2024-11-17 19:45:55.268 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:00.132 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:00.132 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:00.169 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,11,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:00.169 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:00.174 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 43.266 ms
+2024-11-17 19:46:00.174 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:05.391 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:05.391 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:05.409 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,12,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:05.409 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:05.411 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 20.625 ms
+2024-11-17 19:46:05.411 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:10.395 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:10.395 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:10.414 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,13,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:10.414 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:10.416 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 21.260 ms
+2024-11-17 19:46:10.416 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:15.387 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:15.387 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:15.395 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,14,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:15.395 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:15.396 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 9.101 ms
+2024-11-17 19:46:15.396 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:20.386 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:20.386 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:20.403 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,15,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:20.403 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:20.405 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 20.283 ms
+2024-11-17 19:46:20.405 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:25.384 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:25.384 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:25.393 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,16,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:25.393 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:25.395 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 11.222 ms
+2024-11-17 19:46:25.395 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:30.387 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:30.387 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:30.400 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,17,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:30.400 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:30.402 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 15.060 ms
+2024-11-17 19:46:30.402 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:35.374 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:35.374 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:35.384 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,18,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:35.384 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:35.386 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 11.636 ms
+2024-11-17 19:46:35.386 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:40.386 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:40.386 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:40.393 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,19,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:40.393 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:40.394 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 8.380 ms
+2024-11-17 19:46:40.394 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:45.385 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:45.385 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:45.397 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,20,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:45.397 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:45.400 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 15.321 ms
+2024-11-17 19:46:45.400 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:50.386 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:50.386 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:50.394 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,21,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:50.394 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:50.395 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 9.652 ms
+2024-11-17 19:46:50.395 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:46:55.373 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:46:55.373 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:46:55.383 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,22,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:46:55.383 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:46:55.384 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 11.068 ms
+2024-11-17 19:46:55.384 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:47:06.384 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:47:06.384 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:47:06.392 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,23,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:47:06.392 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:47:06.393 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 9.579 ms
+2024-11-17 19:47:06.393 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:48:06.420 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:48:06.420 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:48:06.431 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,24,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:48:06.431 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:48:06.433 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 14.082 ms
+2024-11-17 19:48:06.433 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:48:32.236 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Hits"
+	) t
+	
+2024-11-17 19:48:32.236 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:48:32.246 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,25,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:48:32.246 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:48:32.248 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 12.338 ms
+2024-11-17 19:48:32.248 GMT [88] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:53:01.859 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS "Total",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS "Active",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS "Idle"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS "Transactions",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS "Commits",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS "Rollbacks"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS "Inserts",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS "Updates",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS "Deletes"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS "Fetched",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS "Returned"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS "Reads",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS "Hits"
+	) t
+	
+2024-11-17 19:53:01.859 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 19:53:01.871 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,14,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS ""Total"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS ""Active"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS ""Idle""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Transactions"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS ""Commits"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Rollbacks""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS ""Inserts"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS ""Updates"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS ""Deletes""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS ""Fetched"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS ""Returned""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS ""Reads"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS ""Hits""
+	) t",<not logged>
+2024-11-17 19:53:01.871 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 19:53:01.873 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 14.564 ms
+2024-11-17 19:53:01.873 GMT [86] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 19:53:15.794 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-17 19:53:15.794 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-17 19:53:15.802 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-17 19:53:15.802 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-17 19:53:15.818 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 70) exited with exit code 1
+2024-11-17 19:53:15.818 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-17 19:53:15.820 GMT [65]     LOG:  00000: shutting down
+2024-11-17 19:53:15.820 GMT [65]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-17 19:53:15.833 GMT [65]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-17 19:53:15.833 GMT [65]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-17 19:53:15.936 GMT [65]     LOG:  00000: checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.020 s, sync=0.002 s, total=0.116 s; sync files=1, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=155 kB; lsn=0/1933EA8, redo lsn=0/1933EA8
+2024-11-17 19:53:15.936 GMT [65]     LOCATION:  LogCheckpointEnd, xlog.c:6750

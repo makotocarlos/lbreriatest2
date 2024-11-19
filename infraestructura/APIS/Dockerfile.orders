@@ -1,0 +1,48 @@
+FROM node:20
+
+USER root
+
+
+RUN apt-get update && apt-get install -y \
+    wget \
+    nano
+
+
+RUN npm cache clean --force
+
+
+RUN npm install -g npm@8.12.1
+
+
+RUN npm install -g prisma \
+    && npm install -g cors \
+    && npm install -g dotenv \
+    && npm install -g pg \
+    && npm install -g axios \
+    && npm install -g express \
+    && npm install -g jsonwebtoken \
+    && npm install -g nodemon \
+    && npm install -g @prisma/client
+
+
+RUN mkdir -p /ord/ordersAPI
+
+WORKDIR /ord/ordersAPI
+
+
+COPY orders/package*.json ./
+
+
+RUN npm install
+
+
+COPY orders ./ 
+
+
+RUN npx prisma generate
+
+
+EXPOSE 3002
+
+
+CMD ["npx", "nodemon", "app.js"]

@@ -1,0 +1,26 @@
+2024-11-18 22:13:14.103 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-18 22:13:14.103 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-18 22:13:14.104 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-18 22:13:14.104 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-18 22:13:14.104 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-18 22:13:14.104 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-18 22:13:14.125 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-18 22:13:14.125 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-18 22:13:14.215 GMT [31]     LOG:  00000: database system was shut down at 2024-11-18 22:13:03 GMT
+2024-11-18 22:13:14.215 GMT [31]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-18 22:13:14.326 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-18 22:13:14.326 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-18 22:16:49.709 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-18 22:16:49.709 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-18 22:16:49.719 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-18 22:16:49.719 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-18 22:16:49.745 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 34) exited with exit code 1
+2024-11-18 22:16:49.745 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-18 22:16:49.745 GMT [29]     LOG:  00000: shutting down
+2024-11-18 22:16:49.745 GMT [29]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-18 22:16:49.756 GMT [29]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-18 22:16:49.756 GMT [29]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-18 22:16:49.875 GMT [29]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.037 s, sync=0.010 s, total=0.130 s; sync files=2, longest=0.006 s, average=0.005 s; distance=0 kB, estimate=0 kB; lsn=0/94699B0, redo lsn=0/94699B0
+2024-11-18 22:16:49.875 GMT [29]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-18 22:16:49.912 GMT [1]     LOG:  00000: database system is shut down
+2024-11-18 22:16:49.912 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

@@ -1,0 +1,2037 @@
+2024-11-18 00:02:44.253 GMT,"postgres","postgres",35,"172.18.0.7:51774",673a8424.23,1,"authentication",2024-11-18 00:02:44 GMT,1/1,0,FATAL,28P01,"password authentication failed for user ""postgres""","Connection matched file ""/var/lib/postgresql/data/pg_hba.conf"" line 128: ""host all all all scram-sha-256""",,,,,,,"auth_failed, auth.c:321","","client backend",,0
+2024-11-18 00:03:03.320 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,1,"idle",2024-11-18 00:03:02 GMT,2/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.389 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,2,"SELECT",2024-11-18 00:03:02 GMT,2/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.396 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,3,"SET",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 77.653 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.398 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,4,"idle",2024-11-18 00:03:02 GMT,2/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.401 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,5,"SELECT",2024-11-18 00:03:02 GMT,2/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.401 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,6,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 3.762 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.403 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,7,"idle",2024-11-18 00:03:02 GMT,2/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.462 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,8,"SELECT",2024-11-18 00:03:02 GMT,2/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.467 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,9,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 64.283 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.468 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,10,"idle",2024-11-18 00:03:02 GMT,2/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.483 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,11,"SELECT",2024-11-18 00:03:02 GMT,2/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.485 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,12,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 16.498 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.486 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,13,"idle",2024-11-18 00:03:02 GMT,2/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.534 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,14,"SELECT",2024-11-18 00:03:02 GMT,2/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.536 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,15,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 50.488 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.538 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,16,"idle",2024-11-18 00:03:02 GMT,2/7,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.573 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,17,"SELECT",2024-11-18 00:03:02 GMT,2/7,0,LOG,00000,"AUDIT: SESSION,6,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.576 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,18,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 38.371 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.732 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,19,"idle",2024-11-18 00:03:02 GMT,2/8,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.776 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,20,"SELECT",2024-11-18 00:03:02 GMT,2/8,0,LOG,00000,"AUDIT: SESSION,7,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:03.781 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,21,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 49.325 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.306 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,22,"idle",2024-11-18 00:03:02 GMT,2/9,0,LOG,00000,"statement: 
+SELECT
+    has_table_privilege(
+      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+    ) has_priviledge
+WHERE EXISTS(
+    SELECT has_schema_privilege('pgagent', 'USAGE')
+    WHERE EXISTS(
+        SELECT cl.oid FROM pg_catalog.pg_class cl
+        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+        WHERE relname='pga_job' AND nspname='pgagent'
+    )
+)
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.322 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,23,"SELECT",2024-11-18 00:03:02 GMT,2/9,0,LOG,00000,"AUDIT: SESSION,8,1,READ,SELECT,,,""SELECT
+    has_table_privilege(
+      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+    ) has_priviledge
+WHERE EXISTS(
+    SELECT has_schema_privilege('pgagent', 'USAGE')
+    WHERE EXISTS(
+        SELECT cl.oid FROM pg_catalog.pg_class cl
+        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+        WHERE relname='pga_job' AND nspname='pgagent'
+    )
+)"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.324 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,24,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 19.064 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.389 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,25,"idle",2024-11-18 00:03:02 GMT,2/10,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.389 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,26,"SELECT",2024-11-18 00:03:02 GMT,2/10,0,LOG,00000,"AUDIT: SESSION,9,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.390 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,27,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 1.213 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.406 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,28,"idle",2024-11-18 00:03:02 GMT,2/11,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.407 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,29,"SELECT",2024-11-18 00:03:02 GMT,2/11,0,LOG,00000,"AUDIT: SESSION,10,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.407 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,30,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 1.288 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.478 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,31,"idle",2024-11-18 00:03:02 GMT,2/12,0,LOG,00000,"statement: SELECT
+    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+    db.datistemplate AS is_template,
+    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+    descr.description
+FROM
+    pg_catalog.pg_database db
+    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+    )
+WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+
+ORDER BY datname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.514 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,32,"SELECT",2024-11-18 00:03:02 GMT,2/12,0,LOG,00000,"AUDIT: SESSION,11,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+    db.datistemplate AS is_template,
+    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+    descr.description
+FROM
+    pg_catalog.pg_database db
+    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+    )
+WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+
+ORDER BY datname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:05.515 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,33,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 36.953 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:07.239 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,34,"idle",2024-11-18 00:03:02 GMT,2/13,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_catalog.pg_encoding_to_char(db.encoding) AS serverencoding,
+    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.oid = 16384",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:07.239 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,35,"SELECT",2024-11-18 00:03:02 GMT,2/13,0,LOG,00000,"AUDIT: SESSION,12,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_catalog.pg_encoding_to_char(db.encoding) AS serverencoding,
+    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.oid = 16384"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:07.239 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,36,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 0.783 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:07.496 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,1,"idle",2024-11-18 00:03:07 GMT,3/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.570 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,2,"SELECT",2024-11-18 00:03:07 GMT,3/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.574 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,3,"SET",2024-11-18 00:03:07 GMT,3/0,0,LOG,00000,"duration: 77.769 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.575 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,4,"idle",2024-11-18 00:03:07 GMT,3/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.577 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,5,"SELECT",2024-11-18 00:03:07 GMT,3/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.578 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,6,"SELECT",2024-11-18 00:03:07 GMT,3/0,0,LOG,00000,"duration: 3.009 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.579 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,7,"idle",2024-11-18 00:03:07 GMT,3/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.627 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,1,"idle",2024-11-18 00:03:07 GMT,4/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.629 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,2,"SELECT",2024-11-18 00:03:07 GMT,4/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.633 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,3,"SET",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 5.876 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.634 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,4,"idle",2024-11-18 00:03:07 GMT,4/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.635 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,5,"SELECT",2024-11-18 00:03:07 GMT,4/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.635 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,6,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 0.650 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.636 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,7,"idle",2024-11-18 00:03:07 GMT,4/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.638 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,8,"SELECT",2024-11-18 00:03:07 GMT,3/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.642 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,8,"SELECT",2024-11-18 00:03:07 GMT,4/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.645 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,9,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 9.042 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.645 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,9,"SELECT",2024-11-18 00:03:07 GMT,3/0,0,LOG,00000,"duration: 66.241 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.647 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,10,"idle",2024-11-18 00:03:07 GMT,3/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.647 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,10,"idle",2024-11-18 00:03:07 GMT,4/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.661 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,11,"SELECT",2024-11-18 00:03:07 GMT,4/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.661 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,11,"SELECT",2024-11-18 00:03:07 GMT,3/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.663 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,12,"SELECT",2024-11-18 00:03:07 GMT,3/0,0,LOG,00000,"duration: 16.357 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.663 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,12,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 15.921 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.665 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,13,"idle",2024-11-18 00:03:07 GMT,3/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.665 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,13,"idle",2024-11-18 00:03:07 GMT,4/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.703 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,14,"SELECT",2024-11-18 00:03:07 GMT,3/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.703 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,14,"SELECT",2024-11-18 00:03:07 GMT,4/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.704 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,15,"SELECT",2024-11-18 00:03:07 GMT,3/0,0,LOG,00000,"duration: 39.319 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.704 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,15,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 39.276 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.886 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,16,"idle",2024-11-18 00:03:07 GMT,3/7,0,LOG,00000,"statement: 
+            SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+                'edb_job_scheduler', 'dbms_scheduler') ",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.918 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,17,"SELECT",2024-11-18 00:03:07 GMT,3/7,0,LOG,00000,"AUDIT: SESSION,6,1,READ,SELECT,,,""SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+                'edb_job_scheduler', 'dbms_scheduler')"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:07.919 GMT,"postgres","books_db_dev",37,"172.18.0.7:42768",673a843b.25,18,"SELECT",2024-11-18 00:03:07 GMT,3/0,0,LOG,00000,"duration: 32.747 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:08.027 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,16,"idle",2024-11-18 00:03:07 GMT,4/7,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:08.165 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,17,"SELECT",2024-11-18 00:03:07 GMT,4/7,0,LOG,00000,"AUDIT: SESSION,6,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:08.188 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,18,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 161.682 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:09.612 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,19,"idle",2024-11-18 00:03:07 GMT,4/8,0,LOG,00000,"statement: SELECT
+    nsp.oid,
+    nsp.nspname as name,
+    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+    des.description
+FROM
+    pg_catalog.pg_namespace nsp
+    LEFT OUTER JOIN pg_catalog.pg_description des ON
+        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+WHERE
+             nspname NOT LIKE E'pg\\_%' AND
+            NOT (
+(nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1))
+    )
+
+    
+ORDER BY nspname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:09.670 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,20,"SELECT",2024-11-18 00:03:07 GMT,4/8,0,LOG,00000,"AUDIT: SESSION,7,1,READ,SELECT,,,""SELECT
+    nsp.oid,
+    nsp.nspname as name,
+    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+    des.description
+FROM
+    pg_catalog.pg_namespace nsp
+    LEFT OUTER JOIN pg_catalog.pg_description des ON
+        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+WHERE
+             nspname NOT LIKE E'pg\\_%' AND
+            NOT (
+(nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1))
+    )
+
+    
+ORDER BY nspname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:09.678 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,21,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 66.170 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:09.957 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,22,"idle",2024-11-18 00:03:07 GMT,4/9,0,LOG,00000,"statement: SELECT
+    nsp.nspname as schema_name,
+    (nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+    CASE
+    WHEN nsp.nspname = ANY('{information_schema}')
+        THEN false
+    ELSE true END AS db_support
+FROM
+    pg_catalog.pg_namespace nsp
+WHERE
+    nsp.oid = 2200::OID;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:09.969 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,23,"SELECT",2024-11-18 00:03:07 GMT,4/9,0,LOG,00000,"AUDIT: SESSION,8,1,READ,SELECT,,,""SELECT
+    nsp.nspname as schema_name,
+    (nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+    CASE
+    WHEN nsp.nspname = ANY('{information_schema}')
+        THEN false
+    ELSE true END AS db_support
+FROM
+    pg_catalog.pg_namespace nsp
+WHERE
+    nsp.oid = 2200::OID"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:09.969 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,24,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 12.475 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:12.759 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,25,"idle",2024-11-18 00:03:07 GMT,4/10,0,LOG,00000,"statement: SELECT rel.oid, rel.relname AS name,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+    des.description
+FROM pg_catalog.pg_class rel
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+    AND NOT rel.relispartition
+        ORDER BY rel.relname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:12.791 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,26,"SELECT",2024-11-18 00:03:07 GMT,4/10,0,LOG,00000,"AUDIT: SESSION,9,1,READ,SELECT,,,""SELECT rel.oid, rel.relname AS name,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+    des.description
+FROM pg_catalog.pg_class rel
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+    AND NOT rel.relispartition
+        ORDER BY rel.relname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:12.794 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,27,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 35.068 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:13.092 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,28,"idle",2024-11-18 00:03:07 GMT,4/11,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:13.114 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,29,"SELECT",2024-11-18 00:03:07 GMT,4/11,0,LOG,00000,"AUDIT: SESSION,10,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:13.122 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,30,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 30.340 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:18.092 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,31,"idle",2024-11-18 00:03:07 GMT,4/12,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:18.103 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,32,"SELECT",2024-11-18 00:03:07 GMT,4/12,0,LOG,00000,"AUDIT: SESSION,11,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:18.105 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,33,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 13.921 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:18.423 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,37,"idle",2024-11-18 00:03:02 GMT,2/14,0,LOG,00000,"statement: 
+            SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+                'edb_job_scheduler', 'dbms_scheduler') ",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:18.424 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,38,"SELECT",2024-11-18 00:03:02 GMT,2/14,0,LOG,00000,"AUDIT: SESSION,13,1,READ,SELECT,,,""SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+                'edb_job_scheduler', 'dbms_scheduler')"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:18.424 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,39,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 0.636 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:18.540 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,40,"idle",2024-11-18 00:03:02 GMT,2/15,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:18.557 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,41,"SELECT",2024-11-18 00:03:02 GMT,2/15,0,LOG,00000,"AUDIT: SESSION,14,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:18.567 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,42,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 26.894 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:20.716 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,43,"idle",2024-11-18 00:03:02 GMT,2/16,0,LOG,00000,"statement: SELECT
+    nsp.oid,
+    nsp.nspname as name,
+    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+    des.description
+FROM
+    pg_catalog.pg_namespace nsp
+    LEFT OUTER JOIN pg_catalog.pg_description des ON
+        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+WHERE
+             nspname NOT LIKE E'pg\\_%' AND
+            NOT (
+(nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1))
+    )
+
+    
+ORDER BY nspname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:20.740 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,44,"SELECT",2024-11-18 00:03:02 GMT,2/16,0,LOG,00000,"AUDIT: SESSION,15,1,READ,SELECT,,,""SELECT
+    nsp.oid,
+    nsp.nspname as name,
+    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+    des.description
+FROM
+    pg_catalog.pg_namespace nsp
+    LEFT OUTER JOIN pg_catalog.pg_description des ON
+        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+WHERE
+             nspname NOT LIKE E'pg\\_%' AND
+            NOT (
+(nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1))
+    )
+
+    
+ORDER BY nspname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:20.746 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,45,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 30.356 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:20.991 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,46,"idle",2024-11-18 00:03:02 GMT,2/17,0,LOG,00000,"statement: SELECT
+    nsp.nspname as schema_name,
+    (nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+    CASE
+    WHEN nsp.nspname = ANY('{information_schema}')
+        THEN false
+    ELSE true END AS db_support
+FROM
+    pg_catalog.pg_namespace nsp
+WHERE
+    nsp.oid = 2200::OID;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:20.992 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,47,"SELECT",2024-11-18 00:03:02 GMT,2/17,0,LOG,00000,"AUDIT: SESSION,16,1,READ,SELECT,,,""SELECT
+    nsp.nspname as schema_name,
+    (nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+    CASE
+    WHEN nsp.nspname = ANY('{information_schema}')
+        THEN false
+    ELSE true END AS db_support
+FROM
+    pg_catalog.pg_namespace nsp
+WHERE
+    nsp.oid = 2200::OID"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:20.992 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,48,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 1.121 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:22.988 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,49,"idle",2024-11-18 00:03:02 GMT,2/18,0,LOG,00000,"statement: SELECT rel.oid, rel.relname AS name,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+    des.description
+FROM pg_catalog.pg_class rel
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+    AND NOT rel.relispartition
+        ORDER BY rel.relname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:23.033 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,50,"SELECT",2024-11-18 00:03:02 GMT,2/18,0,LOG,00000,"AUDIT: SESSION,17,1,READ,SELECT,,,""SELECT rel.oid, rel.relname AS name,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+    des.description
+FROM pg_catalog.pg_class rel
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+    AND NOT rel.relispartition
+        ORDER BY rel.relname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:23.037 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,51,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 49.268 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:23.615 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,52,"idle",2024-11-18 00:03:02 GMT,2/19,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:23.632 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,53,"SELECT",2024-11-18 00:03:02 GMT,2/19,0,LOG,00000,"AUDIT: SESSION,18,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 5)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:23.636 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,54,"SELECT",2024-11-18 00:03:02 GMT,2/0,0,LOG,00000,"duration: 20.296 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:03:25.679 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,34,"idle",2024-11-18 00:03:07 GMT,4/13,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:25.695 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,35,"SELECT",2024-11-18 00:03:07 GMT,4/13,0,LOG,00000,"AUDIT: SESSION,12,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:25.697 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,36,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 18.747 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:30.718 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,37,"idle",2024-11-18 00:03:07 GMT,4/14,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:30.730 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,38,"SELECT",2024-11-18 00:03:07 GMT,4/14,0,LOG,00000,"AUDIT: SESSION,13,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:30.732 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,39,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 13.692 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:35.720 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,40,"idle",2024-11-18 00:03:07 GMT,4/15,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:35.734 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,41,"SELECT",2024-11-18 00:03:07 GMT,4/15,0,LOG,00000,"AUDIT: SESSION,14,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:35.736 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,42,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 16.163 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:40.711 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,43,"idle",2024-11-18 00:03:07 GMT,4/16,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:40.719 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,44,"SELECT",2024-11-18 00:03:07 GMT,4/16,0,LOG,00000,"AUDIT: SESSION,15,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:40.720 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,45,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 9.326 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:45.722 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,46,"idle",2024-11-18 00:03:07 GMT,4/17,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:45.735 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,47,"SELECT",2024-11-18 00:03:07 GMT,4/17,0,LOG,00000,"AUDIT: SESSION,16,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:45.736 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,48,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 14.217 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:50.725 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,49,"idle",2024-11-18 00:03:07 GMT,4/18,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:50.734 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,50,"SELECT",2024-11-18 00:03:07 GMT,4/18,0,LOG,00000,"AUDIT: SESSION,17,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:50.735 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,51,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 10.810 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:55.724 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,52,"idle",2024-11-18 00:03:07 GMT,4/19,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:55.740 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,53,"SELECT",2024-11-18 00:03:07 GMT,4/19,0,LOG,00000,"AUDIT: SESSION,18,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:03:55.743 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,54,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 18.834 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:00.720 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,55,"idle",2024-11-18 00:03:07 GMT,4/20,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:00.728 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,56,"SELECT",2024-11-18 00:03:07 GMT,4/20,0,LOG,00000,"AUDIT: SESSION,19,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:00.729 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,57,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 9.080 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:05.723 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,58,"idle",2024-11-18 00:03:07 GMT,4/21,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:05.739 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,59,"SELECT",2024-11-18 00:03:07 GMT,4/21,0,LOG,00000,"AUDIT: SESSION,20,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:05.745 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,60,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 22.030 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:10.756 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,61,"idle",2024-11-18 00:03:07 GMT,4/22,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:10.765 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,62,"SELECT",2024-11-18 00:03:07 GMT,4/22,0,LOG,00000,"AUDIT: SESSION,21,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:10.767 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,63,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 10.911 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:15.728 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,64,"idle",2024-11-18 00:03:07 GMT,4/23,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:15.740 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,65,"SELECT",2024-11-18 00:03:07 GMT,4/23,0,LOG,00000,"AUDIT: SESSION,22,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:15.742 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,66,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 13.505 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:20.720 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,67,"idle",2024-11-18 00:03:07 GMT,4/24,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:20.727 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,68,"SELECT",2024-11-18 00:03:07 GMT,4/24,0,LOG,00000,"AUDIT: SESSION,23,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:20.729 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,69,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 9.101 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:25.722 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,70,"idle",2024-11-18 00:03:07 GMT,4/25,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:25.731 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,71,"SELECT",2024-11-18 00:03:07 GMT,4/25,0,LOG,00000,"AUDIT: SESSION,24,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:04:25.732 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,72,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 10.504 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:05:05.735 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,73,"idle",2024-11-18 00:03:07 GMT,4/26,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:05:05.752 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,74,"SELECT",2024-11-18 00:03:07 GMT,4/26,0,LOG,00000,"AUDIT: SESSION,25,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:05:05.754 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,75,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 19.083 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:06:05.728 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,76,"idle",2024-11-18 00:03:07 GMT,4/27,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:06:05.754 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,77,"SELECT",2024-11-18 00:03:07 GMT,4/27,0,LOG,00000,"AUDIT: SESSION,26,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:06:05.758 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,78,"SELECT",2024-11-18 00:03:07 GMT,4/0,0,LOG,00000,"duration: 30.651 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:06:16.461 GMT,,,1,,673a81fc.1,6,,2024-11-17 23:53:32 GMT,,0,LOG,00000,"received fast shutdown request",,,,,,,,"process_pm_shutdown_request, postmaster.c:2273","","postmaster",,0
+2024-11-18 00:06:16.503 GMT,,,1,,673a81fc.1,7,,2024-11-17 23:53:32 GMT,,0,LOG,00000,"aborting any active transactions",,,,,,,,"process_pm_shutdown_request, postmaster.c:2291","","postmaster",,0
+2024-11-18 00:06:16.508 GMT,"postgres","postgres",36,"172.18.0.7:39914",673a8436.24,55,"idle",2024-11-18 00:03:02 GMT,2/0,0,FATAL,57P01,"terminating connection due to administrator command",,,,,,,,"ProcessInterrupts, postgres.c:3315","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 00:06:16.531 GMT,"postgres","books_db_dev",38,"172.18.0.7:42780",673a843b.26,79,"idle",2024-11-18 00:03:07 GMT,4/0,0,FATAL,57P01,"terminating connection due to administrator command",,,,,,,,"ProcessInterrupts, postgres.c:3315","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 00:06:16.541 GMT,,,1,,673a81fc.1,8,,2024-11-17 23:53:32 GMT,,0,LOG,00000,"background worker ""logical replication launcher"" (PID 33) exited with exit code 1",,,,,,,,"LogChildExit, postmaster.c:3076","","postmaster",,0
+2024-11-18 00:06:16.626 GMT,,,28,,673a81fc.1c,3,,2024-11-17 23:53:32 GMT,,0,LOG,00000,"shutting down",,,,,,,,"ShutdownXLOG, xlog.c:6611","","checkpointer",,0
+2024-11-18 00:06:16.633 GMT,,,28,,673a81fc.1c,4,,2024-11-17 23:53:32 GMT,,0,LOG,00000,"checkpoint starting: shutdown immediate",,,,,,,,"LogCheckpointStart, xlog.c:6661","","checkpointer",,0
+2024-11-18 00:06:16.772 GMT,,,28,,673a81fc.1c,5,,2024-11-17 23:53:32 GMT,,0,LOG,00000,"checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.051 s, sync=0.001 s, total=0.146 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1934498, redo lsn=0/1934498",,,,,,,,"LogCheckpointEnd, xlog.c:6750","","checkpointer",,0
+2024-11-18 00:06:16.820 GMT,,,1,,673a81fc.1,9,,2024-11-17 23:53:32 GMT,,0,LOG,00000,"database system is shut down",,,,,,,,"UnlinkLockFiles, miscinit.c:1171","","postmaster",,0

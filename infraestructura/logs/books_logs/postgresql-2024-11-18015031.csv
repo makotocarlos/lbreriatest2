@@ -1,0 +1,1453 @@
+2024-11-18 01:50:31.855 GMT,,,1,,673a9d67.1,1,,2024-11-18 01:50:31 GMT,,0,LOG,00000,"starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit",,,,,,,,"PostmasterMain, postmaster.c:1080","","postmaster",,0
+2024-11-18 01:50:31.856 GMT,,,1,,673a9d67.1,2,,2024-11-18 01:50:31 GMT,,0,LOG,00000,"listening on IPv4 address ""0.0.0.0"", port 5432",,,,,,,,"ListenServerPort, pqcomm.c:661","","postmaster",,0
+2024-11-18 01:50:31.857 GMT,,,1,,673a9d67.1,3,,2024-11-18 01:50:31 GMT,,0,LOG,00000,"listening on IPv6 address ""::"", port 5432",,,,,,,,"ListenServerPort, pqcomm.c:661","","postmaster",,0
+2024-11-18 01:50:31.921 GMT,,,1,,673a9d67.1,4,,2024-11-18 01:50:31 GMT,,0,LOG,00000,"listening on Unix socket ""/var/run/postgresql/.s.PGSQL.5432""",,,,,,,,"ListenServerPort, pqcomm.c:657","","postmaster",,0
+2024-11-18 01:50:32.043 GMT,,,30,,673a9d68.1e,1,,2024-11-18 01:50:32 GMT,,0,LOG,00000,"database system was shut down at 2024-11-18 01:47:12 GMT",,,,,,,,"StartupXLOG, xlog.c:5445","","startup",,0
+2024-11-18 01:50:32.191 GMT,,,1,,673a9d67.1,5,,2024-11-18 01:50:31 GMT,,0,LOG,00000,"database system is ready to accept connections",,,,,,,,"process_pm_child_exit, postmaster.c:2483","","postmaster",,0
+2024-11-18 01:55:20.770 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,1,"idle",2024-11-18 01:55:20 GMT,0/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.821 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,2,"SELECT",2024-11-18 01:55:20 GMT,0/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.825 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,3,"SET",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 55.505 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.826 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,4,"idle",2024-11-18 01:55:20 GMT,0/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.828 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,5,"SELECT",2024-11-18 01:55:20 GMT,0/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.828 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,6,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 2.096 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.828 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,7,"idle",2024-11-18 01:55:20 GMT,0/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.870 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,8,"SELECT",2024-11-18 01:55:20 GMT,0/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.875 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,9,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 47.058 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.876 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,10,"idle",2024-11-18 01:55:20 GMT,0/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.892 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,11,"SELECT",2024-11-18 01:55:20 GMT,0/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.893 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,12,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 17.067 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.894 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,13,"idle",2024-11-18 01:55:20 GMT,0/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.936 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,14,"SELECT",2024-11-18 01:55:20 GMT,0/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:20.938 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,15,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 43.917 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:21.053 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,1,"idle",2024-11-18 01:55:20 GMT,1/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.107 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,2,"SELECT",2024-11-18 01:55:20 GMT,1/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.110 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,3,"SET",2024-11-18 01:55:20 GMT,1/0,0,LOG,00000,"duration: 56.783 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.111 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,4,"idle",2024-11-18 01:55:20 GMT,1/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.113 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,5,"SELECT",2024-11-18 01:55:20 GMT,1/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.113 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,6,"SELECT",2024-11-18 01:55:20 GMT,1/0,0,LOG,00000,"duration: 2.313 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.114 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,7,"idle",2024-11-18 01:55:20 GMT,1/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.149 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,8,"SELECT",2024-11-18 01:55:20 GMT,1/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.154 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,9,"SELECT",2024-11-18 01:55:20 GMT,1/0,0,LOG,00000,"duration: 40.525 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.155 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,10,"idle",2024-11-18 01:55:20 GMT,1/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.170 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,11,"SELECT",2024-11-18 01:55:20 GMT,1/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.172 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,12,"SELECT",2024-11-18 01:55:20 GMT,1/0,0,LOG,00000,"duration: 16.366 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.173 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,13,"idle",2024-11-18 01:55:20 GMT,1/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.207 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,14,"SELECT",2024-11-18 01:55:20 GMT,1/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.208 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,15,"SELECT",2024-11-18 01:55:20 GMT,1/0,0,LOG,00000,"duration: 34.944 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 01:55:21.313 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,1,"idle",2024-11-18 01:55:21 GMT,2/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.364 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,2,"SELECT",2024-11-18 01:55:21 GMT,2/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.366 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,3,"SET",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 53.770 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.367 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,4,"idle",2024-11-18 01:55:21 GMT,2/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.369 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,5,"SELECT",2024-11-18 01:55:21 GMT,2/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.370 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,6,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 2.653 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.371 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,7,"idle",2024-11-18 01:55:21 GMT,2/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.409 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,8,"SELECT",2024-11-18 01:55:21 GMT,2/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.413 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,9,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 42.673 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.414 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,10,"idle",2024-11-18 01:55:21 GMT,2/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.430 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,11,"SELECT",2024-11-18 01:55:21 GMT,2/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.431 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,12,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 17.422 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.433 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,13,"idle",2024-11-18 01:55:21 GMT,2/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.461 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,14,"SELECT",2024-11-18 01:55:21 GMT,2/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.462 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,15,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 29.347 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:21.819 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,16,"idle",2024-11-18 01:55:20 GMT,0/7,0,LOG,00000,"statement: SELECT CASE WHEN usesuper
+       THEN pg_catalog.pg_is_in_recovery()
+       ELSE FALSE
+       END as inrecovery,
+       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+       THEN pg_is_wal_replay_paused()
+       ELSE FALSE
+       END as isreplaypaused
+FROM pg_catalog.pg_user WHERE usename=current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:21.825 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,17,"SELECT",2024-11-18 01:55:20 GMT,0/7,0,LOG,00000,"AUDIT: SESSION,6,1,READ,SELECT,,,""SELECT CASE WHEN usesuper
+       THEN pg_catalog.pg_is_in_recovery()
+       ELSE FALSE
+       END as inrecovery,
+       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+       THEN pg_is_wal_replay_paused()
+       ELSE FALSE
+       END as isreplaypaused
+FROM pg_catalog.pg_user WHERE usename=current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:21.825 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,18,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 6.102 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:22.020 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,19,"idle",2024-11-18 01:55:20 GMT,0/8,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:22.055 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,20,"SELECT",2024-11-18 01:55:20 GMT,0/8,0,LOG,00000,"AUDIT: SESSION,7,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:22.057 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,21,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 36.876 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.009 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,22,"idle",2024-11-18 01:55:20 GMT,0/9,0,LOG,00000,"statement: 
+SELECT
+    has_table_privilege(
+      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+    ) has_priviledge
+WHERE EXISTS(
+    SELECT has_schema_privilege('pgagent', 'USAGE')
+    WHERE EXISTS(
+        SELECT cl.oid FROM pg_catalog.pg_class cl
+        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+        WHERE relname='pga_job' AND nspname='pgagent'
+    )
+)
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.027 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,23,"SELECT",2024-11-18 01:55:20 GMT,0/9,0,LOG,00000,"AUDIT: SESSION,8,1,READ,SELECT,,,""SELECT
+    has_table_privilege(
+      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+    ) has_priviledge
+WHERE EXISTS(
+    SELECT has_schema_privilege('pgagent', 'USAGE')
+    WHERE EXISTS(
+        SELECT cl.oid FROM pg_catalog.pg_class cl
+        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+        WHERE relname='pga_job' AND nspname='pgagent'
+    )
+)"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.028 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,24,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 19.198 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.075 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,25,"idle",2024-11-18 01:55:20 GMT,0/10,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.076 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,26,"SELECT",2024-11-18 01:55:20 GMT,0/10,0,LOG,00000,"AUDIT: SESSION,9,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.076 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,27,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 0.864 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.090 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,28,"idle",2024-11-18 01:55:20 GMT,0/11,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.091 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,29,"SELECT",2024-11-18 01:55:20 GMT,0/11,0,LOG,00000,"AUDIT: SESSION,10,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.092 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,30,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 1.506 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.413 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,31,"idle",2024-11-18 01:55:20 GMT,0/12,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.455 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,32,"SELECT",2024-11-18 01:55:20 GMT,0/12,0,LOG,00000,"AUDIT: SESSION,11,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.461 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,33,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 48.463 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.601 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,34,"idle",2024-11-18 01:55:20 GMT,0/13,0,LOG,00000,"statement: SELECT
+    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+    db.datistemplate AS is_template,
+    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+    descr.description
+FROM
+    pg_catalog.pg_database db
+    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+    )
+WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+
+ORDER BY datname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.629 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,35,"SELECT",2024-11-18 01:55:20 GMT,0/13,0,LOG,00000,"AUDIT: SESSION,12,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+    db.datistemplate AS is_template,
+    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+    descr.description
+FROM
+    pg_catalog.pg_database db
+    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+    )
+WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+
+ORDER BY datname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.632 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,36,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 31.836 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:23.865 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,16,"idle",2024-11-18 01:55:21 GMT,2/7,0,LOG,00000,"statement: 
+            SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+                'edb_job_scheduler', 'dbms_scheduler') ",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:23.883 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,17,"SELECT",2024-11-18 01:55:21 GMT,2/7,0,LOG,00000,"AUDIT: SESSION,6,1,READ,SELECT,,,""SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+                'edb_job_scheduler', 'dbms_scheduler')"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:23.885 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,18,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 19.708 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:23.997 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,19,"idle",2024-11-18 01:55:21 GMT,2/8,0,LOG,00000,"statement: SELECT
+    nsp.oid,
+    nsp.nspname as name,
+    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+    des.description
+FROM
+    pg_catalog.pg_namespace nsp
+    LEFT OUTER JOIN pg_catalog.pg_description des ON
+        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+WHERE
+             nspname NOT LIKE E'pg\\_%' AND
+            NOT (
+(nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1))
+    )
+
+    
+ORDER BY nspname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.048 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,20,"SELECT",2024-11-18 01:55:21 GMT,2/8,0,LOG,00000,"AUDIT: SESSION,7,1,READ,SELECT,,,""SELECT
+    nsp.oid,
+    nsp.nspname as name,
+    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+    des.description
+FROM
+    pg_catalog.pg_namespace nsp
+    LEFT OUTER JOIN pg_catalog.pg_description des ON
+        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+WHERE
+             nspname NOT LIKE E'pg\\_%' AND
+            NOT (
+(nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1))
+    )
+
+    
+ORDER BY nspname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.055 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,21,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 58.101 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.139 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,22,"idle",2024-11-18 01:55:21 GMT,2/9,0,LOG,00000,"statement: SELECT
+    nsp.nspname as schema_name,
+    (nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+    CASE
+    WHEN nsp.nspname = ANY('{information_schema}')
+        THEN false
+    ELSE true END AS db_support
+FROM
+    pg_catalog.pg_namespace nsp
+WHERE
+    nsp.oid = 2200::OID;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.141 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,23,"SELECT",2024-11-18 01:55:21 GMT,2/9,0,LOG,00000,"AUDIT: SESSION,8,1,READ,SELECT,,,""SELECT
+    nsp.nspname as schema_name,
+    (nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+    CASE
+    WHEN nsp.nspname = ANY('{information_schema}')
+        THEN false
+    ELSE true END AS db_support
+FROM
+    pg_catalog.pg_namespace nsp
+WHERE
+    nsp.oid = 2200::OID"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.141 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,24,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 2.185 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.366 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,25,"idle",2024-11-18 01:55:21 GMT,2/10,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.397 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,26,"SELECT",2024-11-18 01:55:21 GMT,2/10,0,LOG,00000,"AUDIT: SESSION,9,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.422 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,27,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 55.470 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.568 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,28,"idle",2024-11-18 01:55:21 GMT,2/11,0,LOG,00000,"statement: SELECT rel.oid, rel.relname AS name,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+    des.description
+FROM pg_catalog.pg_class rel
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+    AND NOT rel.relispartition
+        ORDER BY rel.relname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.593 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,29,"SELECT",2024-11-18 01:55:21 GMT,2/11,0,LOG,00000,"AUDIT: SESSION,10,1,READ,SELECT,,,""SELECT rel.oid, rel.relname AS name,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+    des.description
+FROM pg_catalog.pg_class rel
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+    AND NOT rel.relispartition
+        ORDER BY rel.relname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.594 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,30,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 25.964 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.769 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,31,"idle",2024-11-18 01:55:21 GMT,2/12,0,LOG,00000,"statement: SELECT
+    CASE WHEN c.relkind = 'p' THEN True ELSE False END As ptable
+FROM
+    pg_catalog.pg_class c
+WHERE
+    c.oid = 16403::oid
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.769 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,32,"SELECT",2024-11-18 01:55:21 GMT,2/12,0,LOG,00000,"AUDIT: SESSION,11,1,READ,SELECT,,,""SELECT
+    CASE WHEN c.relkind = 'p' THEN True ELSE False END As ptable
+FROM
+    pg_catalog.pg_class c
+WHERE
+    c.oid = 16403::oid"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:24.769 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,33,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 0.625 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:29.422 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,34,"idle",2024-11-18 01:55:21 GMT,2/13,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:29.435 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,35,"SELECT",2024-11-18 01:55:21 GMT,2/13,0,LOG,00000,"AUDIT: SESSION,12,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:29.438 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,36,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 15.388 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:55:30.608 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,37,"idle",2024-11-18 01:55:20 GMT,0/14,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:30.618 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,38,"SELECT",2024-11-18 01:55:20 GMT,0/14,0,LOG,00000,"AUDIT: SESSION,13,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:30.620 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,39,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 11.764 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:55:32.092 GMT,,,28,,673a9d68.1c,1,,2024-11-18 01:50:32 GMT,,0,LOG,00000,"checkpoint starting: time",,,,,,,,"LogCheckpointStart, xlog.c:6661","","checkpointer",,0
+2024-11-18 01:55:32.214 GMT,,,28,,673a9d68.1c,2,,2024-11-18 01:50:32 GMT,,0,LOG,00000,"checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.035 s, sync=0.012 s, total=0.123 s; sync files=2, longest=0.007 s, average=0.006 s; distance=0 kB, estimate=0 kB; lsn=0/2E76B50, redo lsn=0/2E76AF8",,,,,,,,"LogCheckpointEnd, xlog.c:6750","","checkpointer",,0
+2024-11-18 01:57:47.530 GMT,"postgres","books",58,"172.18.0.3:37172",673a9f1a.3a,1,"PARSE",2024-11-18 01:57:46 GMT,3/2,0,LOG,00000,"duration: 19.659 ms  parse s0: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-18 01:57:47.543 GMT,"postgres","books",58,"172.18.0.3:37172",673a9f1a.3a,2,"BIND",2024-11-18 01:57:46 GMT,3/3,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT """"public"""".""""Books"""".""""id"""", """"public"""".""""Books"""".""""title"""", """"public"""".""""Books"""".""""author"""", """"public"""".""""Books"""".""""description"""", """"public"""".""""Books"""".""""publishedAt"""" FROM """"public"""".""""Books"""" WHERE 1=1 OFFSET $1"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-18 01:57:47.544 GMT,"postgres","books",58,"172.18.0.3:37172",673a9f1a.3a,3,"BIND",2024-11-18 01:57:46 GMT,3/3,0,LOG,00000,"duration: 13.334 ms  bind s0: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-18 01:57:47.544 GMT,"postgres","books",58,"172.18.0.3:37172",673a9f1a.3a,4,"SELECT",2024-11-18 01:57:46 GMT,3/3,0,LOG,00000,"execute s0: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-18 01:57:47.544 GMT,"postgres","books",58,"172.18.0.3:37172",673a9f1a.3a,5,"SELECT",2024-11-18 01:57:46 GMT,3/3,0,LOG,00000,"duration: 0.060 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-18 01:58:01.043 GMT,"postgres","books",60,"172.18.0.3:50330",673a9f28.3c,1,"PARSE",2024-11-18 01:58:00 GMT,4/2,0,LOG,00000,"duration: 1.277 ms  parse s1: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-18 01:58:01.047 GMT,"postgres","books",60,"172.18.0.3:50330",673a9f28.3c,2,"BIND",2024-11-18 01:58:00 GMT,4/3,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT """"public"""".""""Books"""".""""id"""", """"public"""".""""Books"""".""""title"""", """"public"""".""""Books"""".""""author"""", """"public"""".""""Books"""".""""description"""", """"public"""".""""Books"""".""""publishedAt"""" FROM """"public"""".""""Books"""" WHERE 1=1 OFFSET $1"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-18 01:58:01.048 GMT,"postgres","books",60,"172.18.0.3:50330",673a9f28.3c,3,"BIND",2024-11-18 01:58:00 GMT,4/3,0,LOG,00000,"duration: 4.239 ms  bind s1: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-18 01:58:01.048 GMT,"postgres","books",60,"172.18.0.3:50330",673a9f28.3c,4,"SELECT",2024-11-18 01:58:00 GMT,4/3,0,LOG,00000,"execute s1: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-18 01:58:01.048 GMT,"postgres","books",60,"172.18.0.3:50330",673a9f28.3c,5,"SELECT",2024-11-18 01:58:00 GMT,4/3,0,LOG,00000,"duration: 0.048 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-18 01:58:06.166 GMT,"postgres","books",61,"172.18.0.3:41406",673a9f2e.3d,1,"PARSE",2024-11-18 01:58:06 GMT,5/2,0,LOG,00000,"duration: 3.254 ms  parse s2: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE (""public"".""Books"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-18 01:58:06.183 GMT,"postgres","books",61,"172.18.0.3:41406",673a9f2e.3d,2,"BIND",2024-11-18 01:58:06 GMT,5/3,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT """"public"""".""""Books"""".""""id"""", """"public"""".""""Books"""".""""title"""", """"public"""".""""Books"""".""""author"""", """"public"""".""""Books"""".""""description"""", """"public"""".""""Books"""".""""publishedAt"""" FROM """"public"""".""""Books"""" WHERE (""""public"""".""""Books"""".""""id"""" = $1 AND 1=1) LIMIT $2 OFFSET $3"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-18 01:58:06.183 GMT,"postgres","books",61,"172.18.0.3:41406",673a9f2e.3d,3,"BIND",2024-11-18 01:58:06 GMT,5/3,0,LOG,00000,"duration: 6.032 ms  bind s2: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE (""public"".""Books"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '1', $2 = '1', $3 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-18 01:58:06.183 GMT,"postgres","books",61,"172.18.0.3:41406",673a9f2e.3d,4,"SELECT",2024-11-18 01:58:06 GMT,5/3,0,LOG,00000,"execute s2: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE (""public"".""Books"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3","Parameters: $1 = '1', $2 = '1', $3 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-18 01:58:06.183 GMT,"postgres","books",61,"172.18.0.3:41406",673a9f2e.3d,5,"SELECT",2024-11-18 01:58:06 GMT,5/3,0,LOG,00000,"duration: 0.283 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-18 01:58:39.006 GMT,"postgres","books",64,"172.18.0.3:55498",673a9f4e.40,1,"PARSE",2024-11-18 01:58:38 GMT,6/2,0,LOG,00000,"duration: 7.904 ms  parse s3: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-18 01:58:39.012 GMT,"postgres","books",64,"172.18.0.3:55498",673a9f4e.40,2,"BIND",2024-11-18 01:58:38 GMT,6/3,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT """"public"""".""""Books"""".""""id"""", """"public"""".""""Books"""".""""title"""", """"public"""".""""Books"""".""""author"""", """"public"""".""""Books"""".""""description"""", """"public"""".""""Books"""".""""publishedAt"""" FROM """"public"""".""""Books"""" WHERE 1=1 OFFSET $1"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-18 01:58:39.012 GMT,"postgres","books",64,"172.18.0.3:55498",673a9f4e.40,3,"BIND",2024-11-18 01:58:38 GMT,6/3,0,LOG,00000,"duration: 5.406 ms  bind s3: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-18 01:58:39.012 GMT,"postgres","books",64,"172.18.0.3:55498",673a9f4e.40,4,"SELECT",2024-11-18 01:58:38 GMT,6/3,0,LOG,00000,"execute s3: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-18 01:58:39.012 GMT,"postgres","books",64,"172.18.0.3:55498",673a9f4e.40,5,"SELECT",2024-11-18 01:58:38 GMT,6/3,0,LOG,00000,"duration: 0.055 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-18 01:59:26.345 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,40,"idle",2024-11-18 01:55:20 GMT,0/15,0,LOG,00000,"statement: SELECT CASE WHEN usesuper
+       THEN pg_catalog.pg_is_in_recovery()
+       ELSE FALSE
+       END as inrecovery,
+       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+       THEN pg_is_wal_replay_paused()
+       ELSE FALSE
+       END as isreplaypaused
+FROM pg_catalog.pg_user WHERE usename=current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:26.347 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,41,"SELECT",2024-11-18 01:55:20 GMT,0/15,0,LOG,00000,"AUDIT: SESSION,14,1,READ,SELECT,,,""SELECT CASE WHEN usesuper
+       THEN pg_catalog.pg_is_in_recovery()
+       ELSE FALSE
+       END as inrecovery,
+       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+       THEN pg_is_wal_replay_paused()
+       ELSE FALSE
+       END as isreplaypaused
+FROM pg_catalog.pg_user WHERE usename=current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:26.347 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,42,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 3.227 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:26.353 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,43,"idle",2024-11-18 01:55:20 GMT,0/16,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:26.355 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,44,"SELECT",2024-11-18 01:55:20 GMT,0/16,0,LOG,00000,"AUDIT: SESSION,15,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:26.355 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,45,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 2.472 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:27.802 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,46,"idle",2024-11-18 01:55:20 GMT,0/17,0,LOG,00000,"statement: 
+SELECT
+    has_table_privilege(
+      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+    ) has_priviledge
+WHERE EXISTS(
+    SELECT has_schema_privilege('pgagent', 'USAGE')
+    WHERE EXISTS(
+        SELECT cl.oid FROM pg_catalog.pg_class cl
+        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+        WHERE relname='pga_job' AND nspname='pgagent'
+    )
+)
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:27.803 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,47,"SELECT",2024-11-18 01:55:20 GMT,0/17,0,LOG,00000,"AUDIT: SESSION,16,1,READ,SELECT,,,""SELECT
+    has_table_privilege(
+      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+    ) has_priviledge
+WHERE EXISTS(
+    SELECT has_schema_privilege('pgagent', 'USAGE')
+    WHERE EXISTS(
+        SELECT cl.oid FROM pg_catalog.pg_class cl
+        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+        WHERE relname='pga_job' AND nspname='pgagent'
+    )
+)"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:27.803 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,48,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 10.264 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:27.850 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,49,"idle",2024-11-18 01:55:20 GMT,0/18,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:27.850 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,50,"SELECT",2024-11-18 01:55:20 GMT,0/18,0,LOG,00000,"AUDIT: SESSION,17,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:27.851 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,51,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 0.875 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:27.862 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,52,"idle",2024-11-18 01:55:20 GMT,0/19,0,LOG,00000,"statement: SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:27.863 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,53,"SELECT",2024-11-18 01:55:20 GMT,0/19,0,LOG,00000,"AUDIT: SESSION,18,1,READ,SELECT,,,""SELECT CASE
+    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+    THEN 'pgd'
+    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+    THEN 'log'
+    ELSE NULL
+END as type"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:27.863 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,54,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 0.891 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:27.998 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,55,"idle",2024-11-18 01:55:20 GMT,0/20,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:28.010 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,56,"SELECT",2024-11-18 01:55:20 GMT,0/20,0,LOG,00000,"AUDIT: SESSION,19,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:28.013 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,57,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 14.704 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:28.172 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,58,"idle",2024-11-18 01:55:20 GMT,0/21,0,LOG,00000,"statement: SELECT
+    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+    db.datistemplate AS is_template,
+    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+    descr.description
+FROM
+    pg_catalog.pg_database db
+    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+    )
+WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+
+ORDER BY datname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:28.173 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,59,"SELECT",2024-11-18 01:55:20 GMT,0/21,0,LOG,00000,"AUDIT: SESSION,20,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+    db.datistemplate AS is_template,
+    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+    descr.description
+FROM
+    pg_catalog.pg_database db
+    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+    )
+WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+
+ORDER BY datname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:28.173 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,60,"SELECT",2024-11-18 01:55:20 GMT,0/0,0,LOG,00000,"duration: 1.633 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 01:59:28.391 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,37,"idle",2024-11-18 01:55:21 GMT,2/14,0,LOG,00000,"statement: 
+            SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+                'edb_job_scheduler', 'dbms_scheduler') ",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.392 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,38,"SELECT",2024-11-18 01:55:21 GMT,2/14,0,LOG,00000,"AUDIT: SESSION,13,1,READ,SELECT,,,""SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+                'edb_job_scheduler', 'dbms_scheduler')"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.393 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,39,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 1.232 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.462 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,40,"idle",2024-11-18 01:55:21 GMT,2/15,0,LOG,00000,"statement: SELECT
+    nsp.oid,
+    nsp.nspname as name,
+    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+    des.description
+FROM
+    pg_catalog.pg_namespace nsp
+    LEFT OUTER JOIN pg_catalog.pg_description des ON
+        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+WHERE
+             nspname NOT LIKE E'pg\\_%' AND
+            NOT (
+(nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1))
+    )
+
+    
+ORDER BY nspname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.464 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,41,"SELECT",2024-11-18 01:55:21 GMT,2/15,0,LOG,00000,"AUDIT: SESSION,14,1,READ,SELECT,,,""SELECT
+    nsp.oid,
+    nsp.nspname as name,
+    pg_catalog.has_schema_privilege(nsp.oid, 'CREATE') as can_create,
+    pg_catalog.has_schema_privilege(nsp.oid, 'USAGE') as has_usage,
+    des.description
+FROM
+    pg_catalog.pg_namespace nsp
+    LEFT OUTER JOIN pg_catalog.pg_description des ON
+        (des.objoid=nsp.oid AND des.classoid='pg_namespace'::regclass)
+WHERE
+             nspname NOT LIKE E'pg\\_%' AND
+            NOT (
+(nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1))
+    )
+
+    
+ORDER BY nspname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.465 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,42,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 3.605 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.536 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,43,"idle",2024-11-18 01:55:21 GMT,2/16,0,LOG,00000,"statement: SELECT
+    nsp.nspname as schema_name,
+    (nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+    CASE
+    WHEN nsp.nspname = ANY('{information_schema}')
+        THEN false
+    ELSE true END AS db_support
+FROM
+    pg_catalog.pg_namespace nsp
+WHERE
+    nsp.oid = 2200::OID;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.537 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,44,"SELECT",2024-11-18 01:55:21 GMT,2/16,0,LOG,00000,"AUDIT: SESSION,15,1,READ,SELECT,,,""SELECT
+    nsp.nspname as schema_name,
+    (nsp.nspname = 'pg_catalog' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pg_class' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'pgagent' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'pga_job' AND
+            relnamespace = nsp.oid LIMIT 1)) OR
+    (nsp.nspname = 'information_schema' AND EXISTS
+        (SELECT 1 FROM pg_catalog.pg_class WHERE relname = 'tables' AND
+            relnamespace = nsp.oid LIMIT 1)) AS is_catalog,
+    CASE
+    WHEN nsp.nspname = ANY('{information_schema}')
+        THEN false
+    ELSE true END AS db_support
+FROM
+    pg_catalog.pg_namespace nsp
+WHERE
+    nsp.oid = 2200::OID"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.537 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,45,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 1.370 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.778 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,46,"idle",2024-11-18 01:55:21 GMT,2/17,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.791 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,47,"SELECT",2024-11-18 01:55:21 GMT,2/17,0,LOG,00000,"AUDIT: SESSION,16,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.793 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,48,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 15.158 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.939 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,49,"idle",2024-11-18 01:55:21 GMT,2/18,0,LOG,00000,"statement: SELECT rel.oid, rel.relname AS name,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+    des.description
+FROM pg_catalog.pg_class rel
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+    AND NOT rel.relispartition
+        ORDER BY rel.relname;",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.941 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,50,"SELECT",2024-11-18 01:55:21 GMT,2/18,0,LOG,00000,"AUDIT: SESSION,17,1,READ,SELECT,,,""SELECT rel.oid, rel.relname AS name,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE) AS triggercount,
+    (SELECT count(*) FROM pg_catalog.pg_trigger WHERE tgrelid=rel.oid AND tgisinternal = FALSE AND tgenabled = 'O') AS has_enable_triggers,
+    (CASE WHEN rel.relkind = 'p' THEN true ELSE false END) AS is_partitioned,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhrelid=rel.oid LIMIT 1) as is_inherits,
+    (SELECT count(1) FROM pg_catalog.pg_inherits WHERE inhparent=rel.oid LIMIT 1) as is_inherited,
+    des.description
+FROM pg_catalog.pg_class rel
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=rel.oid AND des.objsubid=0 AND des.classoid='pg_class'::regclass)
+    WHERE rel.relkind IN ('r','s','t','p') AND rel.relnamespace = 2200::oid
+    AND NOT rel.relispartition
+        ORDER BY rel.relname"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:28.941 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,51,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 2.011 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:33.842 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,52,"idle",2024-11-18 01:55:21 GMT,2/19,0,LOG,00000,"statement: /*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Totales"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS ""Activa"",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS ""Inactiva""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Transacciones"",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Cometer"",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Retroceder""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Insersiones"",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Actualizaciones"",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Borrados""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Recuperado"",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Retornado""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Leidas"",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS ""Tocadas""
+) t
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:33.862 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,53,"SELECT",2024-11-18 01:55:21 GMT,2/19,0,LOG,00000,"AUDIT: SESSION,18,1,READ,SELECT,,,""/*pga4dash*/
+SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Totales"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS """"Activa"""",
+   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388))  AS """"Inactiva""""
+) t
+UNION ALL
+SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Transacciones"""",
+   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Cometer"""",
+   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Retroceder""""
+) t
+UNION ALL
+SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Insersiones"""",
+   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Actualizaciones"""",
+   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Borrados""""
+) t
+UNION ALL
+SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Recuperado"""",
+   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Retornado""""
+) t
+UNION ALL
+SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+FROM (SELECT
+   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Leidas"""",
+   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16388)) AS """"Tocadas""""
+) t"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:33.865 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,54,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 22.904 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:35.807 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,1,"idle",2024-11-18 01:59:35 GMT,7/2,0,LOG,00000,"statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.809 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,2,"SELECT",2024-11-18 01:59:35 GMT,7/2,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.813 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,3,"SET",2024-11-18 01:59:35 GMT,7/0,0,LOG,00000,"duration: 6.365 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.815 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,4,"idle",2024-11-18 01:59:35 GMT,7/3,0,LOG,00000,"statement: SELECT version()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.816 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,5,"SELECT",2024-11-18 01:59:35 GMT,7/3,0,LOG,00000,"AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.816 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,6,"SELECT",2024-11-18 01:59:35 GMT,7/0,0,LOG,00000,"duration: 0.638 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.818 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,7,"idle",2024-11-18 01:59:35 GMT,7/4,0,LOG,00000,"statement: 
+SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.825 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,8,"SELECT",2024-11-18 01:59:35 GMT,7/4,0,LOG,00000,"AUDIT: SESSION,3,1,READ,SELECT,,,""SELECT
+    db.oid as did, db.datname, db.datallowconn,
+    pg_encoding_to_char(db.encoding) AS serverencoding,
+    has_database_privilege(db.oid, 'CREATE') as cancreate,
+    datistemplate
+FROM
+    pg_catalog.pg_database db
+WHERE db.datname = current_database()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.826 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,9,"SELECT",2024-11-18 01:59:35 GMT,7/0,0,LOG,00000,"duration: 7.705 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.829 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,10,"idle",2024-11-18 01:59:35 GMT,7/5,0,LOG,00000,"statement: 
+        SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.830 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,11,"SELECT",2024-11-18 01:59:35 GMT,7/5,0,LOG,00000,"AUDIT: SESSION,4,1,READ,SELECT,,,""SELECT
+             gss_authenticated, encrypted
+        FROM
+            pg_catalog.pg_stat_gssapi
+        WHERE pid = pg_backend_pid()"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.830 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,12,"SELECT",2024-11-18 01:59:35 GMT,7/0,0,LOG,00000,"duration: 1.670 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.832 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,13,"idle",2024-11-18 01:59:35 GMT,7/6,0,LOG,00000,"statement: 
+        SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.847 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,14,"SELECT",2024-11-18 01:59:35 GMT,7/6,0,LOG,00000,"AUDIT: SESSION,5,1,READ,SELECT,,,""SELECT
+            roles.oid as id, roles.rolname as name,
+            roles.rolsuper as is_superuser,
+            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+            can_create_role,
+            CASE WHEN roles.rolsuper THEN true
+            ELSE roles.rolcreatedb END as can_create_db,
+            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+                WHERE pg_roles.oid = roles.oid
+            UNION ALL
+            SELECT m.roleid,pgr.rolname FROM cte cte_1
+                JOIN pg_auth_members m ON m.member = cte_1.oid
+                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+            SELECT rolname  FROM cte)) THEN True
+            ELSE False END as can_signal_backend
+        FROM
+            pg_catalog.pg_roles as roles
+        WHERE
+            rolname = current_user"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.848 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,15,"SELECT",2024-11-18 01:59:35 GMT,7/0,0,LOG,00000,"duration: 15.642 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:35.858 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,55,"idle",2024-11-18 01:55:21 GMT,2/20,0,LOG,00000,"statement: SELECT n.nspname, r.relname
+FROM pg_catalog.pg_class r
+    LEFT JOIN pg_catalog.pg_namespace n ON (r.relnamespace = n.oid)
+WHERE r.oid = 16403;
+",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:35.859 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,56,"SELECT",2024-11-18 01:55:21 GMT,2/20,0,LOG,00000,"AUDIT: SESSION,19,1,READ,SELECT,,,""SELECT n.nspname, r.relname
+FROM pg_catalog.pg_class r
+    LEFT JOIN pg_catalog.pg_namespace n ON (r.relnamespace = n.oid)
+WHERE r.oid = 16403"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:35.859 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,57,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 0.932 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:36.005 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,58,"idle",2024-11-18 01:55:21 GMT,2/21,0,LOG,00000,"statement: SELECT at.attname, at.attnum, ty.typname
+FROM pg_catalog.pg_attribute at LEFT JOIN pg_catalog.pg_type ty ON (ty.oid = at.atttypid)
+JOIN pg_catalog.pg_class as cl ON cl.oid=AT.attrelid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=cl.relnamespace
+WHERE
+    cl.relname = 'Books' AND nsp.nspname='public' AND
+attnum = ANY (
+(SELECT con.conkey FROM pg_catalog.pg_class rel LEFT OUTER JOIN pg_catalog.pg_constraint con ON con.conrelid=rel.oid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=REL.relnamespace
+AND con.contype='p' WHERE rel.relkind IN ('r','s','t', 'p') AND
+    rel.relname = 'Books' AND nsp.nspname='public'
+)::oid[])",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:36.081 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,59,"SELECT",2024-11-18 01:55:21 GMT,2/21,0,LOG,00000,"AUDIT: SESSION,20,1,READ,SELECT,,,""SELECT at.attname, at.attnum, ty.typname
+FROM pg_catalog.pg_attribute at LEFT JOIN pg_catalog.pg_type ty ON (ty.oid = at.atttypid)
+JOIN pg_catalog.pg_class as cl ON cl.oid=AT.attrelid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=cl.relnamespace
+WHERE
+    cl.relname = 'Books' AND nsp.nspname='public' AND
+attnum = ANY (
+(SELECT con.conkey FROM pg_catalog.pg_class rel LEFT OUTER JOIN pg_catalog.pg_constraint con ON con.conrelid=rel.oid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=REL.relnamespace
+AND con.contype='p' WHERE rel.relkind IN ('r','s','t', 'p') AND
+    rel.relname = 'Books' AND nsp.nspname='public'
+)::oid[])"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:36.084 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,60,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 78.705 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:36.093 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,61,"idle",2024-11-18 01:55:21 GMT,2/22,0,LOG,00000,"statement: SELECT at.attname, at.attnum, ty.typname
+FROM pg_catalog.pg_attribute at LEFT JOIN pg_catalog.pg_type ty ON (ty.oid = at.atttypid)
+JOIN pg_catalog.pg_class as cl ON cl.oid=AT.attrelid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=cl.relnamespace
+WHERE
+    cl.relname = 'Books' AND nsp.nspname='public' AND
+attnum = ANY (
+(SELECT con.conkey FROM pg_catalog.pg_class rel LEFT OUTER JOIN pg_catalog.pg_constraint con ON con.conrelid=rel.oid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=REL.relnamespace
+AND con.contype='p' WHERE rel.relkind IN ('r','s','t', 'p') AND
+    rel.relname = 'Books' AND nsp.nspname='public'
+)::oid[])",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:36.095 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,62,"SELECT",2024-11-18 01:55:21 GMT,2/22,0,LOG,00000,"AUDIT: SESSION,21,1,READ,SELECT,,,""SELECT at.attname, at.attnum, ty.typname
+FROM pg_catalog.pg_attribute at LEFT JOIN pg_catalog.pg_type ty ON (ty.oid = at.atttypid)
+JOIN pg_catalog.pg_class as cl ON cl.oid=AT.attrelid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=cl.relnamespace
+WHERE
+    cl.relname = 'Books' AND nsp.nspname='public' AND
+attnum = ANY (
+(SELECT con.conkey FROM pg_catalog.pg_class rel LEFT OUTER JOIN pg_catalog.pg_constraint con ON con.conrelid=rel.oid
+JOIN pg_catalog.pg_namespace as nsp ON nsp.oid=REL.relnamespace
+AND con.contype='p' WHERE rel.relkind IN ('r','s','t', 'p') AND
+    rel.relname = 'Books' AND nsp.nspname='public'
+)::oid[])"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:36.095 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,63,"SELECT",2024-11-18 01:55:21 GMT,2/0,0,LOG,00000,"duration: 2.593 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 01:59:36.105 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,16,"idle",2024-11-18 01:59:35 GMT,7/7,0,LOG,00000,"statement: SELECT * FROM public.""Books""
+ORDER BY id ASC ",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:36.112 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,17,"SELECT",2024-11-18 01:59:35 GMT,7/7,0,LOG,00000,"AUDIT: SESSION,6,1,READ,SELECT,,,""SELECT * FROM public.""""Books""""
+ORDER BY id ASC"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:36.113 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,18,"SELECT",2024-11-18 01:59:35 GMT,7/0,0,LOG,00000,"duration: 7.656 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:36.295 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,19,"idle",2024-11-18 01:59:35 GMT,7/8,0,LOG,00000,"statement: SELECT DISTINCT att.attname as name, att.attnum as OID, pg_catalog.format_type(ty.oid,NULL) AS datatype,
+att.attnotnull as not_null, att.atthasdef as has_default_val, des.description, seq.seqtypid
+FROM pg_catalog.pg_attribute att
+    JOIN pg_catalog.pg_type ty ON ty.oid=atttypid
+    JOIN pg_catalog.pg_namespace tn ON tn.oid=ty.typnamespace
+    JOIN pg_catalog.pg_class cl ON cl.oid=att.attrelid
+    JOIN pg_catalog.pg_namespace na ON na.oid=cl.relnamespace
+    LEFT OUTER JOIN pg_catalog.pg_type et ON et.oid=ty.typelem
+    LEFT OUTER JOIN pg_catalog.pg_attrdef def ON adrelid=att.attrelid AND adnum=att.attnum
+    LEFT OUTER JOIN (pg_catalog.pg_depend JOIN pg_catalog.pg_class cs ON classid='pg_class'::regclass AND objid=cs.oid AND cs.relkind='S') ON refobjid=att.attrelid AND refobjsubid=att.attnum
+    LEFT OUTER JOIN pg_catalog.pg_namespace ns ON ns.oid=cs.relnamespace
+    LEFT OUTER JOIN pg_catalog.pg_index pi ON pi.indrelid=att.attrelid AND indisprimary
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=att.attrelid AND des.objsubid=att.attnum AND des.classoid='pg_class'::regclass)
+    LEFT OUTER JOIN pg_catalog.pg_sequence seq ON cs.oid=seq.seqrelid
+WHERE
+
+    att.attrelid = 16403::oid
+    AND att.attnum > 0
+    AND att.attisdropped IS FALSE
+ORDER BY att.attnum",,,,,,,,"exec_simple_query, postgres.c:1075","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:36.368 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,20,"SELECT",2024-11-18 01:59:35 GMT,7/8,0,LOG,00000,"AUDIT: SESSION,7,1,READ,SELECT,,,""SELECT DISTINCT att.attname as name, att.attnum as OID, pg_catalog.format_type(ty.oid,NULL) AS datatype,
+att.attnotnull as not_null, att.atthasdef as has_default_val, des.description, seq.seqtypid
+FROM pg_catalog.pg_attribute att
+    JOIN pg_catalog.pg_type ty ON ty.oid=atttypid
+    JOIN pg_catalog.pg_namespace tn ON tn.oid=ty.typnamespace
+    JOIN pg_catalog.pg_class cl ON cl.oid=att.attrelid
+    JOIN pg_catalog.pg_namespace na ON na.oid=cl.relnamespace
+    LEFT OUTER JOIN pg_catalog.pg_type et ON et.oid=ty.typelem
+    LEFT OUTER JOIN pg_catalog.pg_attrdef def ON adrelid=att.attrelid AND adnum=att.attnum
+    LEFT OUTER JOIN (pg_catalog.pg_depend JOIN pg_catalog.pg_class cs ON classid='pg_class'::regclass AND objid=cs.oid AND cs.relkind='S') ON refobjid=att.attrelid AND refobjsubid=att.attnum
+    LEFT OUTER JOIN pg_catalog.pg_namespace ns ON ns.oid=cs.relnamespace
+    LEFT OUTER JOIN pg_catalog.pg_index pi ON pi.indrelid=att.attrelid AND indisprimary
+    LEFT OUTER JOIN pg_catalog.pg_description des ON (des.objoid=att.attrelid AND des.objsubid=att.attnum AND des.classoid='pg_class'::regclass)
+    LEFT OUTER JOIN pg_catalog.pg_sequence seq ON cs.oid=seq.seqrelid
+WHERE
+
+    att.attrelid = 16403::oid
+    AND att.attnum > 0
+    AND att.attisdropped IS FALSE
+ORDER BY att.attnum"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:36.374 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,21,"SELECT",2024-11-18 01:59:35 GMT,7/0,0,LOG,00000,"duration: 79.139 ms",,,,,,,,"exec_simple_query, postgres.c:1368","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:36.384 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,22,"PARSE",2024-11-18 01:59:35 GMT,7/9,0,LOG,00000,"duration: 0.458 ms  parse <unnamed>: SELECT oid, pg_catalog.format_type(oid, NULL) AS typname FROM pg_catalog.pg_type WHERE oid = ANY($1) ORDER BY oid;",,,,,,,,"exec_parse_message, postgres.c:1609","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:36.384 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,23,"BIND",2024-11-18 01:59:35 GMT,7/9,0,LOG,00000,"AUDIT: SESSION,8,1,READ,SELECT,,,""SELECT oid, pg_catalog.format_type(oid, NULL) AS typname FROM pg_catalog.pg_type WHERE oid = ANY($1) ORDER BY oid"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:36.384 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,24,"BIND",2024-11-18 01:59:35 GMT,7/9,0,LOG,00000,"duration: 0.496 ms  bind <unnamed>: SELECT oid, pg_catalog.format_type(oid, NULL) AS typname FROM pg_catalog.pg_type WHERE oid = ANY($1) ORDER BY oid;","Parameters: $1 = '{23,25,25,25,1114}'",,,,,,,"exec_bind_message, postgres.c:2075","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:36.385 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,25,"SELECT",2024-11-18 01:59:35 GMT,7/9,0,LOG,00000,"execute <unnamed>: SELECT oid, pg_catalog.format_type(oid, NULL) AS typname FROM pg_catalog.pg_type WHERE oid = ANY($1) ORDER BY oid;","Parameters: $1 = '{23,25,25,25,1114}'",,,,,,,"exec_execute_message, postgres.c:2212","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:36.385 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,26,"SELECT",2024-11-18 01:59:35 GMT,7/9,0,LOG,00000,"duration: 0.490 ms",,,,,,,,"exec_execute_message, postgres.c:2332","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 01:59:51.063 GMT,"postgres","books",69,"172.18.0.3:39808",673a9f96.45,1,"PARSE",2024-11-18 01:59:50 GMT,8/2,0,LOG,00000,"duration: 1.438 ms  parse s4: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-18 01:59:51.096 GMT,"postgres","books",69,"172.18.0.3:39808",673a9f96.45,2,"BIND",2024-11-18 01:59:50 GMT,8/3,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT """"public"""".""""Books"""".""""id"""", """"public"""".""""Books"""".""""title"""", """"public"""".""""Books"""".""""author"""", """"public"""".""""Books"""".""""description"""", """"public"""".""""Books"""".""""publishedAt"""" FROM """"public"""".""""Books"""" WHERE 1=1 OFFSET $1"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-18 01:59:51.097 GMT,"postgres","books",69,"172.18.0.3:39808",673a9f96.45,3,"BIND",2024-11-18 01:59:50 GMT,8/3,0,LOG,00000,"duration: 3.378 ms  bind s4: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-18 01:59:51.097 GMT,"postgres","books",69,"172.18.0.3:39808",673a9f96.45,4,"SELECT",2024-11-18 01:59:50 GMT,8/3,0,LOG,00000,"execute s4: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-18 01:59:51.097 GMT,"postgres","books",69,"172.18.0.3:39808",673a9f96.45,5,"SELECT",2024-11-18 01:59:50 GMT,8/3,0,LOG,00000,"duration: 0.120 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-18 01:59:52.495 GMT,"postgres","books",70,"172.18.0.3:39810",673a9f98.46,1,"PARSE",2024-11-18 01:59:52 GMT,9/2,0,LOG,00000,"duration: 1.403 ms  parse s5: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-18 01:59:52.500 GMT,"postgres","books",70,"172.18.0.3:39810",673a9f98.46,2,"BIND",2024-11-18 01:59:52 GMT,9/3,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT """"public"""".""""Books"""".""""id"""", """"public"""".""""Books"""".""""title"""", """"public"""".""""Books"""".""""author"""", """"public"""".""""Books"""".""""description"""", """"public"""".""""Books"""".""""publishedAt"""" FROM """"public"""".""""Books"""" WHERE 1=1 OFFSET $1"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-18 01:59:52.501 GMT,"postgres","books",70,"172.18.0.3:39810",673a9f98.46,3,"BIND",2024-11-18 01:59:52 GMT,9/3,0,LOG,00000,"duration: 4.350 ms  bind s5: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-18 01:59:52.501 GMT,"postgres","books",70,"172.18.0.3:39810",673a9f98.46,4,"SELECT",2024-11-18 01:59:52 GMT,9/3,0,LOG,00000,"execute s5: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-18 01:59:52.501 GMT,"postgres","books",70,"172.18.0.3:39810",673a9f98.46,5,"SELECT",2024-11-18 01:59:52 GMT,9/3,0,LOG,00000,"duration: 0.074 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-18 01:59:53.262 GMT,"postgres","books",72,"172.18.0.3:39826",673a9f99.48,1,"PARSE",2024-11-18 01:59:53 GMT,10/2,0,LOG,00000,"duration: 0.972 ms  parse s6: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",,,,,,,,"exec_parse_message, postgres.c:1609","","client backend",,0
+2024-11-18 01:59:53.266 GMT,"postgres","books",72,"172.18.0.3:39826",673a9f99.48,2,"BIND",2024-11-18 01:59:53 GMT,10/3,0,LOG,00000,"AUDIT: SESSION,1,1,READ,SELECT,,,""SELECT """"public"""".""""Books"""".""""id"""", """"public"""".""""Books"""".""""title"""", """"public"""".""""Books"""".""""author"""", """"public"""".""""Books"""".""""description"""", """"public"""".""""Books"""".""""publishedAt"""" FROM """"public"""".""""Books"""" WHERE 1=1 OFFSET $1"",<not logged>",,,,,,,,"log_audit_event, pgaudit.c:875","","client backend",,0
+2024-11-18 01:59:53.266 GMT,"postgres","books",72,"172.18.0.3:39826",673a9f99.48,3,"BIND",2024-11-18 01:59:53 GMT,10/3,0,LOG,00000,"duration: 2.899 ms  bind s6: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_bind_message, postgres.c:2075","","client backend",,0
+2024-11-18 01:59:53.266 GMT,"postgres","books",72,"172.18.0.3:39826",673a9f99.48,4,"SELECT",2024-11-18 01:59:53 GMT,10/3,0,LOG,00000,"execute s6: SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""publishedAt"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1","Parameters: $1 = '0'",,,,,,,"exec_execute_message, postgres.c:2212","","client backend",,0
+2024-11-18 01:59:53.266 GMT,"postgres","books",72,"172.18.0.3:39826",673a9f99.48,5,"SELECT",2024-11-18 01:59:53 GMT,10/3,0,LOG,00000,"duration: 0.079 ms",,,,,,,,"exec_execute_message, postgres.c:2332","","client backend",,0
+2024-11-18 02:01:20.565 GMT,,,1,,673a9d67.1,6,,2024-11-18 01:50:31 GMT,,0,LOG,00000,"received fast shutdown request",,,,,,,,"process_pm_shutdown_request, postmaster.c:2273","","postmaster",,0
+2024-11-18 02:01:20.588 GMT,,,1,,673a9d67.1,7,,2024-11-18 01:50:31 GMT,,0,LOG,00000,"aborting any active transactions",,,,,,,,"process_pm_shutdown_request, postmaster.c:2291","","postmaster",,0
+2024-11-18 02:01:20.592 GMT,"postgres","books",68,"172.18.0.7:57514",673a9f87.44,27,"idle",2024-11-18 01:59:35 GMT,7/0,0,FATAL,57P01,"terminating connection due to administrator command",,,,,,,,"ProcessInterrupts, postgres.c:3315","pgAdmin 4 - CONN:4092700","client backend",,0
+2024-11-18 02:01:20.592 GMT,"postgres","books_db_dev",49,"172.18.0.7:38706",673a9e88.31,16,"idle",2024-11-18 01:55:20 GMT,1/0,0,FATAL,57P01,"terminating connection due to administrator command",,,,,,,,"ProcessInterrupts, postgres.c:3315","pgAdmin 4 - DB:books_db_dev","client backend",,0
+2024-11-18 02:01:20.593 GMT,"postgres","books",50,"172.18.0.7:38712",673a9e89.32,64,"idle",2024-11-18 01:55:21 GMT,2/0,0,FATAL,57P01,"terminating connection due to administrator command",,,,,,,,"ProcessInterrupts, postgres.c:3315","pgAdmin 4 - DB:books","client backend",,0
+2024-11-18 02:01:20.594 GMT,"postgres","postgres",48,"172.18.0.7:38698",673a9e88.30,61,"idle",2024-11-18 01:55:20 GMT,0/0,0,FATAL,57P01,"terminating connection due to administrator command",,,,,,,,"ProcessInterrupts, postgres.c:3315","pgAdmin 4 - DB:postgres","client backend",,0
+2024-11-18 02:01:20.623 GMT,,,1,,673a9d67.1,8,,2024-11-18 01:50:31 GMT,,0,LOG,00000,"background worker ""logical replication launcher"" (PID 33) exited with exit code 1",,,,,,,,"LogChildExit, postmaster.c:3076","","postmaster",,0
+2024-11-18 02:01:20.725 GMT,,,28,,673a9d68.1c,3,,2024-11-18 01:50:32 GMT,,0,LOG,00000,"shutting down",,,,,,,,"ShutdownXLOG, xlog.c:6611","","checkpointer",,0
+2024-11-18 02:01:20.731 GMT,,,28,,673a9d68.1c,4,,2024-11-18 01:50:32 GMT,,0,LOG,00000,"checkpoint starting: shutdown immediate",,,,,,,,"LogCheckpointStart, xlog.c:6661","","checkpointer",,0
+2024-11-18 02:01:20.883 GMT,,,28,,673a9d68.1c,5,,2024-11-18 01:50:32 GMT,,0,LOG,00000,"checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.059 s, sync=0.005 s, total=0.158 s; sync files=3, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/2E76C00, redo lsn=0/2E76C00",,,,,,,,"LogCheckpointEnd, xlog.c:6750","","checkpointer",,0
+2024-11-18 02:01:20.949 GMT,,,1,,673a9d67.1,9,,2024-11-18 01:50:31 GMT,,0,LOG,00000,"database system is shut down",,,,,,,,"UnlinkLockFiles, miscinit.c:1171","","postmaster",,0

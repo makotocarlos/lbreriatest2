@@ -1,0 +1,38 @@
+2024-11-18 22:45:07.565 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-18 22:45:07.565 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-18 22:45:07.565 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-18 22:45:07.565 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-18 22:45:07.566 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-18 22:45:07.566 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-18 22:45:07.577 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-18 22:45:07.577 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-18 22:45:07.637 GMT [30]     LOG:  00000: database system was interrupted; last known up at 2024-11-18 22:39:13 GMT
+2024-11-18 22:45:07.637 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5479
+2024-11-18 22:45:15.615 GMT [30]     LOG:  00000: database system was not properly shut down; automatic recovery in progress
+2024-11-18 22:45:15.615 GMT [30]     LOCATION:  InitWalRecovery, xlogrecovery.c:937
+2024-11-18 22:45:15.693 GMT [30]     LOG:  00000: redo starts at 0/9469D78
+2024-11-18 22:45:15.693 GMT [30]     LOCATION:  PerformWalRecovery, xlogrecovery.c:1739
+2024-11-18 22:45:15.694 GMT [30]     LOG:  00000: invalid record length at 0/9469E80: expected at least 24, got 0
+2024-11-18 22:45:15.694 GMT [30]     LOCATION:  ReadRecord, xlogrecovery.c:3186
+2024-11-18 22:45:15.694 GMT [30]     LOG:  00000: redo done at 0/9469E48 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2024-11-18 22:45:15.694 GMT [30]     LOCATION:  PerformWalRecovery, xlogrecovery.c:1874
+2024-11-18 22:45:15.771 GMT [28]     LOG:  00000: checkpoint starting: end-of-recovery immediate wait
+2024-11-18 22:45:15.771 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-18 22:45:15.846 GMT [28]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.022 s, sync=0.009 s, total=0.080 s; sync files=2, longest=0.006 s, average=0.005 s; distance=0 kB, estimate=0 kB; lsn=0/9469E80, redo lsn=0/9469E80
+2024-11-18 22:45:15.846 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-18 22:45:15.861 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-18 22:45:15.861 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-18 22:47:27.849 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-18 22:47:27.849 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-18 22:47:27.879 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-18 22:47:27.879 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-18 22:47:27.890 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 33) exited with exit code 1
+2024-11-18 22:47:27.890 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-18 22:47:27.891 GMT [28]     LOG:  00000: shutting down
+2024-11-18 22:47:27.891 GMT [28]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-18 22:47:27.902 GMT [28]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-18 22:47:27.902 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-18 22:47:28.051 GMT [28]     LOG:  00000: checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.020 s, sync=0.001 s, total=0.161 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/9469F30, redo lsn=0/9469F30
+2024-11-18 22:47:28.051 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-18 22:47:28.104 GMT [1]     LOG:  00000: database system is shut down
+2024-11-18 22:47:28.104 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

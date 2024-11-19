@@ -1,0 +1,622 @@
+2024-11-17 19:53:56.837 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-17 19:53:56.837 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-17 19:53:56.838 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-17 19:53:56.838 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-17 19:53:56.838 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-17 19:53:56.838 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-17 19:53:56.847 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-17 19:53:56.847 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-17 19:53:56.882 GMT [31]     LOG:  00000: database system was shut down at 2024-11-17 19:53:15 GMT
+2024-11-17 19:53:56.882 GMT [31]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-17 19:53:56.929 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-17 19:53:56.929 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-17 19:58:56.952 GMT [29]     LOG:  00000: checkpoint starting: time
+2024-11-17 19:58:56.952 GMT [29]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-17 19:58:57.058 GMT [29]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.031 s, sync=0.011 s, total=0.107 s; sync files=2, longest=0.006 s, average=0.006 s; distance=0 kB, estimate=0 kB; lsn=0/1933FB0, redo lsn=0/1933F58
+2024-11-17 19:58:57.058 GMT [29]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-17 20:00:25.999 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-17 20:00:25.999 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:26.053 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-17 20:00:26.053 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:26.056 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 57.459 ms
+2024-11-17 20:00:26.056 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:26.057 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SELECT version()
+2024-11-17 20:00:26.057 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:26.059 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-17 20:00:26.059 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:26.060 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 2.218 ms
+2024-11-17 20:00:26.060 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:26.060 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-17 20:00:26.060 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:26.102 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-17 20:00:26.102 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:26.106 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 45.485 ms
+2024-11-17 20:00:26.106 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:26.107 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-17 20:00:26.107 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:26.121 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-17 20:00:26.121 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:26.122 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 15.728 ms
+2024-11-17 20:00:26.122 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:26.123 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-17 20:00:26.123 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:26.161 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-17 20:00:26.161 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:26.162 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 39.056 ms
+2024-11-17 20:00:26.162 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:26.164 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type;
+2024-11-17 20:00:26.164 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:26.191 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,6,1,READ,SELECT,,,"SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type",<not logged>
+2024-11-17 20:00:26.191 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:26.192 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 28.299 ms
+2024-11-17 20:00:26.192 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:26.383 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS "Totales",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS "Activa",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS "Inactiva"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS "Transacciones",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS "Cometer",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS "Retroceder"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS "Insersiones",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS "Actualizaciones",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS "Borrados"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS "Recuperado",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS "Retornado"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS "Leidas",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS "Tocadas"
+	) t
+	
+2024-11-17 20:00:26.383 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:26.409 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,7,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS ""Totales"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS ""Activa"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS ""Inactiva""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Transacciones"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS ""Cometer"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Retroceder""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS ""Insersiones"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS ""Actualizaciones"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS ""Borrados""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS ""Recuperado"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS ""Retornado""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS ""Leidas"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS ""Tocadas""
+	) t",<not logged>
+2024-11-17 20:00:26.409 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:26.411 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 27.915 ms
+2024-11-17 20:00:26.411 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:28.197 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    has_table_privilege(
+	      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+	    ) has_priviledge
+	WHERE EXISTS(
+	    SELECT has_schema_privilege('pgagent', 'USAGE')
+	    WHERE EXISTS(
+	        SELECT cl.oid FROM pg_catalog.pg_class cl
+	        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+	        WHERE relname='pga_job' AND nspname='pgagent'
+	    )
+	)
+	
+2024-11-17 20:00:28.197 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:28.214 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,8,1,READ,SELECT,,,"SELECT
+	    has_table_privilege(
+	      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+	    ) has_priviledge
+	WHERE EXISTS(
+	    SELECT has_schema_privilege('pgagent', 'USAGE')
+	    WHERE EXISTS(
+	        SELECT cl.oid FROM pg_catalog.pg_class cl
+	        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+	        WHERE relname='pga_job' AND nspname='pgagent'
+	    )
+	)",<not logged>
+2024-11-17 20:00:28.214 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:28.216 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 19.742 ms
+2024-11-17 20:00:28.216 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:28.254 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type;
+2024-11-17 20:00:28.254 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:28.254 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,9,1,READ,SELECT,,,"SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type",<not logged>
+2024-11-17 20:00:28.254 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:28.254 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 0.822 ms
+2024-11-17 20:00:28.254 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:28.265 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type;
+2024-11-17 20:00:28.265 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:28.266 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,10,1,READ,SELECT,,,"SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type",<not logged>
+2024-11-17 20:00:28.266 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:28.266 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 1.085 ms
+2024-11-17 20:00:28.266 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:28.323 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: SELECT
+	    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+	    db.datistemplate AS is_template,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+	    descr.description
+	FROM
+	    pg_catalog.pg_database db
+	    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+	    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+	        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+	    )
+	WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+	
+	ORDER BY datname;
+2024-11-17 20:00:28.323 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:28.349 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,11,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+	    db.datistemplate AS is_template,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+	    descr.description
+	FROM
+	    pg_catalog.pg_database db
+	    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+	    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+	        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+	    )
+	WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+	
+	ORDER BY datname",<not logged>
+2024-11-17 20:00:28.349 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:28.350 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 27.215 ms
+2024-11-17 20:00:28.350 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.209 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_catalog.pg_encoding_to_char(db.encoding) AS serverencoding,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.oid = 16384
+2024-11-17 20:00:30.209 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.210 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,12,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_catalog.pg_encoding_to_char(db.encoding) AS serverencoding,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.oid = 16384",<not logged>
+2024-11-17 20:00:30.210 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.211 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 1.763 ms
+2024-11-17 20:00:30.211 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.216 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_catalog.pg_encoding_to_char(db.encoding) AS serverencoding,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.oid = 16384
+2024-11-17 20:00:30.216 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.217 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: AUDIT: SESSION,13,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_catalog.pg_encoding_to_char(db.encoding) AS serverencoding,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.oid = 16384",<not logged>
+2024-11-17 20:00:30.217 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.217 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOG:  00000: duration: 0.810 ms
+2024-11-17 20:00:30.217 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.338 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-17 20:00:30.338 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.390 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-17 20:00:30.390 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.393 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 54.312 ms
+2024-11-17 20:00:30.393 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.393 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SELECT version()
+2024-11-17 20:00:30.393 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.395 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-17 20:00:30.395 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.396 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 2.139 ms
+2024-11-17 20:00:30.396 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.396 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-17 20:00:30.396 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.428 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-17 20:00:30.428 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.429 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-17 20:00:30.429 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.431 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 3.131 ms
+2024-11-17 20:00:30.431 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.432 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: SELECT version()
+2024-11-17 20:00:30.432 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.432 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-17 20:00:30.432 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.432 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 0.201 ms
+2024-11-17 20:00:30.432 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.433 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-17 20:00:30.433 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.436 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-17 20:00:30.436 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.438 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-17 20:00:30.438 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.440 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 43.952 ms
+2024-11-17 20:00:30.440 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.440 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 6.987 ms
+2024-11-17 20:00:30.440 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.441 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-17 20:00:30.441 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.442 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-17 20:00:30.442 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.457 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-17 20:00:30.457 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.457 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-17 20:00:30.457 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.459 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 18.063 ms
+2024-11-17 20:00:30.459 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.459 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 17.661 ms
+2024-11-17 20:00:30.459 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.460 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-17 20:00:30.460 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.460 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-17 20:00:30.460 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.492 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-17 20:00:30.492 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.492 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-17 20:00:30.492 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.492 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 31.897 ms
+2024-11-17 20:00:30.492 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.492 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 32.398 ms
+2024-11-17 20:00:30.492 GMT [55] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.662 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: 
+	            SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+	                'edb_job_scheduler', 'dbms_scheduler') 
+2024-11-17 20:00:30.662 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.694 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,6,1,READ,SELECT,,,"SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+	                'edb_job_scheduler', 'dbms_scheduler')",<not logged>
+2024-11-17 20:00:30.694 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.695 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 33.302 ms
+2024-11-17 20:00:30.695 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:00:30.791 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Totales",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Activa",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS "Inactiva"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Transacciones",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Cometer",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Retroceder"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Insersiones",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Actualizaciones",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Borrados"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Recuperado",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Retornado"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Leidas",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS "Tocadas"
+	) t
+	
+2024-11-17 20:00:30.791 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-17 20:00:30.846 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: AUDIT: SESSION,7,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Totales"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Activa"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle' AND datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384))  AS ""Inactiva""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Transacciones"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Cometer"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retroceder""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Insersiones"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Actualizaciones"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Borrados""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Recuperado"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Retornado""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Leidas"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database WHERE datname = (SELECT datname FROM pg_catalog.pg_database WHERE oid = 16384)) AS ""Tocadas""
+	) t",<not logged>
+2024-11-17 20:00:30.846 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-17 20:00:30.850 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOG:  00000: duration: 59.494 ms
+2024-11-17 20:00:30.850 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-17 20:04:11.851 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-17 20:04:11.851 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-17 20:04:11.893 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-17 20:04:11.893 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-17 20:04:11.895 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 FATAL:  57P01: terminating connection due to administrator command
+2024-11-17 20:04:11.895 GMT [56] books_db_dev postgres pgAdmin 4 - DB:books_db_dev 172.18.0.6 LOCATION:  ProcessInterrupts, postgres.c:3315
+2024-11-17 20:04:11.895 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 FATAL:  57P01: terminating connection due to administrator command
+2024-11-17 20:04:11.895 GMT [54] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.6 LOCATION:  ProcessInterrupts, postgres.c:3315
+2024-11-17 20:04:11.912 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 34) exited with exit code 1
+2024-11-17 20:04:11.912 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-17 20:04:11.972 GMT [29]     LOG:  00000: shutting down
+2024-11-17 20:04:11.972 GMT [29]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-17 20:04:11.978 GMT [29]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-17 20:04:11.978 GMT [29]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-17 20:04:12.094 GMT [29]     LOG:  00000: checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.023 s, sync=0.001 s, total=0.123 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/1934078, redo lsn=0/1934078
+2024-11-17 20:04:12.094 GMT [29]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-17 20:04:12.177 GMT [1]     LOG:  00000: database system is shut down
+2024-11-17 20:04:12.177 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

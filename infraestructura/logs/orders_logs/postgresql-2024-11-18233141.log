@@ -1,0 +1,22 @@
+2024-11-18 23:31:41.550 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-18 23:31:41.550 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-18 23:31:41.550 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-18 23:31:41.550 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-18 23:31:41.550 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-18 23:31:41.550 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-18 23:31:41.567 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-18 23:31:41.567 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-18 23:31:41.636 GMT [30]     LOG:  00000: database system was interrupted; last known up at 2024-11-18 23:31:20 GMT
+2024-11-18 23:31:41.636 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5479
+2024-11-18 23:31:51.736 GMT [30]     LOG:  00000: database system was not properly shut down; automatic recovery in progress
+2024-11-18 23:31:51.736 GMT [30]     LOCATION:  InitWalRecovery, xlogrecovery.c:937
+2024-11-18 23:31:51.874 GMT [30]     LOG:  00000: invalid record length at 0/2EA3078: expected at least 24, got 0
+2024-11-18 23:31:51.874 GMT [30]     LOCATION:  ReadRecord, xlogrecovery.c:3186
+2024-11-18 23:31:51.874 GMT [30]     LOG:  00000: redo is not required
+2024-11-18 23:31:51.874 GMT [30]     LOCATION:  PerformWalRecovery, xlogrecovery.c:1889
+2024-11-18 23:31:52.038 GMT [28]     LOG:  00000: checkpoint starting: end-of-recovery immediate wait
+2024-11-18 23:31:52.038 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-18 23:31:52.234 GMT [28]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.053 s, sync=0.025 s, total=0.209 s; sync files=2, longest=0.019 s, average=0.013 s; distance=0 kB, estimate=0 kB; lsn=0/2EA3078, redo lsn=0/2EA3078
+2024-11-18 23:31:52.234 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-18 23:31:52.275 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-18 23:31:52.275 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
