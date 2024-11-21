@@ -1,0 +1,818 @@
+2024-11-20 06:16:53.676 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-20 06:16:53.676 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-20 06:16:53.677 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-20 06:16:53.677 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-20 06:16:53.677 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-20 06:16:53.677 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-20 06:16:53.717 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-20 06:16:53.717 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-20 06:16:53.864 GMT [30]     LOG:  00000: database system was shut down at 2024-11-20 00:58:55 GMT
+2024-11-20 06:16:53.864 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-20 06:16:53.963 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-20 06:16:53.963 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-20 06:19:51.706 GMT [34] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 120.072 ms  parse s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:19:51.706 GMT [34] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:19:51.777 GMT [34] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:19:51.777 GMT [34] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:19:51.788 GMT [34] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 76.603 ms  bind s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:19:51.788 GMT [34] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:19:51.788 GMT [34] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:19:51.788 GMT [34] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:19:51.788 GMT [34] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:19:51.788 GMT [34] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:19:51.793 GMT [34] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 5.412 ms
+2024-11-20 06:19:51.793 GMT [34] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:19:53.476 GMT [35] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.889 ms  parse s1: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:19:53.476 GMT [35] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:19:53.483 GMT [35] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:19:53.483 GMT [35] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:19:53.483 GMT [35] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 6.993 ms  bind s1: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:19:53.483 GMT [35] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:19:53.483 GMT [35] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:19:53.483 GMT [35] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s1: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:19:53.483 GMT [35] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:19:53.483 GMT [35] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:19:53.484 GMT [35] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.085 ms
+2024-11-20 06:19:53.484 GMT [35] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:19:54.565 GMT [37] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.251 ms  parse s2: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:19:54.565 GMT [37] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:19:54.577 GMT [37] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:19:54.577 GMT [37] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:19:54.577 GMT [37] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 11.817 ms  bind s2: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:19:54.577 GMT [37] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:19:54.577 GMT [37] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:19:54.577 GMT [37] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s2: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:19:54.577 GMT [37] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:19:54.577 GMT [37] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:19:54.577 GMT [37] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.121 ms
+2024-11-20 06:19:54.577 GMT [37] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:00.614 GMT [38] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.680 ms  parse s3: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:00.614 GMT [38] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:01.582 GMT [38] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:01.582 GMT [38] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:01.582 GMT [38] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 10.751 ms  bind s3: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:01.582 GMT [38] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:01.582 GMT [38] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:01.582 GMT [38] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s3: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:01.582 GMT [38] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:01.582 GMT [38] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:01.582 GMT [38] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.317 ms
+2024-11-20 06:20:01.582 GMT [38] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:01.726 GMT [39] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 2.436 ms  parse s4: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:01.726 GMT [39] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:01.732 GMT [39] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:01.732 GMT [39] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:01.733 GMT [39] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 6.263 ms  bind s4: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:01.733 GMT [39] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:01.733 GMT [39] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:01.733 GMT [39] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s4: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:01.733 GMT [39] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:01.733 GMT [39] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:01.733 GMT [39] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.209 ms
+2024-11-20 06:20:01.733 GMT [39] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:01.737 GMT [40] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.944 ms  parse s5: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:01.737 GMT [40] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:01.774 GMT [40] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:01.774 GMT [40] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:01.775 GMT [40] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 4.696 ms  bind s5: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:01.775 GMT [40] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:01.775 GMT [40] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:01.775 GMT [40] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s5: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:01.775 GMT [40] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:01.775 GMT [40] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:01.775 GMT [40] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.178 ms
+2024-11-20 06:20:01.775 GMT [40] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:19.829 GMT [41] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.239 ms  parse s6: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:19.829 GMT [41] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:19.838 GMT [41] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:19.838 GMT [41] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:19.838 GMT [41] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 8.380 ms  bind s6: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:19.838 GMT [41] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:19.838 GMT [41] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:19.838 GMT [41] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s6: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:19.838 GMT [41] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:19.838 GMT [41] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:19.838 GMT [41] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.093 ms
+2024-11-20 06:20:19.838 GMT [41] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:20.729 GMT [42] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.883 ms  parse s7: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:20.729 GMT [42] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:22.086 GMT [42] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:22.086 GMT [42] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:22.087 GMT [42] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 10.023 ms  bind s7: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.087 GMT [42] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:22.087 GMT [42] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:22.087 GMT [42] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s7: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.087 GMT [42] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:22.087 GMT [42] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:22.087 GMT [42] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.114 ms
+2024-11-20 06:20:22.087 GMT [42] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:22.289 GMT [44] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.575 ms  parse s8: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.289 GMT [44] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:22.373 GMT [43] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.045 ms  parse s9: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.373 GMT [43] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:22.376 GMT [45] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.898 ms  parse s10: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.376 GMT [45] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:22.377 GMT [44] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:22.377 GMT [44] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:22.377 GMT [44] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 4.791 ms  bind s8: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.377 GMT [44] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:22.377 GMT [44] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:22.377 GMT [44] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s8: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.377 GMT [44] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:22.377 GMT [44] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:22.377 GMT [44] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.116 ms
+2024-11-20 06:20:22.377 GMT [44] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:22.380 GMT [43] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:22.380 GMT [43] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:22.380 GMT [43] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 5.057 ms  bind s9: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.380 GMT [43] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:22.380 GMT [43] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:22.380 GMT [43] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s9: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.380 GMT [43] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:22.380 GMT [43] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:22.380 GMT [43] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.107 ms
+2024-11-20 06:20:22.380 GMT [43] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:22.383 GMT [45] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:22.383 GMT [45] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:22.384 GMT [45] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 7.162 ms  bind s10: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.384 GMT [45] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:22.384 GMT [45] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:22.384 GMT [45] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s10: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:22.384 GMT [45] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:22.384 GMT [45] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:22.384 GMT [45] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.143 ms
+2024-11-20 06:20:22.384 GMT [45] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:48.834 GMT [46] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.115 ms  parse s11: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:48.834 GMT [46] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:49.978 GMT [46] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:49.978 GMT [46] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:49.978 GMT [46] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 9.320 ms  bind s11: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:49.978 GMT [46] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:49.978 GMT [46] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:49.978 GMT [46] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s11: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:49.978 GMT [46] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:49.978 GMT [46] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:49.978 GMT [46] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.113 ms
+2024-11-20 06:20:49.978 GMT [46] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:51.174 GMT [46] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.705 ms  parse s12: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:51.174 GMT [46] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:51.176 GMT [48] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.307 ms  parse s13: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:51.176 GMT [48] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:51.181 GMT [47] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.227 ms  parse s14: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:51.181 GMT [47] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:51.185 GMT [48] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:51.185 GMT [48] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:51.186 GMT [48] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 5.390 ms  bind s13: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:51.186 GMT [48] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:51.186 GMT [48] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:51.186 GMT [48] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s13: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:51.186 GMT [48] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:51.186 GMT [48] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:51.186 GMT [48] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.113 ms
+2024-11-20 06:20:51.186 GMT [48] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:51.191 GMT [46] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 10.209 ms  bind s12: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:51.191 GMT [46] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = 'U2FsdGVkX19hqICIohS/nDEu8yJzN++BPZU0Yylj8SQ='
+2024-11-20 06:20:51.191 GMT [46] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:51.191 GMT [46] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s12: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:51.191 GMT [46] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = 'U2FsdGVkX19hqICIohS/nDEu8yJzN++BPZU0Yylj8SQ='
+2024-11-20 06:20:51.191 GMT [46] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:51.191 GMT [46] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,2,1,WRITE,INSERT,,,"INSERT INTO ""public"".""Users"" (""email"",""password"") VALUES ($1,$2) RETURNING ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password""",<not logged>
+2024-11-20 06:20:51.191 GMT [46] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:51.211 GMT [46] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 20.035 ms
+2024-11-20 06:20:51.211 GMT [46] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:51.281 GMT [47] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:51.281 GMT [47] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:51.282 GMT [47] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 7.460 ms  bind s14: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:51.282 GMT [47] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:51.282 GMT [47] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:51.282 GMT [47] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s14: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:51.282 GMT [47] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:51.282 GMT [47] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:51.283 GMT [47] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.477 ms
+2024-11-20 06:20:51.283 GMT [47] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:51.385 GMT [49] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 2.794 ms  parse s15: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:51.385 GMT [49] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:51.482 GMT [50] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.007 ms  parse s16: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:51.482 GMT [50] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:51.484 GMT [50] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.536 ms  bind s16: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:51.484 GMT [50] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = 'U2FsdGVkX19/j+TJFtQPxTg5X0KE+JcNcrVBb2GkB3A='
+2024-11-20 06:20:51.484 GMT [50] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:51.484 GMT [50] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s16: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:51.484 GMT [50] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = 'U2FsdGVkX19/j+TJFtQPxTg5X0KE+JcNcrVBb2GkB3A='
+2024-11-20 06:20:51.484 GMT [50] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:51.484 GMT [50] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,WRITE,INSERT,,,"INSERT INTO ""public"".""Users"" (""email"",""password"") VALUES ($1,$2) RETURNING ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password""",<not logged>
+2024-11-20 06:20:51.484 GMT [50] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:51.488 GMT [50] login postgres [unknown] 172.18.0.3 ERROR:  23505: duplicate key value violates unique constraint "Users_email_key"
+2024-11-20 06:20:51.488 GMT [50] login postgres [unknown] 172.18.0.3 DETAIL:  Key (email)=(marlon@gmail.com) already exists.
+2024-11-20 06:20:51.488 GMT [50] login postgres [unknown] 172.18.0.3 LOCATION:  _bt_check_unique, nbtinsert.c:666
+2024-11-20 06:20:51.488 GMT [50] login postgres [unknown] 172.18.0.3 STATEMENT:  INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:51.489 GMT [49] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:51.489 GMT [49] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:51.489 GMT [49] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 7.921 ms  bind s15: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:51.489 GMT [49] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:51.489 GMT [49] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:51.489 GMT [49] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s15: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:51.489 GMT [49] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:51.489 GMT [49] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:51.491 GMT [49] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.196 ms
+2024-11-20 06:20:51.491 GMT [49] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:51.570 GMT [51] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.026 ms  parse s17: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:51.570 GMT [51] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:51.572 GMT [51] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.544 ms  bind s17: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:51.572 GMT [51] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = 'U2FsdGVkX19Y80m0kfsa7UGNp2Y6PNNo2LmdMtXdpjk='
+2024-11-20 06:20:51.572 GMT [51] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:51.572 GMT [51] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s17: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:51.572 GMT [51] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = 'U2FsdGVkX19Y80m0kfsa7UGNp2Y6PNNo2LmdMtXdpjk='
+2024-11-20 06:20:51.572 GMT [51] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:51.572 GMT [51] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,WRITE,INSERT,,,"INSERT INTO ""public"".""Users"" (""email"",""password"") VALUES ($1,$2) RETURNING ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password""",<not logged>
+2024-11-20 06:20:51.572 GMT [51] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:51.575 GMT [51] login postgres [unknown] 172.18.0.3 ERROR:  23505: duplicate key value violates unique constraint "Users_email_key"
+2024-11-20 06:20:51.575 GMT [51] login postgres [unknown] 172.18.0.3 DETAIL:  Key (email)=(marlon@gmail.com) already exists.
+2024-11-20 06:20:51.575 GMT [51] login postgres [unknown] 172.18.0.3 LOCATION:  _bt_check_unique, nbtinsert.c:666
+2024-11-20 06:20:51.575 GMT [51] login postgres [unknown] 172.18.0.3 STATEMENT:  INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:52.468 GMT [52] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.007 ms  parse s18: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:52.468 GMT [52] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:53.470 GMT [52] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.446 ms  bind s18: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:53.470 GMT [52] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = 'U2FsdGVkX186VrQhj4K5XoZ3+Yc5oNvl5al65wOddO0='
+2024-11-20 06:20:53.470 GMT [52] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:53.471 GMT [52] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s18: INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:53.471 GMT [52] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = 'U2FsdGVkX186VrQhj4K5XoZ3+Yc5oNvl5al65wOddO0='
+2024-11-20 06:20:53.471 GMT [52] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:53.471 GMT [52] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,WRITE,INSERT,,,"INSERT INTO ""public"".""Users"" (""email"",""password"") VALUES ($1,$2) RETURNING ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password""",<not logged>
+2024-11-20 06:20:53.471 GMT [52] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:53.476 GMT [52] login postgres [unknown] 172.18.0.3 ERROR:  23505: duplicate key value violates unique constraint "Users_email_key"
+2024-11-20 06:20:53.476 GMT [52] login postgres [unknown] 172.18.0.3 DETAIL:  Key (email)=(marlon@gmail.com) already exists.
+2024-11-20 06:20:53.476 GMT [52] login postgres [unknown] 172.18.0.3 LOCATION:  _bt_check_unique, nbtinsert.c:666
+2024-11-20 06:20:53.476 GMT [52] login postgres [unknown] 172.18.0.3 STATEMENT:  INSERT INTO "public"."Users" ("email","password") VALUES ($1,$2) RETURNING "public"."Users"."id", "public"."Users"."email", "public"."Users"."password"
+2024-11-20 06:20:53.674 GMT [53] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 3.534 ms  parse s19: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:53.674 GMT [53] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:53.675 GMT [54] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.064 ms  parse s20: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:53.675 GMT [54] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:20:53.684 GMT [53] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:53.684 GMT [53] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:53.684 GMT [53] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 9.744 ms  bind s19: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:53.684 GMT [53] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:53.684 GMT [53] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:53.684 GMT [53] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s19: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:53.684 GMT [53] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:53.684 GMT [53] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:53.685 GMT [53] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.156 ms
+2024-11-20 06:20:53.685 GMT [53] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:20:53.685 GMT [54] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:20:53.685 GMT [54] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:20:53.686 GMT [54] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 10.404 ms  bind s20: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:53.686 GMT [54] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:53.686 GMT [54] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:20:53.686 GMT [54] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s20: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:20:53.686 GMT [54] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:20:53.686 GMT [54] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:20:53.686 GMT [54] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.335 ms
+2024-11-20 06:20:53.686 GMT [54] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:21:53.938 GMT [28]     LOG:  00000: checkpoint starting: time
+2024-11-20 06:21:53.938 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-20 06:21:54.481 GMT [28]     LOG:  00000: checkpoint complete: wrote 7 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.448 s, sync=0.024 s, total=0.543 s; sync files=6, longest=0.008 s, average=0.004 s; distance=2 kB, estimate=2 kB; lsn=0/946E0B0, redo lsn=0/946E058
+2024-11-20 06:21:54.481 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-20 06:21:58.253 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-20 06:21:58.253 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.330 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-20 06:21:58.330 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.333 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 80.236 ms
+2024-11-20 06:21:58.333 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.334 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: SELECT version()
+2024-11-20 06:21:58.334 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.337 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-20 06:21:58.337 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.337 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 2.613 ms
+2024-11-20 06:21:58.337 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.338 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-20 06:21:58.338 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.389 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-20 06:21:58.389 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.395 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 57.005 ms
+2024-11-20 06:21:58.395 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.396 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-20 06:21:58.396 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.410 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-20 06:21:58.410 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.412 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 16.052 ms
+2024-11-20 06:21:58.412 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.413 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-20 06:21:58.413 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.477 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-20 06:21:58.477 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.479 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 66.443 ms
+2024-11-20 06:21:58.479 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.482 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: SELECT CASE WHEN usesuper
+	       THEN pg_catalog.pg_is_in_recovery()
+	       ELSE FALSE
+	       END as inrecovery,
+	       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+	       THEN pg_is_wal_replay_paused()
+	       ELSE FALSE
+	       END as isreplaypaused
+	FROM pg_catalog.pg_user WHERE usename=current_user
+2024-11-20 06:21:58.482 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.488 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,6,1,READ,SELECT,,,"SELECT CASE WHEN usesuper
+	       THEN pg_catalog.pg_is_in_recovery()
+	       ELSE FALSE
+	       END as inrecovery,
+	       CASE WHEN usesuper AND pg_catalog.pg_is_in_recovery()
+	       THEN pg_is_wal_replay_paused()
+	       ELSE FALSE
+	       END as isreplaypaused
+	FROM pg_catalog.pg_user WHERE usename=current_user",<not logged>
+2024-11-20 06:21:58.488 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.488 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 6.700 ms
+2024-11-20 06:21:58.488 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.491 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type;
+2024-11-20 06:21:58.491 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.528 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,7,1,READ,SELECT,,,"SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type",<not logged>
+2024-11-20 06:21:58.528 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.529 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 38.312 ms
+2024-11-20 06:21:58.529 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.661 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: /*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS "Totales",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS "Activa",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS "Inactiva"
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS "Transacciones",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS "Cometer",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS "Retroceder"
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS "Insersiones",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS "Actualizaciones",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS "Borrados"
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS "Recuperado",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS "Retornado"
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS "Leidas",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS "Tocadas"
+	) t
+	
+2024-11-20 06:21:58.661 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.687 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,8,1,READ,SELECT,,,"/*pga4dash*/
+	SELECT 'session_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity) AS ""Totales"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'active')  AS ""Activa"",
+	   (SELECT count(*) FROM pg_catalog.pg_stat_activity WHERE state = 'idle')  AS ""Inactiva""
+	) t
+	UNION ALL
+	SELECT 'tps_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(xact_commit) + sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Transacciones"",
+	   (SELECT sum(xact_commit) FROM pg_catalog.pg_stat_database) AS ""Cometer"",
+	   (SELECT sum(xact_rollback) FROM pg_catalog.pg_stat_database) AS ""Retroceder""
+	) t
+	UNION ALL
+	SELECT 'ti_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_inserted) FROM pg_catalog.pg_stat_database) AS ""Insersiones"",
+	   (SELECT sum(tup_updated) FROM pg_catalog.pg_stat_database) AS ""Actualizaciones"",
+	   (SELECT sum(tup_deleted) FROM pg_catalog.pg_stat_database) AS ""Borrados""
+	) t
+	UNION ALL
+	SELECT 'to_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(tup_fetched) FROM pg_catalog.pg_stat_database) AS ""Recuperado"",
+	   (SELECT sum(tup_returned) FROM pg_catalog.pg_stat_database) AS ""Retornado""
+	) t
+	UNION ALL
+	SELECT 'bio_stats' AS chart_name, pg_catalog.row_to_json(t) AS chart_data
+	FROM (SELECT
+	   (SELECT sum(blks_read) FROM pg_catalog.pg_stat_database) AS ""Leidas"",
+	   (SELECT sum(blks_hit) FROM pg_catalog.pg_stat_database) AS ""Tocadas""
+	) t",<not logged>
+2024-11-20 06:21:58.687 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.688 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 26.785 ms
+2024-11-20 06:21:58.688 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.768 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: 
+	SELECT
+	    has_table_privilege(
+	      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+	    ) has_priviledge
+	WHERE EXISTS(
+	    SELECT has_schema_privilege('pgagent', 'USAGE')
+	    WHERE EXISTS(
+	        SELECT cl.oid FROM pg_catalog.pg_class cl
+	        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+	        WHERE relname='pga_job' AND nspname='pgagent'
+	    )
+	)
+	
+2024-11-20 06:21:58.768 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.777 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,9,1,READ,SELECT,,,"SELECT
+	    has_table_privilege(
+	      'pgagent.pga_job', 'INSERT, SELECT, UPDATE'
+	    ) has_priviledge
+	WHERE EXISTS(
+	    SELECT has_schema_privilege('pgagent', 'USAGE')
+	    WHERE EXISTS(
+	        SELECT cl.oid FROM pg_catalog.pg_class cl
+	        LEFT JOIN pg_catalog.pg_namespace ns ON ns.oid=relnamespace
+	        WHERE relname='pga_job' AND nspname='pgagent'
+	    )
+	)",<not logged>
+2024-11-20 06:21:58.777 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.778 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 11.012 ms
+2024-11-20 06:21:58.778 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.829 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type;
+2024-11-20 06:21:58.829 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.829 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,10,1,READ,SELECT,,,"SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type",<not logged>
+2024-11-20 06:21:58.829 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.829 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 0.862 ms
+2024-11-20 06:21:58.829 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.842 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type;
+2024-11-20 06:21:58.842 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.842 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,11,1,READ,SELECT,,,"SELECT CASE
+	    WHEN (SELECT count(extname) FROM pg_catalog.pg_extension WHERE extname='bdr') > 0
+	    THEN 'pgd'
+	    WHEN (SELECT COUNT(*) FROM pg_replication_slots) > 0
+	    THEN 'log'
+	    ELSE NULL
+	END as type",<not logged>
+2024-11-20 06:21:58.842 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.842 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 0.803 ms
+2024-11-20 06:21:58.842 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.880 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: SELECT
+	    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+	    db.datistemplate AS is_template,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+	    descr.description
+	FROM
+	    pg_catalog.pg_database db
+	    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+	    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+	        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+	    )
+	WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+	
+	ORDER BY datname;
+2024-11-20 06:21:58.880 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.904 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,12,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname as name, ta.spcname as spcname, db.datallowconn,
+	    db.datistemplate AS is_template,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate, datdba as owner,
+	    descr.description
+	FROM
+	    pg_catalog.pg_database db
+	    LEFT OUTER JOIN pg_catalog.pg_tablespace ta ON db.dattablespace = ta.oid
+	    LEFT OUTER JOIN pg_catalog.pg_shdescription descr ON (
+	        db.oid=descr.objoid AND descr.classoid='pg_database'::regclass
+	    )
+	WHERE         db.oid > 16383::OID OR db.datname IN ('postgres', 'edb')
+	
+	ORDER BY datname",<not logged>
+2024-11-20 06:21:58.904 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.906 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 26.000 ms
+2024-11-20 06:21:58.906 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:58.992 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_catalog.pg_encoding_to_char(db.encoding) AS serverencoding,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.oid = 24577
+2024-11-20 06:21:58.992 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:58.993 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: AUDIT: SESSION,13,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_catalog.pg_encoding_to_char(db.encoding) AS serverencoding,
+	    pg_catalog.has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.oid = 24577",<not logged>
+2024-11-20 06:21:58.993 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:58.993 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOG:  00000: duration: 1.051 ms
+2024-11-20 06:21:58.993 GMT [57] postgres postgres pgAdmin 4 - DB:postgres 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.139 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-20 06:21:59.139 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.161 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-20 06:21:59.161 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.166 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 27.408 ms
+2024-11-20 06:21:59.166 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.167 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: SELECT version()
+2024-11-20 06:21:59.167 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.170 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-20 06:21:59.170 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.170 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 3.364 ms
+2024-11-20 06:21:59.170 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.172 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-20 06:21:59.172 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.203 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-20 06:21:59.203 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.203 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 30.580 ms
+2024-11-20 06:21:59.203 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.204 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-20 06:21:59.204 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.222 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-20 06:21:59.222 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.224 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 19.510 ms
+2024-11-20 06:21:59.224 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.225 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-20 06:21:59.225 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.249 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: SET DateStyle=ISO; SET client_min_messages=notice; SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'; SET client_encoding='utf-8';
+2024-11-20 06:21:59.249 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.251 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT set_config('bytea_output','hex',false) FROM pg_show_all_settings() WHERE name = 'bytea_output'",<not logged>
+2024-11-20 06:21:59.251 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.256 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 6.677 ms
+2024-11-20 06:21:59.256 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.257 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: SELECT version()
+2024-11-20 06:21:59.257 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.257 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,SELECT version(),<not logged>
+2024-11-20 06:21:59.257 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.257 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 0.328 ms
+2024-11-20 06:21:59.257 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.258 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: 
+	SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()
+2024-11-20 06:21:59.258 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.263 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT
+	    db.oid as did, db.datname, db.datallowconn,
+	    pg_encoding_to_char(db.encoding) AS serverencoding,
+	    has_database_privilege(db.oid, 'CREATE') as cancreate,
+	    datistemplate
+	FROM
+	    pg_catalog.pg_database db
+	WHERE db.datname = current_database()",<not logged>
+2024-11-20 06:21:59.263 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.263 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 5.557 ms
+2024-11-20 06:21:59.263 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.264 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: 
+	        SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()
+2024-11-20 06:21:59.264 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.265 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT
+	             gss_authenticated, encrypted
+	        FROM
+	            pg_catalog.pg_stat_gssapi
+	        WHERE pid = pg_backend_pid()",<not logged>
+2024-11-20 06:21:59.265 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.265 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 1.525 ms
+2024-11-20 06:21:59.265 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.266 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-20 06:21:59.266 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.266 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 41.714 ms
+2024-11-20 06:21:59.266 GMT [58] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.266 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: 
+	        SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user
+2024-11-20 06:21:59.266 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.283 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT
+	            roles.oid as id, roles.rolname as name,
+	            roles.rolsuper as is_superuser,
+	            CASE WHEN roles.rolsuper THEN true ELSE roles.rolcreaterole END as
+	            can_create_role,
+	            CASE WHEN roles.rolsuper THEN true
+	            ELSE roles.rolcreatedb END as can_create_db,
+	            CASE WHEN 'pg_signal_backend'=ANY(ARRAY(WITH RECURSIVE cte AS (
+	            SELECT pg_roles.oid,pg_roles.rolname FROM pg_roles
+	                WHERE pg_roles.oid = roles.oid
+	            UNION ALL
+	            SELECT m.roleid,pgr.rolname FROM cte cte_1
+	                JOIN pg_auth_members m ON m.member = cte_1.oid
+	                JOIN pg_roles pgr ON pgr.oid = m.roleid)
+	            SELECT rolname  FROM cte)) THEN True
+	            ELSE False END as can_signal_backend
+	        FROM
+	            pg_catalog.pg_roles as roles
+	        WHERE
+	            rolname = current_user",<not logged>
+2024-11-20 06:21:59.283 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.284 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 17.345 ms
+2024-11-20 06:21:59.284 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:21:59.467 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: statement: 
+	            SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+	                'edb_job_scheduler', 'dbms_scheduler') 
+2024-11-20 06:21:59.467 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-20 06:21:59.499 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: AUDIT: SESSION,6,1,READ,SELECT,,,"SELECT COUNT(*) FROM pg_extension WHERE extname IN (
+	                'edb_job_scheduler', 'dbms_scheduler')",<not logged>
+2024-11-20 06:21:59.499 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:21:59.500 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOG:  00000: duration: 33.352 ms
+2024-11-20 06:21:59.500 GMT [59] login postgres pgAdmin 4 - DB:login 172.18.0.10 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-20 06:24:18.335 GMT [63] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 2.070 ms  parse s21: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:24:18.335 GMT [63] login postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 06:24:18.361 GMT [63] login postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-20 06:24:18.361 GMT [63] login postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 06:24:18.361 GMT [63] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 16.240 ms  bind s21: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:24:18.361 GMT [63] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:24:18.361 GMT [63] login postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 06:24:18.361 GMT [63] login postgres [unknown] 172.18.0.3 LOG:  00000: execute s21: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-20 06:24:18.361 GMT [63] login postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-20 06:24:18.361 GMT [63] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 06:24:18.362 GMT [63] login postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.529 ms
+2024-11-20 06:24:18.362 GMT [63] login postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 06:24:51.600 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-20 06:24:51.600 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-20 06:24:51.607 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-20 06:24:51.607 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-20 06:24:51.621 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 33) exited with exit code 1
+2024-11-20 06:24:51.621 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-20 06:24:51.624 GMT [28]     LOG:  00000: shutting down
+2024-11-20 06:24:51.624 GMT [28]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-20 06:24:51.628 GMT [28]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-20 06:24:51.628 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-20 06:24:51.704 GMT [28]     LOG:  00000: checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.020 s, sync=0.001 s, total=0.081 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=2 kB; lsn=0/946E160, redo lsn=0/946E160
+2024-11-20 06:24:51.704 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-20 06:24:51.741 GMT [1]     LOG:  00000: database system is shut down
+2024-11-20 06:24:51.741 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

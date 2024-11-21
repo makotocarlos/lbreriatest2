@@ -1,0 +1,40 @@
+2024-11-20 20:45:42.852 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-20 20:45:42.852 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-20 20:45:42.854 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-20 20:45:42.854 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-20 20:45:42.854 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-20 20:45:42.854 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-20 20:45:42.923 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-20 20:45:42.923 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-20 20:45:43.079 GMT [30]     LOG:  00000: database system was shut down at 2024-11-20 20:09:34 GMT
+2024-11-20 20:45:43.079 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-20 20:45:43.290 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-20 20:45:43.290 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-20 20:47:15.226 GMT [38] books postgres [unknown] 172.18.0.4 LOG:  00000: duration: 59.575 ms  parse s0: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-20 20:47:15.226 GMT [38] books postgres [unknown] 172.18.0.4 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-20 20:47:15.254 GMT [38] books postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-20 20:47:15.254 GMT [38] books postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-20 20:47:15.259 GMT [38] books postgres [unknown] 172.18.0.4 LOG:  00000: duration: 32.000 ms  bind s0: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-20 20:47:15.259 GMT [38] books postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '0'
+2024-11-20 20:47:15.259 GMT [38] books postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-20 20:47:15.259 GMT [38] books postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-20 20:47:15.259 GMT [38] books postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '0'
+2024-11-20 20:47:15.259 GMT [38] books postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-20 20:47:15.261 GMT [38] books postgres [unknown] 172.18.0.4 LOG:  00000: duration: 1.565 ms
+2024-11-20 20:47:15.261 GMT [38] books postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-20 20:50:23.448 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-20 20:50:23.448 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-20 20:50:23.472 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-20 20:50:23.472 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-20 20:50:23.569 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 33) exited with exit code 1
+2024-11-20 20:50:23.569 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-20 20:50:23.663 GMT [48]     FATAL:  57P01: terminating autovacuum process due to administrator command
+2024-11-20 20:50:23.663 GMT [48]     LOCATION:  ProcessInterrupts, postgres.c:3291
+2024-11-20 20:50:23.677 GMT [28]     LOG:  00000: shutting down
+2024-11-20 20:50:23.677 GMT [28]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-20 20:50:23.687 GMT [28]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-20 20:50:23.687 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-20 20:50:23.874 GMT [28]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.055 s, sync=0.016 s, total=0.197 s; sync files=2, longest=0.011 s, average=0.008 s; distance=0 kB, estimate=0 kB; lsn=0/7E96C68, redo lsn=0/7E96C68
+2024-11-20 20:50:23.874 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-20 20:50:23.925 GMT [1]     LOG:  00000: database system is shut down
+2024-11-20 20:50:23.925 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

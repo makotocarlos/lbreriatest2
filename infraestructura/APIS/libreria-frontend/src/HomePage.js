@@ -56,6 +56,11 @@ const HomePage = () => {
     };
 
     try {
+      const response = await axios.post('http://localhost:3002/orders', orderData, {
+        headers: {
+          'Authorization': `Bearer ${auth.token}`,
+        },
+      });
       setOrderStatus({ success: true, message: 'Orden realizada exitosamente.' });
     } catch (err) {
       console.error('Error al realizar la orden:', err);

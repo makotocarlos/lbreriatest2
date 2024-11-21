@@ -1,0 +1,49 @@
+FROM node:20
+
+USER root
+
+# Actualiza los paquetes y instala dependencias necesarias
+RUN apt-get update && apt-get install -y \
+    wget \
+    nano
+
+# Limpia la caché de npm
+RUN npm cache clean --force
+
+# Instala una versión específica de npm
+RUN npm install -g npm@8.12.1
+
+# Instala dependencias globales necesarias
+RUN npm install -g prisma \
+    && npm install -g cors \
+    && npm install -g dotenv \
+    && npm install -g pg \
+    && npm install -g axios \
+    && npm install -g express \
+    && npm install -g jsonwebtoken \
+    && npm install -g nodemon \
+    && npm install -g @prisma/client
+
+# Crea el directorio para la API de pagos
+RUN mkdir -p /payments/paymentsAPI
+
+# Establece el directorio de trabajo
+WORKDIR /payments/paymentsAPI
+
+# Copia los archivos de configuración de npm (package.json y package-lock.json)
+COPY payments/package*.json ./
+
+# Instala las dependencias del proyecto
+RUN npm install
+
+# Copia el código de la aplicación
+COPY payments ./ 
+
+# Ejecuta la generación de Prisma
+RUN npx prisma generate
+
+# Expone el puerto que usará la API (3002 en este caso)
+EXPOSE 3005
+
+# Comando para iniciar la aplicación con nodemon
+CMD ["npx", "nodemon", "app.js"]

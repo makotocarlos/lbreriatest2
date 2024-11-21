@@ -1,0 +1,78 @@
+2024-11-21 01:47:37.608 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-21 01:47:37.608 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-21 01:47:37.609 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-21 01:47:37.609 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-21 01:47:37.609 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-21 01:47:37.609 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-21 01:47:37.628 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-21 01:47:37.628 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-21 01:47:37.849 GMT [31]     LOG:  00000: database system was shut down at 2024-11-21 01:46:51 GMT
+2024-11-21 01:47:37.849 GMT [31]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-21 01:47:37.944 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-21 01:47:37.944 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-21 01:48:47.253 GMT [39] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 81.382 ms  parse s0: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 01:48:47.253 GMT [39] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-21 01:48:47.286 GMT [39] payments postgres [unknown] 172.18.0.7 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""payments"".""id"", ""public"".""payments"".""userId"", ""public"".""payments"".""orderId"", ""public"".""payments"".""amount"", ""public"".""payments"".""status"", ""public"".""payments"".""method"", ""public"".""payments"".""createdAt"", ""public"".""payments"".""updatedAt"" FROM ""public"".""payments"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-21 01:48:47.286 GMT [39] payments postgres [unknown] 172.18.0.7 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 01:48:47.293 GMT [39] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 37.096 ms  bind s0: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 01:48:47.293 GMT [39] payments postgres [unknown] 172.18.0.7 DETAIL:  Parameters: $1 = '0'
+2024-11-21 01:48:47.293 GMT [39] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 01:48:47.293 GMT [39] payments postgres [unknown] 172.18.0.7 LOG:  00000: execute s0: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 01:48:47.293 GMT [39] payments postgres [unknown] 172.18.0.7 DETAIL:  Parameters: $1 = '0'
+2024-11-21 01:48:47.293 GMT [39] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 01:48:47.294 GMT [39] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 1.258 ms
+2024-11-21 01:48:47.294 GMT [39] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 01:52:37.808 GMT [29]     LOG:  00000: checkpoint starting: time
+2024-11-21 01:52:37.808 GMT [29]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-21 01:52:37.960 GMT [29]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.041 s, sync=0.025 s, total=0.157 s; sync files=2, longest=0.016 s, average=0.013 s; distance=0 kB, estimate=0 kB; lsn=0/2E29C58, redo lsn=0/2E29C00
+2024-11-21 01:52:37.960 GMT [29]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-21 01:57:50.622 GMT [76] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 1.647 ms  parse s1: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 01:57:50.622 GMT [76] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-21 01:57:50.630 GMT [76] payments postgres [unknown] 172.18.0.7 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""payments"".""id"", ""public"".""payments"".""userId"", ""public"".""payments"".""orderId"", ""public"".""payments"".""amount"", ""public"".""payments"".""status"", ""public"".""payments"".""method"", ""public"".""payments"".""createdAt"", ""public"".""payments"".""updatedAt"" FROM ""public"".""payments"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-21 01:57:50.630 GMT [76] payments postgres [unknown] 172.18.0.7 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 01:57:50.631 GMT [76] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 7.823 ms  bind s1: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 01:57:50.631 GMT [76] payments postgres [unknown] 172.18.0.7 DETAIL:  Parameters: $1 = '0'
+2024-11-21 01:57:50.631 GMT [76] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 01:57:50.631 GMT [76] payments postgres [unknown] 172.18.0.7 LOG:  00000: execute s1: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 01:57:50.631 GMT [76] payments postgres [unknown] 172.18.0.7 DETAIL:  Parameters: $1 = '0'
+2024-11-21 01:57:50.631 GMT [76] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 01:57:50.631 GMT [76] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 0.072 ms
+2024-11-21 01:57:50.631 GMT [76] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 02:04:11.220 GMT [103] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 2.693 ms  parse s2: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 02:04:11.220 GMT [103] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-21 02:04:11.237 GMT [103] payments postgres [unknown] 172.18.0.7 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""payments"".""id"", ""public"".""payments"".""userId"", ""public"".""payments"".""orderId"", ""public"".""payments"".""amount"", ""public"".""payments"".""status"", ""public"".""payments"".""method"", ""public"".""payments"".""createdAt"", ""public"".""payments"".""updatedAt"" FROM ""public"".""payments"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-21 02:04:11.237 GMT [103] payments postgres [unknown] 172.18.0.7 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 02:04:11.237 GMT [103] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 4.892 ms  bind s2: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 02:04:11.237 GMT [103] payments postgres [unknown] 172.18.0.7 DETAIL:  Parameters: $1 = '0'
+2024-11-21 02:04:11.237 GMT [103] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 02:04:11.238 GMT [103] payments postgres [unknown] 172.18.0.7 LOG:  00000: execute s2: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 02:04:11.238 GMT [103] payments postgres [unknown] 172.18.0.7 DETAIL:  Parameters: $1 = '0'
+2024-11-21 02:04:11.238 GMT [103] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 02:04:11.238 GMT [103] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 0.208 ms
+2024-11-21 02:04:11.238 GMT [103] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 02:04:21.137 GMT [103] payments postgres [unknown] 172.18.0.7 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,"SELECT ""public"".""payments"".""id"", ""public"".""payments"".""userId"", ""public"".""payments"".""orderId"", ""public"".""payments"".""amount"", ""public"".""payments"".""status"", ""public"".""payments"".""method"", ""public"".""payments"".""createdAt"", ""public"".""payments"".""updatedAt"" FROM ""public"".""payments"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-21 02:04:21.137 GMT [103] payments postgres [unknown] 172.18.0.7 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 02:04:21.138 GMT [103] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 0.566 ms  bind s2: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 02:04:21.138 GMT [103] payments postgres [unknown] 172.18.0.7 DETAIL:  Parameters: $1 = '0'
+2024-11-21 02:04:21.138 GMT [103] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 02:04:21.138 GMT [103] payments postgres [unknown] 172.18.0.7 LOG:  00000: execute s2: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-21 02:04:21.138 GMT [103] payments postgres [unknown] 172.18.0.7 DETAIL:  Parameters: $1 = '0'
+2024-11-21 02:04:21.138 GMT [103] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 02:04:21.138 GMT [103] payments postgres [unknown] 172.18.0.7 LOG:  00000: duration: 0.089 ms
+2024-11-21 02:04:21.138 GMT [103] payments postgres [unknown] 172.18.0.7 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 02:04:28.646 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-21 02:04:28.646 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-21 02:04:28.679 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-21 02:04:28.679 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-21 02:04:28.689 GMT [103] payments postgres [unknown] 172.18.0.7 FATAL:  57P01: terminating connection due to administrator command
+2024-11-21 02:04:28.689 GMT [103] payments postgres [unknown] 172.18.0.7 LOCATION:  ProcessInterrupts, postgres.c:3315
+2024-11-21 02:04:28.735 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 34) exited with exit code 1
+2024-11-21 02:04:28.735 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-21 02:04:28.765 GMT [29]     LOG:  00000: shutting down
+2024-11-21 02:04:28.765 GMT [29]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-21 02:04:28.776 GMT [29]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-21 02:04:28.776 GMT [29]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-21 02:04:28.986 GMT [29]     LOG:  00000: checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.037 s, sync=0.001 s, total=0.221 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/2E29D08, redo lsn=0/2E29D08
+2024-11-21 02:04:28.986 GMT [29]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-21 02:04:29.058 GMT [1]     LOG:  00000: database system is shut down
+2024-11-21 02:04:29.058 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

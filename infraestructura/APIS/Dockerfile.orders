@@ -25,9 +25,9 @@ RUN npm install -g prisma \
     && npm install -g @prisma/client
 
 
-RUN mkdir -p /ord/ordersAPI
+RUN mkdir -p /usr/ordersAPI
 
-WORKDIR /ord/ordersAPI
+WORKDIR /usr/ordersAPI
 
 
 COPY orders/package*.json ./

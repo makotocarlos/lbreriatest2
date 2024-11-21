@@ -7,15 +7,17 @@
  */
 
 const { Router } = require('express');
-const router = Router();
+const { createOrder, getOrder, getOrders } = require('../controllers/orders.controller');
 
-// Importa el controlador correctamente
-const { createOrder, getOrders } = require('../controllers/orders.controller');  // Asegúrate de importar ambas funciones
+const router = Router();
 
 // Ruta para crear una nueva orden
 router.post('/', createOrder);
 
-// Ruta para obtener las órdenes (todas o una específica)
-router.get('/:orderId?', getOrders);  // La ruta acepta un parámetro opcional `orderId`
+// Ruta para obtener todas las órdenes
+router.get('/', getOrders);
+
+// Ruta para obtener una orden específica
+router.get('/:id', getOrder);
 
 module.exports = router;
