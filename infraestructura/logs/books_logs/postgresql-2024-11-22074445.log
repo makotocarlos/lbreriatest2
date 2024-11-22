@@ -1,0 +1,66 @@
+2024-11-22 07:44:45.994 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-22 07:44:45.994 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-22 07:44:45.994 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-22 07:44:45.994 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-22 07:44:45.994 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-22 07:44:45.994 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-22 07:44:46.005 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-22 07:44:46.005 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-22 07:44:46.088 GMT [30]     LOG:  00000: database system was shut down at 2024-11-22 07:44:17 GMT
+2024-11-22 07:44:46.088 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-22 07:44:46.161 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-22 07:44:46.161 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-22 07:45:53.962 GMT [35] books postgres [unknown] 172.18.0.3 LOG:  00000: duration: 71.754 ms  parse s0: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-22 07:45:53.962 GMT [35] books postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-22 07:45:53.994 GMT [35] books postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-22 07:45:53.994 GMT [35] books postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-22 07:45:53.998 GMT [35] books postgres [unknown] 172.18.0.3 LOG:  00000: duration: 35.485 ms  bind s0: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-22 07:45:53.998 GMT [35] books postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = '0'
+2024-11-22 07:45:53.998 GMT [35] books postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-22 07:45:53.998 GMT [35] books postgres [unknown] 172.18.0.3 LOG:  00000: execute s0: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-22 07:45:53.998 GMT [35] books postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = '0'
+2024-11-22 07:45:53.998 GMT [35] books postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-22 07:45:53.999 GMT [35] books postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.093 ms
+2024-11-22 07:45:53.999 GMT [35] books postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-22 07:46:56.510 GMT [37] books postgres [unknown] 172.18.0.3 LOG:  00000: duration: 3.194 ms  parse s1: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-22 07:46:56.510 GMT [37] books postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-22 07:46:56.519 GMT [37] books postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-22 07:46:56.519 GMT [37] books postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-22 07:46:56.520 GMT [37] books postgres [unknown] 172.18.0.3 LOG:  00000: duration: 7.963 ms  bind s1: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-22 07:46:56.520 GMT [37] books postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = '0'
+2024-11-22 07:46:56.520 GMT [37] books postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-22 07:46:56.520 GMT [37] books postgres [unknown] 172.18.0.3 LOG:  00000: execute s1: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-22 07:46:56.520 GMT [37] books postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = '0'
+2024-11-22 07:46:56.520 GMT [37] books postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-22 07:46:56.520 GMT [37] books postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.349 ms
+2024-11-22 07:46:56.520 GMT [37] books postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-22 07:47:05.097 GMT [38] books postgres [unknown] 172.18.0.3 LOG:  00000: duration: 1.289 ms  parse s2: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-22 07:47:05.097 GMT [38] books postgres [unknown] 172.18.0.3 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-22 07:47:05.103 GMT [38] books postgres [unknown] 172.18.0.3 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Books"".""id"", ""public"".""Books"".""title"", ""public"".""Books"".""author"", ""public"".""Books"".""description"", ""public"".""Books"".""imageUrl"", ""public"".""Books"".""price"" FROM ""public"".""Books"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-22 07:47:05.103 GMT [38] books postgres [unknown] 172.18.0.3 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-22 07:47:05.103 GMT [38] books postgres [unknown] 172.18.0.3 LOG:  00000: duration: 5.518 ms  bind s2: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-22 07:47:05.103 GMT [38] books postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = '0'
+2024-11-22 07:47:05.103 GMT [38] books postgres [unknown] 172.18.0.3 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-22 07:47:05.103 GMT [38] books postgres [unknown] 172.18.0.3 LOG:  00000: execute s2: SELECT "public"."Books"."id", "public"."Books"."title", "public"."Books"."author", "public"."Books"."description", "public"."Books"."imageUrl", "public"."Books"."price" FROM "public"."Books" WHERE 1=1 OFFSET $1
+2024-11-22 07:47:05.103 GMT [38] books postgres [unknown] 172.18.0.3 DETAIL:  Parameters: $1 = '0'
+2024-11-22 07:47:05.103 GMT [38] books postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-22 07:47:05.103 GMT [38] books postgres [unknown] 172.18.0.3 LOG:  00000: duration: 0.069 ms
+2024-11-22 07:47:05.103 GMT [38] books postgres [unknown] 172.18.0.3 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-22 07:49:46.130 GMT [28]     LOG:  00000: checkpoint starting: time
+2024-11-22 07:49:46.130 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-22 07:49:46.311 GMT [28]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.059 s, sync=0.015 s, total=0.184 s; sync files=2, longest=0.008 s, average=0.008 s; distance=0 kB, estimate=0 kB; lsn=0/7E99DF8, redo lsn=0/7E99DA0
+2024-11-22 07:49:46.311 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-22 07:50:43.939 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-22 07:50:43.939 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-22 07:50:44.010 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-22 07:50:44.010 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-22 07:50:44.086 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 33) exited with exit code 1
+2024-11-22 07:50:44.086 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-22 07:50:44.087 GMT [28]     LOG:  00000: shutting down
+2024-11-22 07:50:44.087 GMT [28]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-22 07:50:44.112 GMT [28]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-22 07:50:44.112 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-22 07:50:44.253 GMT [28]     LOG:  00000: checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.025 s, sync=0.001 s, total=0.167 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=0 kB; lsn=0/7E99EA8, redo lsn=0/7E99EA8
+2024-11-22 07:50:44.253 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-22 07:50:44.315 GMT [1]     LOG:  00000: database system is shut down
+2024-11-22 07:50:44.315 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

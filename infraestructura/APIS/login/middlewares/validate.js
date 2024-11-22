@@ -1,6 +1,6 @@
 const CryptoJS = require("crypto-js");
 
-// Función para encriptar
+
 const Encrypt = (data) => {
     if (!process.env.AUTH_AES_SECRET_KEY) {
         throw new Error("AUTH_AES_SECRET_KEY no está definida");
@@ -8,7 +8,7 @@ const Encrypt = (data) => {
     return CryptoJS.AES.encrypt(data, process.env.AUTH_AES_SECRET_KEY).toString();
 };
 
-// Función para desencriptar
+
 const Decrypt = (data) => {
     if (!process.env.AUTH_AES_SECRET_KEY) {
         throw new Error("AUTH_AES_SECRET_KEY no está definida");
@@ -17,7 +17,7 @@ const Decrypt = (data) => {
     return bytes.toString(CryptoJS.enc.Utf8);
 };
 
-// Verificación de funcionamiento
+
 const TestEncryption = () => {
     try {
         console.log("Verificando el funcionamiento de encriptado/desencriptado...");
@@ -42,7 +42,7 @@ const TestEncryption = () => {
     }
 };
 
-// Llama la función de prueba
+
 TestEncryption();
 
 module.exports = {

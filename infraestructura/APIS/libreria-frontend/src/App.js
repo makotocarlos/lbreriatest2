@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loginAsync, logout, registerAsync } from './features/authSlice';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import HomePage from './HomePage'; // Asegúrate de que este componente esté en la ubicación correcta
+import PaymentsPage from './pages/PaymentsPage'; // Asegúrate de que PaymentsPage esté en la carpeta pages
 
 function App() {
   const [email, setEmail] = useState('');
@@ -31,6 +32,7 @@ function App() {
         <h1>Ucc {auth.isLoggedIn ? auth.email : 'Librería distribuida'}</h1>
 
         <Routes>
+          {/* Ruta raíz que muestra el formulario de login/registro o un botón de logout si está autenticado */}
           <Route
             path="/"
             element={
@@ -99,6 +101,8 @@ function App() {
               )
             }
           />
+
+          {/* Ruta de HomePage protegida, solo accesible si está autenticado */}
           <Route
             path="/home"
             element={
@@ -110,6 +114,18 @@ function App() {
                 </div>
               ) : (
                 <Navigate to="/" />
+              )
+            }
+          />
+
+          {/* Ruta para la página de pagos */}
+          <Route
+            path="/payments"
+            element={
+              auth.isLoggedIn ? (
+                <PaymentsPage />  // Aquí se muestra la página de pagos si el usuario está autenticado
+              ) : (
+                <Navigate to="/" />  // Si no está autenticado, se redirige al login
               )
             }
           />

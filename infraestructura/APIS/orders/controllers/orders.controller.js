@@ -114,9 +114,44 @@ const getOrders = async (req, res) => {
     });
   }
 };
+const getOrdersByUser = async (req, res) => {
+  const { userId } = req.query;
+
+  if (!userId) {
+    return res.status(400).json({ message: 'El userId es requerido' });
+  }
+
+  try {
+    const response = await axios.get(`http://localhost:3005/orders?userId=${userId}`);
+    const orders = response.data;
+
+    if (!orders || orders.length === 0) {
+      return res.status(404).json({ message: 'No se encontraron órdenes para este usuario' });
+    }
+
+    return res.status(200).json({
+      message: 'Órdenes del usuario recuperadas con éxito',
+      orders,
+    });
+  } catch (error) {
+    console.error('Error al obtener las órdenes del usuario:', error);
+
+    if (error.response) {
+      return res.status(error.response.status).json({
+        message: `Error en la API externa: ${error.response.statusText}`,
+      });
+    }
+
+    return res.status(500).json({
+      message: 'Error interno al obtener las órdenes del usuario',
+      error: error.message,
+    });
+  }
+};
 
 module.exports = {
   createOrder,
   getOrder,
   getOrders,
+  getOrdersByUser,
 };

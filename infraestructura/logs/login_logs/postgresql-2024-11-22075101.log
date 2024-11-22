@@ -1,0 +1,76 @@
+2024-11-22 07:51:01.847 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-22 07:51:01.847 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-22 07:51:01.849 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-22 07:51:01.849 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-22 07:51:01.849 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-22 07:51:01.849 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-22 07:51:01.865 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-22 07:51:01.865 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-22 07:51:01.942 GMT [30]     LOG:  00000: database system was shut down at 2024-11-22 07:50:47 GMT
+2024-11-22 07:51:01.942 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-22 07:51:02.040 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-22 07:51:02.040 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-22 07:52:00.050 GMT [34] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 55.962 ms  parse s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-22 07:52:00.050 GMT [34] login postgres [unknown] 172.18.0.9 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-22 07:52:00.105 GMT [34] login postgres [unknown] 172.18.0.9 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-22 07:52:00.105 GMT [34] login postgres [unknown] 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-22 07:52:00.110 GMT [34] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 55.587 ms  bind s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-22 07:52:00.110 GMT [34] login postgres [unknown] 172.18.0.9 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-22 07:52:00.110 GMT [34] login postgres [unknown] 172.18.0.9 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-22 07:52:00.110 GMT [34] login postgres [unknown] 172.18.0.9 LOG:  00000: execute s0: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-22 07:52:00.110 GMT [34] login postgres [unknown] 172.18.0.9 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-22 07:52:00.110 GMT [34] login postgres [unknown] 172.18.0.9 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-22 07:52:00.114 GMT [34] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 3.949 ms
+2024-11-22 07:52:00.114 GMT [34] login postgres [unknown] 172.18.0.9 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-22 07:55:22.455 GMT [39] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 5.244 ms  parse s1: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-22 07:55:22.455 GMT [39] login postgres [unknown] 172.18.0.9 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-22 07:55:22.465 GMT [39] login postgres [unknown] 172.18.0.9 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE ""public"".""Users"".""email"" = $1 LIMIT $2 OFFSET $3",<not logged>
+2024-11-22 07:55:22.465 GMT [39] login postgres [unknown] 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-22 07:55:22.466 GMT [39] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 9.910 ms  bind s1: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-22 07:55:22.466 GMT [39] login postgres [unknown] 172.18.0.9 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-22 07:55:22.466 GMT [39] login postgres [unknown] 172.18.0.9 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-22 07:55:22.466 GMT [39] login postgres [unknown] 172.18.0.9 LOG:  00000: execute s1: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE "public"."Users"."email" = $1 LIMIT $2 OFFSET $3
+2024-11-22 07:55:22.466 GMT [39] login postgres [unknown] 172.18.0.9 DETAIL:  Parameters: $1 = 'marlon@gmail.com', $2 = '1', $3 = '0'
+2024-11-22 07:55:22.466 GMT [39] login postgres [unknown] 172.18.0.9 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-22 07:55:22.466 GMT [39] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 0.233 ms
+2024-11-22 07:55:22.466 GMT [39] login postgres [unknown] 172.18.0.9 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-22 07:56:02.005 GMT [28]     LOG:  00000: checkpoint starting: time
+2024-11-22 07:56:02.005 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-22 07:56:02.227 GMT [28]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.075 s, sync=0.021 s, total=0.223 s; sync files=2, longest=0.012 s, average=0.011 s; distance=0 kB, estimate=0 kB; lsn=0/9472A78, redo lsn=0/9472A20
+2024-11-22 07:56:02.227 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-22 07:59:19.806 GMT [44] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 2.316 ms  parse s2: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE ("public"."Users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-22 07:59:19.806 GMT [44] login postgres [unknown] 172.18.0.9 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-22 07:59:19.817 GMT [44] login postgres [unknown] 172.18.0.9 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE (""public"".""Users"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-22 07:59:19.817 GMT [44] login postgres [unknown] 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-22 07:59:19.818 GMT [44] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 9.523 ms  bind s2: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE ("public"."Users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-22 07:59:19.818 GMT [44] login postgres [unknown] 172.18.0.9 DETAIL:  Parameters: $1 = '2', $2 = '1', $3 = '0'
+2024-11-22 07:59:19.818 GMT [44] login postgres [unknown] 172.18.0.9 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-22 07:59:19.818 GMT [44] login postgres [unknown] 172.18.0.9 LOG:  00000: execute s2: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE ("public"."Users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-22 07:59:19.818 GMT [44] login postgres [unknown] 172.18.0.9 DETAIL:  Parameters: $1 = '2', $2 = '1', $3 = '0'
+2024-11-22 07:59:19.818 GMT [44] login postgres [unknown] 172.18.0.9 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-22 07:59:19.819 GMT [44] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 1.496 ms
+2024-11-22 07:59:19.819 GMT [44] login postgres [unknown] 172.18.0.9 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-22 07:59:35.201 GMT [45] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 1.371 ms  parse s3: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE ("public"."Users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-22 07:59:35.201 GMT [45] login postgres [unknown] 172.18.0.9 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-22 07:59:35.617 GMT [45] login postgres [unknown] 172.18.0.9 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE (""public"".""Users"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-22 07:59:35.617 GMT [45] login postgres [unknown] 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-22 07:59:35.617 GMT [45] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 9.958 ms  bind s3: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE ("public"."Users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-22 07:59:35.617 GMT [45] login postgres [unknown] 172.18.0.9 DETAIL:  Parameters: $1 = '1', $2 = '1', $3 = '0'
+2024-11-22 07:59:35.617 GMT [45] login postgres [unknown] 172.18.0.9 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-22 07:59:35.617 GMT [45] login postgres [unknown] 172.18.0.9 LOG:  00000: execute s3: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE ("public"."Users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-22 07:59:35.617 GMT [45] login postgres [unknown] 172.18.0.9 DETAIL:  Parameters: $1 = '1', $2 = '1', $3 = '0'
+2024-11-22 07:59:35.617 GMT [45] login postgres [unknown] 172.18.0.9 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-22 07:59:35.617 GMT [45] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 0.061 ms
+2024-11-22 07:59:35.617 GMT [45] login postgres [unknown] 172.18.0.9 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-22 07:59:35.770 GMT [46] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 0.849 ms  parse s4: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE ("public"."Users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-22 07:59:35.770 GMT [46] login postgres [unknown] 172.18.0.9 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-22 07:59:35.794 GMT [46] login postgres [unknown] 172.18.0.9 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""Users"".""id"", ""public"".""Users"".""email"", ""public"".""Users"".""password"" FROM ""public"".""Users"" WHERE (""public"".""Users"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-22 07:59:35.794 GMT [46] login postgres [unknown] 172.18.0.9 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-22 07:59:35.794 GMT [46] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 4.660 ms  bind s4: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE ("public"."Users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-22 07:59:35.794 GMT [46] login postgres [unknown] 172.18.0.9 DETAIL:  Parameters: $1 = '2', $2 = '1', $3 = '0'
+2024-11-22 07:59:35.794 GMT [46] login postgres [unknown] 172.18.0.9 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-22 07:59:35.794 GMT [46] login postgres [unknown] 172.18.0.9 LOG:  00000: execute s4: SELECT "public"."Users"."id", "public"."Users"."email", "public"."Users"."password" FROM "public"."Users" WHERE ("public"."Users"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-22 07:59:35.794 GMT [46] login postgres [unknown] 172.18.0.9 DETAIL:  Parameters: $1 = '2', $2 = '1', $3 = '0'
+2024-11-22 07:59:35.794 GMT [46] login postgres [unknown] 172.18.0.9 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-22 07:59:35.794 GMT [46] login postgres [unknown] 172.18.0.9 LOG:  00000: duration: 0.214 ms
+2024-11-22 07:59:35.794 GMT [46] login postgres [unknown] 172.18.0.9 LOCATION:  exec_execute_message, postgres.c:2332

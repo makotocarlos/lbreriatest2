@@ -1,0 +1,56 @@
+2024-11-22 07:51:01.877 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-22 07:51:01.877 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-22 07:51:01.878 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-22 07:51:01.878 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-22 07:51:01.878 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-22 07:51:01.878 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-22 07:51:01.892 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-22 07:51:01.892 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-22 07:51:01.951 GMT [30]     LOG:  00000: database system was shut down at 2024-11-22 07:50:44 GMT
+2024-11-22 07:51:01.951 GMT [30]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-22 07:51:02.046 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-22 07:51:02.046 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-22 07:56:01.985 GMT [28]     LOG:  00000: checkpoint starting: time
+2024-11-22 07:56:01.985 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-22 07:56:02.233 GMT [28]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.088 s, sync=0.020 s, total=0.251 s; sync files=2, longest=0.012 s, average=0.010 s; distance=0 kB, estimate=0 kB; lsn=0/2E2B870, redo lsn=0/2E2B818
+2024-11-22 07:56:02.233 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-22 07:59:21.865 GMT [34] payments postgres [unknown] 172.18.0.6 LOG:  00000: duration: 61.901 ms  parse s0: INSERT INTO "public"."payments" ("userId","orderId","amount","status","method","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt"
+2024-11-22 07:59:21.865 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-22 07:59:21.879 GMT [34] payments postgres [unknown] 172.18.0.6 LOG:  00000: duration: 5.744 ms  bind s0: INSERT INTO "public"."payments" ("userId","orderId","amount","status","method","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt"
+2024-11-22 07:59:21.879 GMT [34] payments postgres [unknown] 172.18.0.6 DETAIL:  Parameters: $1 = '2', $2 = '2', $3 = '150.75', $4 = 'pending', $5 = 'credit_card', $6 = '2024-11-22 07:59:21.606', $7 = '2024-11-22 07:59:21.606'
+2024-11-22 07:59:21.879 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-22 07:59:21.880 GMT [34] payments postgres [unknown] 172.18.0.6 LOG:  00000: execute s0: INSERT INTO "public"."payments" ("userId","orderId","amount","status","method","createdAt","updatedAt") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt"
+2024-11-22 07:59:21.880 GMT [34] payments postgres [unknown] 172.18.0.6 DETAIL:  Parameters: $1 = '2', $2 = '2', $3 = '150.75', $4 = 'pending', $5 = 'credit_card', $6 = '2024-11-22 07:59:21.606', $7 = '2024-11-22 07:59:21.606'
+2024-11-22 07:59:21.880 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-22 07:59:21.886 GMT [34] payments postgres [unknown] 172.18.0.6 LOG:  00000: AUDIT: SESSION,1,1,WRITE,INSERT,,,"INSERT INTO ""public"".""payments"" (""userId"",""orderId"",""amount"",""status"",""method"",""createdAt"",""updatedAt"") VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING ""public"".""payments"".""id"", ""public"".""payments"".""userId"", ""public"".""payments"".""orderId"", ""public"".""payments"".""amount"", ""public"".""payments"".""status"", ""public"".""payments"".""method"", ""public"".""payments"".""createdAt"", ""public"".""payments"".""updatedAt""",<not logged>
+2024-11-22 07:59:21.886 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-22 07:59:21.924 GMT [34] payments postgres [unknown] 172.18.0.6 LOG:  00000: duration: 44.924 ms
+2024-11-22 07:59:21.924 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-22 07:59:34.234 GMT [34] payments postgres [unknown] 172.18.0.6 LOG:  00000: duration: 18.597 ms  parse s1: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-22 07:59:34.234 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-22 07:59:34.257 GMT [34] payments postgres [unknown] 172.18.0.6 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,"SELECT ""public"".""payments"".""id"", ""public"".""payments"".""userId"", ""public"".""payments"".""orderId"", ""public"".""payments"".""amount"", ""public"".""payments"".""status"", ""public"".""payments"".""method"", ""public"".""payments"".""createdAt"", ""public"".""payments"".""updatedAt"" FROM ""public"".""payments"" WHERE 1=1 OFFSET $1",<not logged>
+2024-11-22 07:59:34.257 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-22 07:59:34.257 GMT [34] payments postgres [unknown] 172.18.0.6 LOG:  00000: duration: 21.581 ms  bind s1: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-22 07:59:34.257 GMT [34] payments postgres [unknown] 172.18.0.6 DETAIL:  Parameters: $1 = '0'
+2024-11-22 07:59:34.257 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-22 07:59:34.257 GMT [34] payments postgres [unknown] 172.18.0.6 LOG:  00000: execute s1: SELECT "public"."payments"."id", "public"."payments"."userId", "public"."payments"."orderId", "public"."payments"."amount", "public"."payments"."status", "public"."payments"."method", "public"."payments"."createdAt", "public"."payments"."updatedAt" FROM "public"."payments" WHERE 1=1 OFFSET $1
+2024-11-22 07:59:34.257 GMT [34] payments postgres [unknown] 172.18.0.6 DETAIL:  Parameters: $1 = '0'
+2024-11-22 07:59:34.257 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-22 07:59:34.258 GMT [34] payments postgres [unknown] 172.18.0.6 LOG:  00000: duration: 0.707 ms
+2024-11-22 07:59:34.258 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-22 08:00:01.960 GMT [1]     LOG:  00000: received fast shutdown request
+2024-11-22 08:00:01.960 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2273
+2024-11-22 08:00:01.980 GMT [1]     LOG:  00000: aborting any active transactions
+2024-11-22 08:00:01.980 GMT [1]     LOCATION:  process_pm_shutdown_request, postmaster.c:2291
+2024-11-22 08:00:01.996 GMT [34] payments postgres [unknown] 172.18.0.6 FATAL:  57P01: terminating connection due to administrator command
+2024-11-22 08:00:01.996 GMT [34] payments postgres [unknown] 172.18.0.6 LOCATION:  ProcessInterrupts, postgres.c:3315
+2024-11-22 08:00:02.055 GMT [1]     LOG:  00000: background worker "logical replication launcher" (PID 33) exited with exit code 1
+2024-11-22 08:00:02.055 GMT [1]     LOCATION:  LogChildExit, postmaster.c:3076
+2024-11-22 08:00:02.095 GMT [28]     LOG:  00000: shutting down
+2024-11-22 08:00:02.095 GMT [28]     LOCATION:  ShutdownXLOG, xlog.c:6611
+2024-11-22 08:00:02.105 GMT [28]     LOG:  00000: checkpoint starting: shutdown immediate
+2024-11-22 08:00:02.105 GMT [28]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-22 08:00:02.213 GMT [28]     LOG:  00000: checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.028 s, sync=0.010 s, total=0.117 s; sync files=4, longest=0.005 s, average=0.003 s; distance=0 kB, estimate=0 kB; lsn=0/2E2BB78, redo lsn=0/2E2BB78
+2024-11-22 08:00:02.213 GMT [28]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-22 08:00:02.271 GMT [1]     LOG:  00000: database system is shut down
+2024-11-22 08:00:02.271 GMT [1]     LOCATION:  UnlinkLockFiles, miscinit.c:1171

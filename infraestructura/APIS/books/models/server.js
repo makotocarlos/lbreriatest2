@@ -21,23 +21,23 @@ class Server {
     constructor() {
         this.app = express();
         this.port = 3001;
-        this.path = '/api/';  // Define el prefijo de las rutas
+        this.path = '/api/';  
         this.middlewares();
         this.routes();
     }
 
-    // Configura middlewares
+    
     middlewares() {
-        this.app.use(cors()); // Habilita CORS
-        this.app.use(express.json()); // Permite el manejo de datos JSON
+        this.app.use(cors()); 
+        this.app.use(express.json()); 
     }
 
-    // Define las rutas
+    
     routes() {
         this.app.use('/books', require('../routes/books.routes'));
     }
 
-    // Inicia el servidor
+    
     listen() {
         this.app.listen(this.port, () => {
             console.log(`Servidor funcionando en el puerto: ${this.port}`);

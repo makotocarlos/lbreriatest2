@@ -20,21 +20,21 @@ class OrderServer {
 
     constructor() {
         this.app = express();
-        this.port = 3002; // Puedes cambiar el puerto si es necesario
-        this.path = '/api/';  // Define el prefijo de las rutas
+        this.port = 3002; 
+        this.path = '/api/';  
         this.middlewares();
         this.routes();
     }
 
     // Configura middlewares
     middlewares() {
-        this.app.use(cors()); // Habilita CORS
-        this.app.use(express.json()); // Permite el manejo de datos JSON
+        this.app.use(cors()); 
+        this.app.use(express.json()); 
     }
 
     // Define las rutas
     routes() {
-        this.app.use('/orders', require('../routes/orders.routes')); // Rutas de órdenes
+        this.app.use('/orders', require('../routes/orders.routes')); 
     }
 
     // Inicia el servidor

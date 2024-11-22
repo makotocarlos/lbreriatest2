@@ -18,10 +18,10 @@ const { ShowBooks, AddBook, ShowBook, EditBook, DeleteBook } = require('../contr
 /**
  * Rutas
  */
-router.get('/', ShowBooks); // Obtener todos los libros
-router.post('/', AddBook); // Agregar un libro
-router.get('/:id', ShowBook); // Obtener un libro específico
-router.put('/:id', EditBook); // Editar un libro
-router.delete('/:id', DeleteBook); // Eliminar un libro
+router.get('/', ShowBooks); 
+router.post('/', AddBook); 
+router.get('/:id', ShowBook); 
+router.put('/:id', EditBook); 
+router.delete('/:id', DeleteBook); 
 
 module.exports = router;

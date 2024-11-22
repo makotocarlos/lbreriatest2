@@ -7,7 +7,7 @@
  */
 
 const { Router } = require('express');
-const { createOrder, getOrder, getOrders } = require('../controllers/orders.controller');
+const { createOrder, getOrder, getOrders, getOrdersByUser } = require('../controllers/orders.controller');
 
 const router = Router();
 
@@ -19,5 +19,8 @@ router.get('/', getOrders);
 
 // Ruta para obtener una orden específica
 router.get('/:id', getOrder);
+
+// Ruta para obtener las órdenes de un usuario específico
+router.get('/user', getOrdersByUser);
 
 module.exports = router;

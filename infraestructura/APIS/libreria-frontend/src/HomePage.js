@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';  
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
@@ -8,12 +9,13 @@ const HomePage = () => {
   const [orderStatus, setOrderStatus] = useState({ success: null, message: '' });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [orders, setOrders] = useState([]); // Asegurarse de que orders sea un array vacío al principio
+  const [orders, setOrders] = useState([]); 
   const [showOrders, setShowOrders] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(''); // Estado para la búsqueda
+  const [searchQuery, setSearchQuery] = useState(''); 
   const auth = useSelector((state) => state.auth);
+  const navigate  = useNavigate();  
 
-  // Fetch books on mount
+  
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -26,7 +28,7 @@ const HomePage = () => {
         setLoading(false);
       } catch (err) {
         setError(err.message);
-        setBooks([]); // Evita que books quede como undefined
+        setBooks([]); 
         setLoading(false);
       }
     };
@@ -34,7 +36,7 @@ const HomePage = () => {
     fetchBooks();
   }, []);
 
-  // Fetch orders for the user
+  
   useEffect(() => {
     const fetchOrders = async () => {
       if (!auth.isLoggedIn || !auth.userID) {
@@ -63,7 +65,7 @@ const HomePage = () => {
     }
   }, [showOrders, auth.isLoggedIn, auth.userID, auth.token]);
 
-  // Handle order submission
+  
   const handleOrder = async (bookId) => {
     if (!auth.isLoggedIn || !auth.userID) {
       setOrderStatus({ success: false, message: 'Error: Usuario no autenticado.' });
@@ -98,10 +100,15 @@ const HomePage = () => {
     }
   };
 
-  // Filtrar libros por el título
+  
   const filteredBooks = books.filter((book) =>
     book.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+ 
+  const goToPayments = () => {
+    navigate('/payments');  // Navega a la ruta de pagos
+  };
 
   if (loading) return <p>Cargando libros...</p>;
   if (error) return <p>Error al cargar libros: {error}</p>;
@@ -224,6 +231,21 @@ const HomePage = () => {
           {orderStatus.message}
         </p>
       )}
+
+      {/* Botón para ir a la página de pagos */}
+      <button
+        onClick={goToPayments}
+        style={{
+          padding: '10px 20px',
+          backgroundColor: '#007bff',
+          color: '#fff',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer',
+        }}
+      >
+        Ir a Gestión de Pagos
+      </button>
     </div>
   );
 };

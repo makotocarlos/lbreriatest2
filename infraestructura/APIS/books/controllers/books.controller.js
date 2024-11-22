@@ -3,7 +3,7 @@ const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
 
-// Obtener todos los libros
+
 const ShowBooks = async (req = request, res = response) => {
     try {
         const books = await prisma.books.findMany();
@@ -20,7 +20,7 @@ const ShowBooks = async (req = request, res = response) => {
     }
 };
 
-// Agregar un libro
+
 const AddBook = async (req = request, res = response) => {
     try {
         const { title, description, author, imageUrl, price } = req.body;
@@ -49,7 +49,7 @@ const AddBook = async (req = request, res = response) => {
     }
 };
 
-// Obtener un libro específico
+
 const ShowBook = async (req = request, res = response) => {
     try {
         const { id } = req.params;
@@ -79,7 +79,7 @@ const ShowBook = async (req = request, res = response) => {
     }
 };
 
-// Editar un libro
+
 const EditBook = async (req = request, res = response) => {
     try {
         const { id } = req.params;
@@ -94,7 +94,7 @@ const EditBook = async (req = request, res = response) => {
                 description,
                 author,
                 imageUrl,
-                price, // Actualizado precio
+                price, 
             }
         });
 
@@ -112,7 +112,7 @@ const EditBook = async (req = request, res = response) => {
     }
 };
 
-// Eliminar un libro
+
 const DeleteBook = async (req = request, res = response) => {
     try {
         const { id } = req.params;
