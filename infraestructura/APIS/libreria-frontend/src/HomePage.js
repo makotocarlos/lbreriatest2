@@ -8,8 +8,9 @@ const HomePage = () => {
   const [orderStatus, setOrderStatus] = useState({ success: null, message: '' });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [orders, setOrders] = useState([]); // Estado para las órdenes
-  const [showOrders, setShowOrders] = useState(false); // Controlar si mostrar órdenes
+  const [orders, setOrders] = useState([]); // Asegurarse de que orders sea un array vacío al principio
+  const [showOrders, setShowOrders] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(''); // Estado para la búsqueda
   const auth = useSelector((state) => state.auth);
 
   // Fetch books on mount
@@ -17,10 +18,15 @@ const HomePage = () => {
     const fetchBooks = async () => {
       try {
         const response = await axios.get('http://localhost:3001/books');
-        setBooks(response.data.books);
+        if (response.data && Array.isArray(response.data.books)) {
+          setBooks(response.data.books);
+        } else {
+          throw new Error('Datos inesperados de la API');
+        }
         setLoading(false);
       } catch (err) {
         setError(err.message);
+        setBooks([]); // Evita que books quede como undefined
         setLoading(false);
       }
     };
@@ -28,13 +34,34 @@ const HomePage = () => {
     fetchBooks();
   }, []);
 
-  // Handle quantity input change
-  const handleQuantityChange = (bookId, value) => {
-    setQuantities((prevQuantities) => ({
-      ...prevQuantities,
-      [bookId]: value,
-    }));
-  };
+  // Fetch orders for the user
+  useEffect(() => {
+    const fetchOrders = async () => {
+      if (!auth.isLoggedIn || !auth.userID) {
+        setOrderStatus({ success: false, message: 'Usuario no autenticado.' });
+        return;
+      }
+
+      try {
+        const response = await axios.get(`http://localhost:3002/orders/${auth.userID}`, {
+          headers: {
+            'Authorization': `Bearer ${auth.token}`,
+          },
+        });
+        setOrders(response.data.orders || []); // Asegúrate de que orders siempre sea un array
+      } catch (err) {
+        console.error('Error al obtener las órdenes:', err);
+        setOrderStatus({
+          success: false,
+          message: err.response?.data?.message || 'Error al obtener las órdenes.',
+        });
+      }
+    };
+
+    if (showOrders) {
+      fetchOrders();
+    }
+  }, [showOrders, auth.isLoggedIn, auth.userID, auth.token]);
 
   // Handle order submission
   const handleOrder = async (bookId) => {
@@ -71,36 +98,10 @@ const HomePage = () => {
     }
   };
 
-  // Función para obtener las órdenes del usuario
-  const fetchOrders = async () => {
-    if (!auth.isLoggedIn || !auth.userID) {
-      setOrderStatus({ success: false, message: 'Usuario no autenticado.' });
-      return;
-    }
-
-    try {
-      const response = await axios.get(`http://localhost:3002/orders/${auth.userID}`, {
-        headers: {
-          'Authorization': `Bearer ${auth.token}`,
-        },
-      });
-      setOrders(response.data.orders);
-    } catch (err) {
-      console.error('Error al obtener las órdenes:', err);
-      setOrderStatus({
-        success: false,
-        message: err.response?.data?.message || 'Error al obtener las órdenes.',
-      });
-    }
-  };
-
-  // Toggle para mostrar u ocultar las órdenes
-  const handleShowOrders = () => {
-    setShowOrders(!showOrders);
-    if (!showOrders) {
-      fetchOrders();
-    }
-  };
+  // Filtrar libros por el título
+  const filteredBooks = books.filter((book) =>
+    book.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   if (loading) return <p>Cargando libros...</p>;
   if (error) return <p>Error al cargar libros: {error}</p>;
@@ -108,89 +109,112 @@ const HomePage = () => {
   return (
     <div>
       <h1>Libros disponibles</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
-        {books.map((book) => (
-          <div
-            key={book.id}
-            style={{
-              border: '1px solid #ccc',
-              padding: '10px',
-              borderRadius: '5px',
-              width: '200px',
-            }}
-          >
-            <h3>{book.title}</h3>
-            <p>Autor: {book.author}</p>
-            <p>Precio: ${book.price}</p>
-            <img
-              src={book.imageUrl}
-              alt={book.title}
-              style={{ width: '100%', borderRadius: '5px' }}
-            />
-            <div style={{ marginTop: '10px', display: 'flex', alignItems: 'center' }}>
-              <input
-                type="number"
-                min="1"
-                placeholder="Cantidad"
-                value={quantities[book.id] || ''}
-                onChange={(e) => handleQuantityChange(book.id, e.target.value)}
-                style={{
-                  width: '60px',
-                  marginRight: '10px',
-                  padding: '5px',
-                  borderRadius: '3px',
-                }}
-              />
-              <button
-                onClick={() => handleOrder(book.id)}
-                style={{
-                  padding: '5px 10px',
-                  backgroundColor: '#007bff',
-                  color: '#fff',
-                  border: 'none',
-                  borderRadius: '3px',
-                  cursor: 'pointer',
-                }}
-              >
-                Comprar
-              </button>
-            </div>
-          </div>
-        ))}
+
+      {/* Barra de búsqueda */}
+      <div style={{ marginBottom: '20px' }}>
+        <input
+          type="text"
+          placeholder="Buscar por título"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={{
+            padding: '8px',
+            width: '300px',
+            borderRadius: '5px',
+            border: '1px solid #ccc',
+          }}
+        />
       </div>
 
-      {/* Botón para ver las órdenes */}
-      {auth.isLoggedIn && (
-        <button
-          onClick={handleShowOrders}
-          style={{
-            marginTop: '20px',
-            padding: '10px 20px',
-            backgroundColor: '#28a745',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-          }}
-        >
-          {showOrders ? 'Ocultar órdenes' : 'Ver órdenes'}
-        </button>
-      )}
+      {/* Mostrar los libros filtrados */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+        {filteredBooks.length > 0 ? (
+          filteredBooks.map((book) => (
+            <div
+              key={book.id}
+              style={{
+                border: '1px solid #ccc',
+                padding: '10px',
+                borderRadius: '5px',
+                width: '200px',
+              }}
+            >
+              <h3>{book.title}</h3>
+              <p>Autor: {book.author}</p>
+              <p>Precio: ${book.price}</p>
+              <img
+                src={book.imageUrl}
+                alt={book.title}
+                style={{ width: '100%', borderRadius: '5px' }}
+              />
+              <div style={{ marginTop: '10px', display: 'flex', alignItems: 'center' }}>
+                <input
+                  type="number"
+                  min="1"
+                  placeholder="Cantidad"
+                  value={quantities[book.id] || ''}
+                  onChange={(e) => handleQuantityChange(book.id, e.target.value)}
+                  style={{
+                    width: '60px',
+                    marginRight: '10px',
+                    padding: '5px',
+                    borderRadius: '3px',
+                  }}
+                />
+                <button
+                  onClick={() => handleOrder(book.id)}
+                  style={{
+                    padding: '5px 10px',
+                    backgroundColor: '#007bff',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '3px',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Comprar
+                </button>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No hay libros que coincidan con tu búsqueda.</p>
+        )}
+      </div>
 
-      {/* Mostrar las órdenes si showOrders es true */}
-      {showOrders && (
+      {/* Sección de órdenes */}
+      {auth.isLoggedIn && (
         <div style={{ marginTop: '20px' }}>
           <h2>Mis órdenes</h2>
-          {orders.length > 0 ? (
-            <ul>
-              {orders.map((order) => (
-                <li key={order.id}>
-                  Libro ID: {order.bookId}, Cantidad: {order.quantity}, Fecha: {order.date}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No tienes órdenes realizadas aún.</p>
+          <button
+            onClick={() => setShowOrders(!showOrders)}
+            style={{
+              padding: '10px 20px',
+              backgroundColor: '#28a745',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+            }}
+          >
+            {showOrders ? 'Ocultar órdenes' : 'Ver órdenes'}
+          </button>
+
+          {/* Mostrar las órdenes si showOrders es true */}
+          {showOrders && (
+            <div style={{ marginTop: '20px' }}>
+              {orders.length > 0 ? (
+                <ul>
+                  {orders.map((order) => (
+                    <li key={order.id}>
+                      Libro ID: {order.bookId}, Cantidad: {order.quantity}, Fecha: {order.date}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>No tienes órdenes realizadas aún.</p>
+              )}
+            </div>
           )}
         </div>
       )}
@@ -205,5 +229,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-

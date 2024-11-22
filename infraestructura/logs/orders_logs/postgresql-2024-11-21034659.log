@@ -1,0 +1,418 @@
+2024-11-21 03:46:59.701 GMT [1]     LOG:  00000: starting PostgreSQL 17.1 (Debian 17.1-1.pgdg120+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14) 12.2.0, 64-bit
+2024-11-21 03:46:59.701 GMT [1]     LOCATION:  PostmasterMain, postmaster.c:1080
+2024-11-21 03:46:59.702 GMT [1]     LOG:  00000: listening on IPv4 address "0.0.0.0", port 5432
+2024-11-21 03:46:59.702 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-21 03:46:59.702 GMT [1]     LOG:  00000: listening on IPv6 address "::", port 5432
+2024-11-21 03:46:59.702 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:661
+2024-11-21 03:46:59.718 GMT [1]     LOG:  00000: listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2024-11-21 03:46:59.718 GMT [1]     LOCATION:  ListenServerPort, pqcomm.c:657
+2024-11-21 03:46:59.805 GMT [31]     LOG:  00000: database system was shut down at 2024-11-21 03:46:41 GMT
+2024-11-21 03:46:59.805 GMT [31]     LOCATION:  StartupXLOG, xlog.c:5445
+2024-11-21 03:46:59.911 GMT [1]     LOG:  00000: database system is ready to accept connections
+2024-11-21 03:46:59.911 GMT [1]     LOCATION:  process_pm_child_exit, postmaster.c:2483
+2024-11-21 03:48:25.208 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 87.786 ms  parse s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:25.208 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-21 03:48:25.261 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,1,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:48:25.261 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:25.266 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 31.093 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:25.266 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:25.266 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:25.266 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:25.266 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:25.266 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:25.268 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 1.790 ms
+2024-11-21 03:48:25.268 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:25.270 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 1.001 ms  parse s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:25.270 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_parse_message, postgres.c:1609
+2024-11-21 03:48:25.275 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,2,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:48:25.275 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:25.275 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 3.827 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:25.275 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:25.275 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:25.275 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:25.275 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:25.275 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:25.275 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.596 ms
+2024-11-21 03:48:25.275 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:28.717 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,3,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:48:28.717 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:28.717 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.376 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:28.717 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:28.717 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:28.717 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:28.717 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:28.717 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:28.717 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.072 ms
+2024-11-21 03:48:28.717 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:28.718 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,4,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:48:28.718 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:28.718 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.265 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:28.718 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:28.718 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:28.718 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:28.718 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:28.718 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:28.718 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.067 ms
+2024-11-21 03:48:28.718 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:29.680 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,5,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:48:29.680 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:29.680 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.344 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:29.680 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:29.680 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:29.681 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:29.681 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:29.681 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:29.681 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.065 ms
+2024-11-21 03:48:29.681 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:29.682 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,6,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:48:29.682 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:29.682 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.338 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:29.682 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:29.682 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:29.682 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:29.682 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:29.682 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:29.682 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.082 ms
+2024-11-21 03:48:29.682 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:30.119 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,7,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:48:30.119 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:30.119 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.492 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:30.119 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:30.119 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:30.119 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:30.119 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:30.119 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:30.119 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.095 ms
+2024-11-21 03:48:30.119 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:30.120 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,8,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:48:30.120 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:30.120 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.242 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:30.120 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:30.120 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:30.120 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:30.120 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:30.120 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:30.120 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.067 ms
+2024-11-21 03:48:30.120 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:30.486 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,9,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:48:30.486 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:30.486 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.496 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:30.486 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:30.486 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:30.486 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:30.486 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:30.486 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:30.487 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.234 ms
+2024-11-21 03:48:30.487 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:30.487 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,10,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:48:30.487 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:30.488 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.270 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:30.488 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:30.488 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:30.488 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:30.488 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:30.488 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:30.488 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.057 ms
+2024-11-21 03:48:30.488 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:30.816 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,11,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:48:30.816 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:30.816 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.668 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:30.816 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:30.816 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:30.816 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:30.816 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:30.816 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:30.816 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.098 ms
+2024-11-21 03:48:30.816 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:30.817 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,12,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:48:30.817 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:30.817 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.271 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:30.817 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:30.817 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:30.817 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:30.817 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:30.817 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:30.817 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.072 ms
+2024-11-21 03:48:30.817 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:31.492 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,13,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:48:31.492 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:31.492 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.370 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:31.492 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:31.492 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:31.492 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:48:31.492 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:48:31.492 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:31.492 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.074 ms
+2024-11-21 03:48:31.492 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:48:31.493 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,14,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:48:31.493 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:48:31.493 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.100 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:31.493 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:31.493 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:48:31.493 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:48:31.493 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:48:31.493 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:48:31.493 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.091 ms
+2024-11-21 03:48:31.493 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:49:05.179 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: statement: SELECT 1
+2024-11-21 03:49:05.179 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-21 03:49:05.179 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,15,1,READ,SELECT,,,SELECT 1,<not logged>
+2024-11-21 03:49:05.179 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:49:05.179 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.545 ms
+2024-11-21 03:49:05.179 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-21 03:49:05.181 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,16,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:49:05.181 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:49:05.181 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.492 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:49:05.181 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:49:05.181 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:49:05.181 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:49:05.181 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:49:05.181 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:49:05.181 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.069 ms
+2024-11-21 03:49:05.181 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:49:05.182 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,17,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:49:05.182 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:49:05.182 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.167 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:49:05.182 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:49:05.182 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:49:05.182 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:49:05.182 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:49:05.182 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:49:05.182 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.079 ms
+2024-11-21 03:49:05.182 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:49:07.232 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,18,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:49:07.232 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:49:07.232 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.420 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:49:07.232 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:49:07.232 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:49:07.232 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:49:07.232 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:49:07.232 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:49:07.232 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.086 ms
+2024-11-21 03:49:07.232 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:49:07.233 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,19,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:49:07.233 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:49:07.233 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.166 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:49:07.233 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:49:07.233 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:49:07.233 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:49:07.233 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:49:07.233 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:49:07.233 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.084 ms
+2024-11-21 03:49:07.233 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:49:13.626 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,20,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:49:13.626 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:49:13.626 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.490 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:49:13.626 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:49:13.626 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:49:13.626 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:49:13.626 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:49:13.626 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:49:13.626 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.070 ms
+2024-11-21 03:49:13.626 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:49:13.627 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,21,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:49:13.627 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:49:13.627 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.115 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:49:13.627 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:49:13.627 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:49:13.627 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:49:13.627 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:49:13.627 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:49:13.627 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.059 ms
+2024-11-21 03:49:13.627 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:12.081 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: statement: SELECT 1
+2024-11-21 03:50:12.081 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-21 03:50:12.081 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,22,1,READ,SELECT,,,SELECT 1,<not logged>
+2024-11-21 03:50:12.081 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:12.081 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.482 ms
+2024-11-21 03:50:12.081 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-21 03:50:12.083 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,23,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:50:12.083 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:12.084 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.923 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:12.084 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:12.084 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:12.084 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:12.084 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:12.084 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:12.084 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.233 ms
+2024-11-21 03:50:12.084 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:12.086 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,24,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:50:12.086 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:12.086 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.260 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:12.086 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:12.086 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:12.086 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:12.086 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:12.086 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:12.086 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.092 ms
+2024-11-21 03:50:12.086 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:16.784 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,25,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:50:16.784 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:16.784 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.633 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:16.784 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:16.784 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:16.784 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:16.784 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:16.784 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:16.784 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.127 ms
+2024-11-21 03:50:16.784 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:16.787 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,26,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:50:16.787 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:16.787 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.309 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:16.787 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:16.787 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:16.787 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:16.787 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:16.787 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:16.787 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.113 ms
+2024-11-21 03:50:16.787 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:17.241 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,27,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:50:17.241 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:17.241 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.354 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:17.241 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:17.241 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:17.242 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:17.242 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:17.242 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:17.242 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.086 ms
+2024-11-21 03:50:17.242 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:17.242 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,28,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:50:17.242 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:17.242 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.157 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:17.242 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:17.242 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:17.243 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:17.243 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:17.243 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:17.243 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.071 ms
+2024-11-21 03:50:17.243 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:17.597 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,29,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:50:17.597 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:17.597 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.415 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:17.597 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:17.597 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:17.597 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:17.597 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:17.597 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:17.597 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.084 ms
+2024-11-21 03:50:17.597 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:17.598 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,30,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:50:17.598 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:17.598 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.191 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:17.598 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:17.598 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:17.598 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:17.598 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:17.598 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:17.598 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.084 ms
+2024-11-21 03:50:17.598 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:18.169 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,31,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:50:18.169 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:18.169 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.485 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:18.169 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:18.169 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:18.169 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:18.169 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:18.169 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:18.169 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.096 ms
+2024-11-21 03:50:18.169 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:18.170 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,32,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:50:18.170 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:18.171 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.178 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:18.171 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:18.171 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:18.171 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:18.171 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:18.171 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:18.171 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.068 ms
+2024-11-21 03:50:18.171 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:18.901 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,33,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:50:18.901 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:18.901 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.405 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:18.901 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:18.901 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:18.901 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:18.901 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:18.901 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:18.901 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.074 ms
+2024-11-21 03:50:18.901 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:18.902 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,34,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:50:18.902 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:18.902 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.149 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:18.902 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:18.902 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:18.902 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:18.902 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:18.902 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:18.902 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.063 ms
+2024-11-21 03:50:18.902 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:19.363 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,35,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:50:19.363 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:19.364 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.480 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:19.364 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:19.364 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:19.364 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:19.364 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:19.364 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:19.364 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.103 ms
+2024-11-21 03:50:19.364 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:19.365 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,36,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:50:19.365 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:19.365 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.163 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:19.365 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:19.365 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:19.365 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:19.365 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:19.365 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:19.365 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.072 ms
+2024-11-21 03:50:19.365 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:20.021 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,37,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:50:20.021 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:20.021 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.437 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:20.021 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:20.021 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:20.021 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:50:20.021 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:50:20.021 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:20.021 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.102 ms
+2024-11-21 03:50:20.021 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:50:20.022 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,38,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:50:20.022 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:50:20.022 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.173 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:20.022 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:20.022 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:50:20.022 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:50:20.022 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:50:20.022 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:50:20.022 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.096 ms
+2024-11-21 03:50:20.022 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:51:59.876 GMT [29]     LOG:  00000: checkpoint starting: time
+2024-11-21 03:51:59.876 GMT [29]     LOCATION:  LogCheckpointStart, xlog.c:6661
+2024-11-21 03:51:59.975 GMT [29]     LOG:  00000: checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.029 s, sync=0.010 s, total=0.099 s; sync files=2, longest=0.006 s, average=0.005 s; distance=0 kB, estimate=0 kB; lsn=0/51BB0D0, redo lsn=0/51BB078
+2024-11-21 03:51:59.975 GMT [29]     LOCATION:  LogCheckpointEnd, xlog.c:6750
+2024-11-21 03:52:24.503 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: statement: SELECT 1
+2024-11-21 03:52:24.503 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_simple_query, postgres.c:1075
+2024-11-21 03:52:24.504 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,39,1,READ,SELECT,,,SELECT 1,<not logged>
+2024-11-21 03:52:24.504 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:52:24.504 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.568 ms
+2024-11-21 03:52:24.504 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_simple_query, postgres.c:1368
+2024-11-21 03:52:24.505 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,40,1,READ,SELECT,,,"SELECT ""public"".""orders"".""id"", ""public"".""orders"".""userId"", ""public"".""orders"".""totalAmount"", ""public"".""orders"".""status"", ""public"".""orders"".""createdAt"", ""public"".""orders"".""updatedAt"" FROM ""public"".""orders"" WHERE (""public"".""orders"".""id"" = $1 AND 1=1) LIMIT $2 OFFSET $3",<not logged>
+2024-11-21 03:52:24.505 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:52:24.505 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.341 ms  bind s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:52:24.505 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:52:24.505 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:52:24.505 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s0: SELECT "public"."orders"."id", "public"."orders"."userId", "public"."orders"."totalAmount", "public"."orders"."status", "public"."orders"."createdAt", "public"."orders"."updatedAt" FROM "public"."orders" WHERE ("public"."orders"."id" = $1 AND 1=1) LIMIT $2 OFFSET $3
+2024-11-21 03:52:24.505 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '1', $3 = '0'
+2024-11-21 03:52:24.505 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:52:24.506 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.138 ms
+2024-11-21 03:52:24.506 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
+2024-11-21 03:52:24.507 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: AUDIT: SESSION,41,1,READ,SELECT,,,"SELECT ""public"".""items"".""id"", ""public"".""items"".""orderId"", ""public"".""items"".""bookId"", ""public"".""items"".""quantity"", ""public"".""items"".""price"" FROM ""public"".""items"" WHERE ""public"".""items"".""orderId"" IN ($1) OFFSET $2",<not logged>
+2024-11-21 03:52:24.507 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  log_audit_event, pgaudit.c:875
+2024-11-21 03:52:24.507 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.127 ms  bind s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:52:24.507 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:52:24.507 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_bind_message, postgres.c:2075
+2024-11-21 03:52:24.507 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: execute s1: SELECT "public"."items"."id", "public"."items"."orderId", "public"."items"."bookId", "public"."items"."quantity", "public"."items"."price" FROM "public"."items" WHERE "public"."items"."orderId" IN ($1) OFFSET $2
+2024-11-21 03:52:24.507 GMT [39] orders postgres [unknown] 172.18.0.4 DETAIL:  Parameters: $1 = '7', $2 = '0'
+2024-11-21 03:52:24.507 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2212
+2024-11-21 03:52:24.507 GMT [39] orders postgres [unknown] 172.18.0.4 LOG:  00000: duration: 0.068 ms
+2024-11-21 03:52:24.507 GMT [39] orders postgres [unknown] 172.18.0.4 LOCATION:  exec_execute_message, postgres.c:2332
